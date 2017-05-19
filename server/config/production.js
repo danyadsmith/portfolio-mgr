@@ -5,9 +5,10 @@ module.exports = {
     info: false
   },
   db: {
-    name: process.env.DATABASE_NAME,
-    url: process.env.DATABASE_URL,
-    user: process.env.POSTGRES_USER,
-    password: process.env.POSTGRES_PWD
-  }
+    dialect  : 'pg',
+    host     : process.env.DATABASE_URL,
+    user     : process.env.POSTGRES_USER,
+    password : process.env.POSTGRES_PWD,
+    database : process.env.DATABASE_NAME
+    sync     : true;
 };

@@ -5,9 +5,11 @@ module.exports = {
     info: false
   },
   db: {
-    name: 'portfolio_mgr_test',
-    url: process.env.DATABASE_URL,
-    user: process.env.POSTGRES_USER,
-    password: process.env.POSTGRES_PWD
+    dialect  : 'pg',
+    host     : process.env.DATABASE_URL,
+    user     : process.env.POSTGRES_USER,
+    password : process.env.POSTGRES_PWD,
+    database : 'portfolio_mgr_test'
+    sync     : true;
   }
 };

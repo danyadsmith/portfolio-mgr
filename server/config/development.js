@@ -1,13 +1,14 @@
 module.exports = {
   url: 'http://localhost',
   log: {
-    debug: false,
-    info: false
+    debug    : false,
+    info     : true
   },
   db: {
-    name: 'portfolio_mgr',
-    url: process.env.DATABASE_URL,
-    user: process.env.POSTGRES_USER,
-    password: process.env.POSTGRES_PWD
-  }
+    dialect  : 'pg',
+    host     : process.env.DATABASE_URL,
+    user     : process.env.POSTGRES_USER,
+    password : process.env.POSTGRES_PWD,
+    database : 'portfolio_mgr'
+    sync     : true;
 };
