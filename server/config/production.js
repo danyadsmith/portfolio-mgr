@@ -9,6 +9,7 @@ module.exports = {
     host     : process.env.DATABASE_URL,
     user     : process.env.POSTGRES_USER,
     password : process.env.POSTGRES_PWD,
-    database : process.env.DATABASE_NAME
-    sync     : true;
+    database : process.env.DATABASE_NAME,
+    sync     : true
+  }
 };
