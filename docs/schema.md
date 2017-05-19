@@ -1,4 +1,4 @@
-
+# Portfolio Manager
 
 ## Schema Design
 
@@ -98,14 +98,3 @@
       }
     }
 
-
-## REST API Design
-
-    {
-      "VERB /route": {
-        "description": "returns all lions",
-        "success_response": "200 application/json",
-        "error_response": "200 application/json",
-        "data": ""
-      }
-    }
