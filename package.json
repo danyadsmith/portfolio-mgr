@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "stop": "node server/config/shutdown.js",
-    "test": "mocha spec/* --reporter list"
+    "test": "mocha server/spec/* --reporter spec --no-deprecation --full-trace"
   },
   "keywords": [
     "portfolio"
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "dotenv": "^4.0.0",
     "request": "^2.81.0",
     "supertest": "^3.0.0"
   }
