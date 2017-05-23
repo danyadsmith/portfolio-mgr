@@ -5,11 +5,11 @@ module.exports = {
     info     : true
   },
   db: {
-    dialect  : 'pg',
+    dialect  : 'postgres',
     host     : process.env.DATABASE_URL,
-    user     : process.env.POSTGRES_USER,
-    password : process.env.POSTGRES_PWD,
-    database : 'portfolio_mgr',
+    user     : process.env.DATABASE_USER,
+    password : process.env.DATABASE_PWD,
+    database : process.env.DATABASE_NAME,
     sync     : true
   }
 };

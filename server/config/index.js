@@ -1,4 +1,5 @@
 var _ = require('lodash');
+require('dotenv').config()
 
 var config = {
   dev: 'development',
@@ -6,8 +7,8 @@ var config = {
   prod: 'production',
   port: process.env.PORT || 3000,
   jwt: {
-    secret: process.env.JWT || 'supersecret',
-    expireTime: 24 * 60 * 10
+    secret: process.env.JWT_SECRET || 'supersecret',
+    expiry: 24 * 60 * 10
   }
 };
 

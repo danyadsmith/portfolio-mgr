@@ -1,7 +1,7 @@
 const chalk     = require('chalk');
-const config    = require('./config');
+const config    = require('../config');
 const Sequelize = require('sequelize');
-var db          = new Sequelize(config.db.name, config.db.user, config.db.password { dialect: config.db.dialect, logging: config.log.debug });
+const db        = new Sequelize(config.db.database, config.db.user, config.db.password, { host: config.db.host, dialect: config.db.dialect, logging: config.log.debug });
 
 var Skill = db.define('Skill', {
   name: Sequelize.STRING,
@@ -34,7 +34,7 @@ var Project = db.define('Project', {
   title: Sequelize.STRING,
   role: Sequelize.STRING,
   url: Sequelize.STRING,
-  highlights: Sequelize.ARRAY
+  highlights: Sequelize.ARRAY(Sequelize.TEXT)
 });
 
 var ProjectType = db.define('ProjectType', {
@@ -65,11 +65,6 @@ var Blog = db.define('Blog', {
   mediumUrl: Sequelize.STRING
 });
 
-var SkillCategory = db.define('SkillCategory', {
-  SkillId: Sequelize.INTEGER,
-  CategoryId: Sequelize.INTEGER
-});
-
 var BlogCategory = db.define('BlogCategory', {
   BlogId: Sequelize.INTEGER,
   CategoryId: Sequelize.INTEGER
@@ -98,11 +93,15 @@ var Setting = db.define('Setting', {
   hidePhone: Sequelize.BOOLEAN,
   hideAddress: Sequelize.BOOLEAN,
   hideLocation: Sequelize.BOOLEAN,
-  enableContactForm: Sequelize.BOOLEAN
-})
+  enableContactForm: Sequelize.BOOLEAN,
+  enableResumeModule: Sequelize.BOOLEAN,
+  enablePortfolioModule: Sequelize.BOOLEAN,
+  enableBlogModule: Sequelize.BOOLEAN,
+  enableSignup: Sequelize.BOOLEAN
+});
 
-Category.belongsToMany(Skill, {through: SkillCategory, onDelete: 'CASCADE'});
 Category.belongsToMany(Blog, {through: BlogCategory, onDelete: 'CASCADE'});
+Skill.hasOne(Category);
 User.hasMany(Skill);
 User.hasMany(Education);
 User.hasMany(Job);
@@ -115,7 +114,8 @@ Project.hasOne(ProjectType);
 
 db.sync({force: config.db.sync}).then(function () {
   if (config.log.info) {
-    console.log(chalk.green('Initialized the ' + config.env + ' database: ' + config.db.name));
+    console.log(chalk.green('Initialized the ' + config.env + ' database: ' +
+      config.db.database));
   }
   return null;
 }).catch(function (error) {
@@ -128,7 +128,6 @@ module.exports = {
   User: User,
   Category: Category,
   Skill: Skill,
-  SkillCategory: SkillCategory,
   Education: Education,
   Job: Job,
   Project: Project,
