@@ -6,9 +6,10 @@ const helpers = require('./helpers');
 const request = require('supertest');
 const expect = require('chai').expect;
 
-describe('[AUTHENTICATION]   /signup', function () {
+describe('[SERVER AUTHENTICATION]   /signup', function () {
   describe('Creates a user account and authenticates the user when the username is unique', function (){
     it('returns a 201 status code and stores the user in the database', function (done) {
+      this.timeout(1000);
       request(app)
         .post('/signup')
         .set('Accept', 'application/json')
@@ -16,9 +17,8 @@ describe('[AUTHENTICATION]   /signup', function () {
         .expect('Content-Type', /json/)
         .expect(201)
         .end(function(err, res) {
-          var body = JSON.parse(res.text);
-          expect(body).to.be.an('object');
-          expect(body).to.have.property('token');
+          expect(res.body).to.be.an('object');
+          expect(res.body).to.have.property('token');
           done();
         });
     });
@@ -40,11 +40,25 @@ describe('[AUTHENTICATION]   /signup', function () {
   });
 });
 
-describe('[AUTHENTICATION]   /signin', function () {
+describe('[SERVER AUTHENTICATION]   /signin', function () {
   describe('Authenticates the visitor when matching credentials are supplied', function () {
+    it('receives a valid user token from the client', function (done) {
+      request(app)
+        .post('/signin')
+        .set('Authorization', helpers.authorization)
+        .set('Accept', 'application/json')
+        .send(helpers.users[0])
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end(function(err, res) {
+          done();
+        });
+    });
+
     it('returns a 200 status code', function (done) {
       request(app)
         .post('/signin')
+        .set('Authorization', helpers.authorization)
         .set('Accept', 'application/json')
         .send(helpers.users[0])
         .expect('Content-Type', /json/)

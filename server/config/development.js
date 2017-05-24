@@ -10,6 +10,6 @@ module.exports = {
     user     : process.env.DATABASE_USER,
     password : process.env.DATABASE_PWD,
     database : process.env.DATABASE_NAME,
-    sync     : true
+    sync     : false
   }
 };

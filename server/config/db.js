@@ -114,7 +114,7 @@ Project.hasOne(ProjectType);
 
 db.sync({force: config.db.sync}).then(function () {
   if (config.log.info) {
-    console.log(chalk.green('Initialized the ' + config.env + ' database: ' +
+    console.log(chalk.green('Connected to the ' + config.env + ' database: ' +
       config.db.database));
   }
   return null;
