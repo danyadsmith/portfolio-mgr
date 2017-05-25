@@ -1,7 +1,7 @@
 /* globals describe it */
 const app = require('../server');
-const chalk = require('chalk');
-const config = require('../config/');
+//const chalk = require('chalk');
+//const config = require('../config/');
 const helpers = require('./helpers');
 const request = require('supertest');
 const expect = require('chai').expect;
@@ -34,6 +34,7 @@ describe('[SERVER AUTHENTICATION]   /signup', function () {
         .expect('Content-Type', /json/)
         .expect(409)
         .end(function(err, res) {
+          expect(res.body).to.be.an('object');
           done();
         });
     });
@@ -51,6 +52,7 @@ describe('[SERVER AUTHENTICATION]   /signin', function () {
         .expect('Content-Type', /json/)
         .expect(200)
         .end(function(err, res) {
+          expect(res.body).to.be.an('object');
           done();
         });
     });
@@ -64,6 +66,7 @@ describe('[SERVER AUTHENTICATION]   /signin', function () {
         .expect('Content-Type', /json/)
         .expect(200)
         .end(function(err, res) {
+          expect(res.body).to.be.an('object');
           done();
         });
     });
@@ -78,6 +81,7 @@ describe('[SERVER AUTHENTICATION]   /signin', function () {
         .expect('Content-Type', /json/)
         .expect(401)
         .end(function(err, res) {
+          expect(res.body).to.be.an('object');
           done();
         });
     });
@@ -90,6 +94,7 @@ describe('[SERVER AUTHENTICATION]   /signin', function () {
         .expect('Content-Type', /json/)
         .expect(401)
         .end(function(err, res) {
+          expect(res.body).to.be.an('object');
           done();
         });
     });
@@ -102,6 +107,7 @@ describe('[SERVER AUTHENTICATION]   /signin', function () {
         .expect('Content-Type', /json/)
         .expect(400)
         .end(function(err, res) {
+          expect(res.body).to.be.an('object');
           done();
         });
     });

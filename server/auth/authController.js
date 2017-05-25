@@ -37,7 +37,7 @@ module.exports = {
       });
   },
 
-  signin: function (req, res) {
+  signin: function (req, res, next) {
     if (req.body.username && req.body.password) {
       return helpers.getUser(req.body.username)
         .then(function (user) {
@@ -63,17 +63,20 @@ module.exports = {
           switch (error.message) {
           case 'Bad username':
             if (config.log.info) {
-              console.log(chalk.red('[Error] There is no registered user with username: ', req.body.username));
+              console.log(chalk.red('[Error] There is no registered user with username: ',
+                req.body.username));
             }
             res.status(401).send({message: 'Invalid username.'});
             break;
           case 'Bad password':
             if (config.log.info) {
-              console.log(chalk.red('[Error] Incorrect password submitted for username: ', req.body.username));
+              console.log(chalk.red('[Error] Incorrect password submitted for username: ',
+                req.body.username));
             }
             res.status(401).send({message: 'Invalid password.'});
             break;
           default:
+            next(error);
             break;
           }
         });
