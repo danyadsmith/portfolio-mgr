@@ -20,12 +20,15 @@ if (config.env !== 'testing') {
 
 app.use(middleware.headers);
 
-app.use('/api', api)
 app.use('/', authRouter);
+app.use('/api', api);
 
 app.use(function (err, req, res, next) {
-  console.error(chalk.red.bold('ERROR: ', err));
-  res.send(err);
+  if (config.log.debug) {
+    console.log(chalk.red.bold('ERROR: ', err.message));
+    console.log(chalk.white(err.stack));
+  }
+  res.status(400).send({message: err.message});
   next();
 });
 

@@ -42,9 +42,9 @@ module.exports = {
     },
   ],
   categoryUpdates: [
-    'Web Standards'
+    {name: 'Web Standards'}
   ],
   skillUpdates: [
-    'JavaScript'
+    {name: 'JavaScript'}
   ]
-}
+};

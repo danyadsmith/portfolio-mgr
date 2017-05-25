@@ -2,7 +2,7 @@ module.exports = {
   url: 'http://localhost',
   log: {
     debug    : false,
-    info     : true
+    info     : false
   },
   db: {
     dialect  : 'postgres',

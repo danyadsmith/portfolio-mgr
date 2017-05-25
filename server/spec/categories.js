@@ -146,7 +146,7 @@ describe('[CATEGORIES]   /api/categories/', function () {
   });
 
   describe('Retrieves a category from the database', function () {
-    it('should get a category by ID via a GET request', function (done) {
+    it('should GET a category by ID', function (done) {
       request(app)
         .get('/api/categories/1')
         .set('Accept', 'application/json')
@@ -162,7 +162,7 @@ describe('[CATEGORIES]   /api/categories/', function () {
   });
 
   describe('Retrieves all categories from the database', function () {
-    it('should get all categories via a GET request', function (done) {
+    it('should GET all categories', function (done) {
       this.timeout(3500);
       request(app)
         .get('/api/categories')
@@ -179,24 +179,24 @@ describe('[CATEGORIES]   /api/categories/', function () {
   });
 
   describe('Deletes a category from the database', function () {
-    it('should delete a category via a DELETE request', function (done) {
+    it('should DELETE a category', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('/api/categories/5')
+        .delete('/api/categories/9')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
         .end(function(err, resp) {
           var category = resp.body;
           expect(category).to.be.an('object');
-          expect(category).to.have.property('name');
+          expect(category.id).to.eql(9);
           done();
         });
     });
   });
 
   describe('Retrieves all categories from the database', function () {
-    it('should get all categories via a GET request', function (done) {
+    it('should GET all categories', function (done) {
       request(app)
         .get('/api/categories')
         .set('Accept', 'application/json')
@@ -212,7 +212,7 @@ describe('[CATEGORIES]   /api/categories/', function () {
   });
 
   describe('Updates a category in the database', function () {
-    it('should update a category via a PUT request', function (done) {
+    it('should PUT updates for a category into the database', function (done) {
       request(app)
         .put('/api/categories/2')
         .set('Accept', 'application/json')
