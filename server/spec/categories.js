@@ -18,8 +18,8 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .expect(200)
         .end(function(err, resp) {
           var category = resp.body;
-          expect(category).to.be.a('string');
-          expect(category).to.eql('Programming Languages');
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Programming Languages');
           done();
         });
     });
@@ -33,8 +33,8 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .expect(200)
         .end(function(err, resp) {
           var category = resp.body;
-          expect(category).to.be.a('string');
-          expect(category).to.eql('Web');
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Web');
           done();
         });
     });
@@ -48,8 +48,8 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .expect(200)
         .end(function(err, resp) {
           var category = resp.body;
-          expect(category).to.be.a('string');
-          expect(category).to.eql('Front-end Frameworks');
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Front-end Frameworks');
           done();
         });
     });
@@ -63,8 +63,8 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .expect(200)
         .end(function (err, resp) {
           var category = resp.body;
-          expect(category).to.be.a('string');
-          expect(category).to.eql('Server-side Frameworks');
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Server-side Frameworks');
           done();
         });
     });
@@ -78,8 +78,8 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .expect(200)
         .end(function (err, resp) {
           var category = resp.body;
-          expect(category).to.be.a('string');
-          expect(category).to.eql('Databases and ORMs');
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Databases and ORMs');
           done();
         });
     });
@@ -93,8 +93,8 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .expect(200)
         .end(function (err, resp) {
           var category = resp.body;
-          expect(category).to.be.a('string');
-          expect(category).to.eql('UX and Design');
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('UX and Design');
           done();
         });
     });
@@ -108,8 +108,8 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .expect(200)
         .end(function (err, resp) {
           var category = resp.body;
-          expect(category).to.be.a('string');
-          expect(category).to.eql('Project Management');
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Project Management');
           done();
         });
     });
@@ -123,8 +123,8 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .expect(200)
         .end(function (err, resp) {
           var category = resp.body;
-          expect(category).to.be.a('string');
-          expect(category).to.eql('Business Software');
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Business Software');
           done();
         });
     });
@@ -138,8 +138,8 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .expect(200)
         .end(function (err, resp) {
           var category = resp.body;
-          expect(category).to.be.a('string');
-          expect(category).to.eql('Other');
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Other');
           done();
         });
     });
@@ -163,6 +163,7 @@ describe('[CATEGORIES]   /api/categories/', function () {
 
   describe('Retrieves all categories from the database', function () {
     it('should get all categories via a GET request', function (done) {
+      this.timeout(3500);
       request(app)
         .get('/api/categories')
         .set('Accept', 'application/json')
@@ -171,14 +172,15 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .end(function(err, resp) {
           var categories = resp.body;
           expect(categories).to.be.an('array');
-          expect(categories.length).to.eql(5);
+          expect(categories.length).to.eql(9);
           done();
         });
-    });
+    });2
   });
 
   describe('Deletes a category from the database', function () {
     it('should delete a category via a DELETE request', function (done) {
+      this.timeout(3500);
       request(app)
         .delete('/api/categories/5')
         .set('Accept', 'application/json')
@@ -203,7 +205,7 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .end(function(err, resp) {
           var categories = resp.body;
           expect(categories).to.be.an('array');
-          expect(categories.length).to.eql(4);
+          expect(categories.length).to.eql(8);
           done();
         });
     });
@@ -219,8 +221,8 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .expect(200)
         .end(function(err, resp) {
           var category = resp.body;
-          expect(category).to.be.a('string');
-          expect(category).to.eql('Web Standards');
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Web Standards');
           done();
         });
     });

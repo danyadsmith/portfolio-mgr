@@ -1,10 +1,11 @@
+const api = require('./api');
+const authRouter = require('./auth/authRoutes.js');
+const bodyParser = require('body-parser');
 const chalk = require('chalk');
 const config = require('./config');
 const express = require('express');
-const bodyParser = require('body-parser');
-const authRouter = require('./auth/authRoutes.js');
-const morgan = require('morgan');
 const middleware = require('./middleware');
+const morgan = require('morgan');
 
 const app = express();
 
@@ -19,6 +20,7 @@ if (config.env !== 'testing') {
 
 app.use(middleware.headers);
 
+app.use('/api', api)
 app.use('/', authRouter);
 
 app.use(function (err, req, res, next) {
