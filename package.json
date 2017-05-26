@@ -4,10 +4,11 @@
   "description": "A portfolio platform for web developers and designers.",
   "main": "index.js",
   "scripts": {
+    "predev": "node server/db/seed.js",
     "dev": "nodemon index.js",
     "start": "node index.js",
     "stop": "node server/config/shutdown.js",
-    "pretest": "node server/config/db.js",
+    "pretest": "node server/db/index.js",
     "test": "mocha server/spec/* --reporter spec --no-deprecation --full-trace"
   },
   "keywords": [

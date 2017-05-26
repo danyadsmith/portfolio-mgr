@@ -2,7 +2,7 @@ const _ = require('lodash');
 const bcrypt = require('bcrypt');
 const config = require('../config');
 const jwt = require('jsonwebtoken');
-const sequelize = require('../config/db');
+const sequelize = require('../db');
 
 module.exports = {
 

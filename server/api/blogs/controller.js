@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const config = require('../../config');
-const sequelize = require('../../config/db');
+const sequelize = require('../../db');
 
 module.exports = {
   param: function (req, res, next) {

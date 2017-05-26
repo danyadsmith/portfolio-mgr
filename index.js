@@ -1,4 +1,4 @@
-var app = require('./server/server');
+var app = require('./server');
 var chalk = require('chalk');
 var config = require('./server/config');
 

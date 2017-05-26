@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const config = require('../../config');
-const sequelize = require('../../config/db');
+const sequelize = require('../../db');
 
 module.exports = {
   param: function (req, res, next) {
@@ -30,10 +30,6 @@ module.exports = {
 
   post: function (req, res) {
     var skill = req.body;
-    skill.category = {
-      id: req.body.CategoryId
-    };
-    delete skill.CategoryId;
     return sequelize.Skill.create(skill)
       .then(function (skill) {
         res.json(skill);
