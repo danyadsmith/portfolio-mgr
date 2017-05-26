@@ -19,8 +19,8 @@ module.exports = {
 
   get: function (req, res) {
     return sequelize.Skill.findAll()
-      .then(function (categories) {
-        res.json(categories);
+      .then(function (skills) {
+        res.json(skills);
       });
   },
 

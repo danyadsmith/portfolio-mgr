@@ -102,6 +102,7 @@ var Setting = db.define('Setting', {
 
 Category.belongsToMany(Blog, {through: BlogCategory, onDelete: 'CASCADE'});
 Skill.belongsTo(Category, {as: 'category'});
+Blog.belongsTo(User, {as: 'user'});
 User.hasMany(Skill);
 User.hasMany(Education);
 User.hasMany(Job);

@@ -16,7 +16,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .send(helpers.skills[0])
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
           expect(skill.name).to.eql('C#');
@@ -31,7 +31,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .send(helpers.skills[1])
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
           expect(skill.name).to.eql('Java');
@@ -46,7 +46,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .send(helpers.skills[2])
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
           expect(skill.name).to.eql('Ruby');
@@ -829,7 +829,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var skills = resp.body;
           expect(skills).to.be.an('array');
           expect(skills.length).to.eql(53);
@@ -846,7 +846,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
           expect(skill.id).to.eql(53);
@@ -862,7 +862,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var skills = resp.body;
           expect(skills).to.be.an('array');
           expect(skills.length).to.eql(52);
@@ -879,7 +879,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .send(helpers.skillUpdates[0])
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
           expect(skill.name).to.eql('JavaScript');

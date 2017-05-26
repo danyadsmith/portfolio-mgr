@@ -66,13 +66,20 @@ module.exports = {
     {CategoryId: 9, name: 'TDD', expertise: 0},
     {CategoryId: 9, name: 'Technical Writing', expertise: 1}
   ],
+  blogs: [
+    {title: 'From SQL to NoSQL: Getting Started with MongoDB', published: false, user: {id: 1}},
+    {title: 'Implementing CRUD Operations with Sequelize', published: false, user: {id: 1}},
+    {title: 'Grid-Based Web Design: A History', published: false, user: {id: 1}},
+    {title: 'Color Management Strategies in Sass', published: true, datePublished:'2017-05-21', user: {id: 1}},
+    {title: 'Managing Environment Variables in Node.js', published: true, datePublished:'2017-04-21', user: {id: 1}}
+  ],
   users: [
     {
-        firstName: 'Danya',
-        middleName: 'D.',
-        lastName: 'Smith',
-        username: 'danyadsmith',
-        password: 'password'
+      firstName: 'Danya',
+      middleName: 'D.',
+      lastName: 'Smith',
+      username: 'danyadsmith',
+      password: 'password'
     }
   ],
   badUsers: [
