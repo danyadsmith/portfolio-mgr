@@ -101,5 +101,8 @@ module.exports = {
   ],
   skillUpdates: [
     {name: 'JavaScript'}
+  ],
+  blogUpdates: [
+    {title: 'From SQL to NoSQL: Getting Started with MongoDB and Mongoose'}
   ]
 };

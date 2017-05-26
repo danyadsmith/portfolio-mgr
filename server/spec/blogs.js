@@ -156,7 +156,7 @@ describe('[BLOGS]   /api/blogs/', function () {
       request(app)
         .put('/api/blogs/1')
         .set('Accept', 'application/json')
-        .send(helpers.skillUpdates[0])
+        .send(helpers.blogUpdates[0])
         .expect('Content-Type', /json/)
         .expect(200)
         .end(function(err, resp) {
