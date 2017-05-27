@@ -1,5 +1,5 @@
 /* globals describe it */
-const app = require('../../server');
+const app = require('../index');
 const chalk = require('chalk');
 const config = require('../config/');
 const helpers = require('./helpers');

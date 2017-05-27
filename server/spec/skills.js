@@ -1,5 +1,5 @@
 /* globals describe it */
-const app = require('../../server');
+const app = require('../index');
 const chalk = require('chalk');
 const config = require('../config/');
 const helpers = require('./helpers');
@@ -49,7 +49,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Ruby');
+          expect(skill.name).to.eql('HTML');
           done();
         });
     });
@@ -64,7 +64,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('HTML');
+          expect(skill.name).to.eql('CSS');
           done();
         });
     });
@@ -79,7 +79,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('CSS');
+          expect(skill.name).to.eql('Angular');
           done();
         });
     });
@@ -94,7 +94,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('SASS');
+          expect(skill.name).to.eql('React');
           done();
         });
     });
@@ -109,7 +109,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('SCSS');
+          expect(skill.name).to.eql('ASP.net');
           done();
         });
     });
@@ -124,7 +124,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('SVG');
+          expect(skill.name).to.eql('Ruby on Rails');
           done();
         });
     });
@@ -139,7 +139,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('XML');
+          expect(skill.name).to.eql('PostgreSQL');
           done();
         });
     });
@@ -154,7 +154,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('XSLT');
+          expect(skill.name).to.eql('MongoDB');
           done();
         });
     });
@@ -169,7 +169,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Angular');
+          expect(skill.name).to.eql('Balsamiq Mockups');
           done();
         });
     });
@@ -184,7 +184,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('AngularJS');
+          expect(skill.name).to.eql('Sketch');
           done();
         });
     });
@@ -199,7 +199,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Bootstrap');
+          expect(skill.name).to.eql('Git');
           done();
         });
     });
@@ -214,7 +214,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('jQuery');
+          expect(skill.name).to.eql('Microsoft Project');
           done();
         });
     });
@@ -229,7 +229,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('KnockoutJS');
+          expect(skill.name).to.eql('Microsoft Office/Office365');
           done();
         });
     });
@@ -244,7 +244,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('React');
+          expect(skill.name).to.eql('Visio');
           done();
         });
     });
@@ -259,7 +259,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Underscore');
+          expect(skill.name).to.eql('Agile/SCRUM');
           done();
         });
     });
@@ -274,532 +274,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('ASP.net');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[18])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('ASP.net MVC');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[19])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('PHP');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[20])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Ruby on Rails');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[21])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('NodeJS');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[22])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Express');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[23])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Unix/Bash');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[24])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('IIS');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[25])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Powershell');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[26])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Microsoft SQL Server');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[27])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('MySQL');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[28])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('SQLite3');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[29])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('PostgreSQL');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[30])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('MongoDB');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[31])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Firebase');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[32])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Mongoose');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[33])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Sequelize');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[34])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Adobe Creative Cloud');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[35])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Balsamiq Mockups');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[36])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Sketch');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[37])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Git');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[38])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Microsoft Project');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[39])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Redmine');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[40])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('TargetProcess');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[41])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Trello');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[42])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Waffle.io');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[43])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('ZenHub');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[44])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Microsoft Office/Office365');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[45])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Visio');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[46])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('SharePoint');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[47])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Agile/SCRUM');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[48])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
           expect(skill.name).to.eql('BDD');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[49])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Meeting Facilitation');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[50])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Requirements Gathering');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[51])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('TDD');
-          done();
-        });
-    });
-
-    it('should POST a new skill', function (done) {
-      request(app)
-        .post('/api/skills')
-        .set('Accept', 'application/json')
-        .send(helpers.skills[52])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var skill = resp.body;
-          expect(skill).to.be.an('object');
-          expect(skill.name).to.eql('Technical Writing');
           done();
         });
     });
@@ -832,7 +307,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skills = resp.body;
           expect(skills).to.be.an('array');
-          expect(skills.length).to.eql(53);
+          expect(skills.length).to.eql(18);
           done();
         });
     });
@@ -842,14 +317,14 @@ describe('[SKILLS]   /api/skills/', function () {
     it('should DELETE a skill', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('/api/skills/53')
+        .delete('/api/skills/15')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
         .end(function (err, resp) {
           var skill = resp.body;
           expect(skill).to.be.an('object');
-          expect(skill.id).to.eql(53);
+          expect(skill.id).to.eql(15);
           done();
         });
     });
@@ -865,7 +340,7 @@ describe('[SKILLS]   /api/skills/', function () {
         .end(function (err, resp) {
           var skills = resp.body;
           expect(skills).to.be.an('array');
-          expect(skills.length).to.eql(52);
+          expect(skills.length).to.eql(17);
           done();
         });
     });

@@ -14,57 +14,22 @@ module.exports = {
   skills: [
     {user: {id: 1}, category: {id: 1}, name: 'C#', expertise: 1},
     {user: {id: 1}, category: {id: 1}, name: 'Java', expertise: 1},
-    {user: {id: 1}, category: {id: 1}, name: 'Ruby', expertise: 0},
     {user: {id: 1}, category: {id: 2}, name: 'HTML', expertise: 1},
     {user: {id: 1}, category: {id: 2}, name: 'CSS', expertise: 1},
-    {user: {id: 1}, category: {id: 2}, name: 'SASS', expertise: 1},
-    {user: {id: 1}, category: {id: 2}, name: 'SCSS', expertise: 1},
-    {user: {id: 1}, category: {id: 2}, name: 'SVG', expertise: 0},
-    {user: {id: 1}, category: {id: 2}, name: 'XML', expertise: 1},
-    {user: {id: 1}, category: {id: 2}, name: 'XSLT', expertise: 1},
     {user: {id: 1}, category: {id: 3}, name: 'Angular', expertise: 0},
-    {user: {id: 1}, category: {id: 3}, name: 'AngularJS', expertise: 1},
-    {user: {id: 1}, category: {id: 3}, name: 'Bootstrap', expertise: 1},
-    {user: {id: 1}, category: {id: 3}, name: 'jQuery', expertise: 1},
-    {user: {id: 1}, category: {id: 3}, name: 'KnockoutJS', expertise: 0},
     {user: {id: 1}, category: {id: 3}, name: 'React', expertise: 0},
-    {user: {id: 1}, category: {id: 3}, name: 'Underscore', expertise: 1},
     {user: {id: 1}, category: {id: 4}, name: 'ASP.net', expertise: 1},
-    {user: {id: 1}, category: {id: 4}, name: 'ASP.net MVC', expertise: 0},
-    {user: {id: 1}, category: {id: 4}, name: 'PHP', expertise: 0},
     {user: {id: 1}, category: {id: 4}, name: 'Ruby on Rails', expertise: 1},
-    {user: {id: 1}, category: {id: 5}, name: 'NodeJS', expertise: 1},
-    {user: {id: 1}, category: {id: 5}, name: 'Express', expertise: 1},
-    {user: {id: 1}, category: {id: 5}, name: 'Unix/Bash', expertise: 1},
-    {user: {id: 1}, category: {id: 5}, name: 'IIS', expertise: 1},
-    {user: {id: 1}, category: {id: 5}, name: 'Powershell', expertise: 0},
-    {user: {id: 1}, category: {id: 5}, name: 'Microsoft SQL Server', expertise: 1},
-    {user: {id: 1}, category: {id: 5}, name: 'MySQL', expertise: 1},
-    {user: {id: 1}, category: {id: 5}, name: 'SQLite3', expertise: 1},
     {user: {id: 1}, category: {id: 5}, name: 'PostgreSQL', expertise: 1},
     {user: {id: 1}, category: {id: 5}, name: 'MongoDB', expertise: 0},
-    {user: {id: 1}, category: {id: 5}, name: 'Firebase', expertise: 0},
-    {user: {id: 1}, category: {id: 5}, name: 'Mongoose', expertise: 0},
-    {user: {id: 1}, category: {id: 5}, name: 'Sequelize', expertise: 1},
-    {user: {id: 1}, category: {id: 6}, name: 'Adobe Creative Cloud', expertise: 1},
     {user: {id: 1}, category: {id: 6}, name: 'Balsamiq Mockups', expertise: 1},
     {user: {id: 1}, category: {id: 6}, name: 'Sketch', expertise: 0},
     {user: {id: 1}, category: {id: 7}, name: 'Git', expertise: 1},
     {user: {id: 1}, category: {id: 7}, name: 'Microsoft Project', expertise: 1},
-    {user: {id: 1}, category: {id: 7}, name: 'Redmine', expertise: 1},
-    {user: {id: 1}, category: {id: 7}, name: 'TargetProcess', expertise: 0},
-    {user: {id: 1}, category: {id: 7}, name: 'Trello', expertise: 1},
-    {user: {id: 1}, category: {id: 7}, name: 'Waffle.io', expertise: 1},
-    {user: {id: 1}, category: {id: 7}, name: 'ZenHub', expertise: 0},
     {user: {id: 1}, category: {id: 8}, name: 'Microsoft Office/Office365', expertise: 1},
     {user: {id: 1}, category: {id: 8}, name: 'Visio', expertise: 1},
-    {user: {id: 1}, category: {id: 8}, name: 'SharePoint', expertise: 1},
     {user: {id: 1}, category: {id: 9}, name: 'Agile/SCRUM', expertise: 0},
-    {user: {id: 1}, category: {id: 9}, name: 'BDD', expertise: 0},
-    {user: {id: 1}, category: {id: 9}, name: 'Meeting Facilitation', expertise: 1},
-    {user: {id: 1}, category: {id: 9}, name: 'Requirements Gathering', expertise: 1},
-    {user: {id: 1}, category: {id: 9}, name: 'TDD', expertise: 0},
-    {user: {id: 1}, category: {id: 9}, name: 'Technical Writing', expertise: 1}
+    {user: {id: 1}, category: {id: 9}, name: 'BDD', expertise: 0}
   ],
   blogs: [
     {title: 'From SQL to NoSQL: Getting Started with MongoDB', published: false, user: {id: 1}},
@@ -84,6 +49,51 @@ module.exports = {
     { employer: 'Oakland University', city: 'Rochester Hills', state: 'MI', jobTitle: 'Entrepreneurship Institute Assistant', startDate: '2001-02-01', endDate: '2001-09-01', logoImage: '' },
     { employer: 'Management Systems, Inc.', city: 'Detroit', state: 'MI', jobTitle: 'Director, Computer Learning Center', startDate: '1997-06-01', endDate: '2000-08-01', logoImage: '' },
     { employer: 'Management Systems, Inc.', city: 'Detroit', state: 'MI', jobTitle: 'Director, Computer Learning Center', startDate: '1997-06-01', endDate: '2000-08-01', logoImage: '' }
+  ],
+  projectTypes: [
+    { name: 'Work'},
+    { name: 'Open Source'}
+  ],
+  projects: [
+    {title: 'everyONE.lear.com', role: 'Developer, Administrator', url: '', type: {id: 1}, highlights: [
+      'Implemented custom branding including an optional responsive web design feature for intranet sites',
+      'Developed custom web parts and application pages',
+      'Supported site owners with content migrations from legacy enterprise portal'
+    ], startDate: '2012-03-01'},
+    {title: 'Global Audit Management System', role: 'Developer', url: '', type: {id: 1}, highlights: [
+      'Discovered, documented and corrected data migration issues in inherited codebase',
+      'Reworked front-end web forms and masterpages to enhance UI and UX'
+    ], startDate: '2015-05-28'},
+    {title: 'ePAD Purchasing Authorization System', role: 'Developer', url: '', type: {id: 1}, highlights: [
+      'Documented requirements using flowcharts, entity-relationship diagrams, state transition diagrams, swim-lane diagrams, business rules and RASCI charts to facilitate communication and solidify MVP',
+      'Designed user interface wireframes and implemented design using CSS grid-based layouts',
+      'Created C# business classes and Microsoft SQL Server stored procedures, functions and views',
+      'Developed ASP.net masterpages, web forms, dashboards and search features'
+    ], startDate: '2011-04-06', endDate: '2011-07-27'},
+    {title: 'MyLear Portal', role: 'Developer, Administrator and Architect', url: '', type: {id: 1}, highlights: [
+      'Managed codebase, feature upgrades and deployment process for over 50 custom ASP.net web parts',
+      'Created and deployed portal migration packages and code revisions from DEV to QA and Production',
+      'Administered portal security, implemented taxonomy and monitored portal servers and services',
+      'Completed two major version upgrades and applied periodic patches and hotfixes'
+    ], startDate: '2004-09-01', endDate: '2016-10-20'},
+    {title: 'EconClub.org', role: 'Business Analyst', url: 'http://www.econclub.org', type: {id: 1}, highlights: [
+      'Worked with a team to customize and deploy the iMIS e-Series e-commerce application',
+      'Migrated DOS-based membership database to iMIS Membership Management Software'
+    ], startDate: '2003-06-02', endDate: '2004-09-01'},
+    {title: 'Siren', role: 'Developer', type: {id: 2}, highlights: [
+      'Designed database schema and implemented server-side controllers',
+      'Created and refactored API Routes to use modular functions to manage complex Promise chains',
+      'Wrote integration tests for API routes using Mocha, Chai and supertest'
+    ], startDate: '2017-04-04', endDate: '2017-04-28'},
+    {title: 'Hydra Travel', role: 'Developer', url: 'http://hydra-travel.herokuapp.com/', type: {id: 2}, highlights: [
+      'Converted MongoDB schema from an embedded structure to a relational structure using references',
+      'Refactored server controllers and API routes to support enhancements and improve code organization',
+      'Added server-side configuration for database seeding, debugging and API key organization'
+    ], startDate: '2017-03-29', endDate: '2017-04-03'},
+    {title: 'Stackets', role: 'Developer', url: 'http://stackets.herokuapp.com/', type: {id: 2}, highlights: [
+      'Worked with a team to customize and deploy the iMIS e-Series e-commerce application',
+      'Migrated DOS-based membership database to iMIS Membership Management Software'
+    ], startDate: '2017-03-15', endDate: '2017-03-27'}
   ],
   users: [
     {
@@ -122,5 +132,8 @@ module.exports = {
   ],
   jobUpdates: [
     { employer: 'American Axle & Manufacturing (AAM)'}
+  ],
+  projectUpdates: [
+    {endDate: '2017-09-01'}
   ]
 };
