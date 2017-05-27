@@ -35,7 +35,9 @@ var Project = db.define('Project', {
   title: Sequelize.STRING,
   role: Sequelize.STRING,
   url: Sequelize.STRING,
-  highlights: Sequelize.ARRAY(Sequelize.TEXT)
+  highlights: Sequelize.ARRAY(Sequelize.TEXT),
+  startDate: Sequelize.DATE,
+  endDate: Sequelize.DATE
 });
 
 var ProjectType = db.define('ProjectType', {
@@ -112,7 +114,7 @@ CommunityService.belongsTo(User, {as: 'user'});
 SocialMediaAccount.belongsTo(User, {as: 'user'});
 Portfolio.belongsTo(User, {as: 'user'});
 Blog.belongsTo(User, {as: 'user'});
-Project.hasOne(ProjectType);
+ProjectType.hasOne(Project, {as: 'type'});
 
 db.sync({force: config.db.sync}).then(function () {
   if (config.log.info) {
