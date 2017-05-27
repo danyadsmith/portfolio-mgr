@@ -95,6 +95,11 @@ module.exports = {
       'Migrated DOS-based membership database to iMIS Membership Management Software'
     ], startDate: '2017-03-15', endDate: '2017-03-27'}
   ],
+  services: [
+    {organization: 'Metro Detroit Free Code Camp', role: 'Founder, Meetup Organizer'},
+    {organization: 'Tutormate', role: 'Tutor'},
+    {organization: 'Forgotten Harvest', role: 'Warehouse Crew Volunteer'},
+  ],
   users: [
     {
       firstName: 'Danya',
@@ -135,5 +140,8 @@ module.exports = {
   ],
   projectUpdates: [
     {endDate: '2017-09-01'}
+  ],
+  serviceUpdates: [
+    {organization: 'DevStudy.group'}
   ]
 };

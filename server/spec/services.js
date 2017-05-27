@@ -19,7 +19,7 @@ describe('[SERVICE]   /api/services/', function () {
         .end(function (err, resp) {
           var service = resp.body;
           expect(service).to.be.an('object');
-          expect(service.title).to.eql('everyONE.lear.com');
+          expect(service.organization).to.eql('Metro Detroit Free Code Camp');
           done();
         });
     });
@@ -34,7 +34,7 @@ describe('[SERVICE]   /api/services/', function () {
         .end(function (err, resp) {
           var service = resp.body;
           expect(service).to.be.an('object');
-          expect(service.title).to.eql('Global Audit Management System');
+          expect(service.organization).to.eql('Tutormate');
           done();
         });
     });
@@ -49,37 +49,7 @@ describe('[SERVICE]   /api/services/', function () {
         .end(function (err, resp) {
           var service = resp.body;
           expect(service).to.be.an('object');
-          expect(service.title).to.eql('ePAD Purchasing Authorization System');
-          done();
-        });
-    });
-
-    it('should POST a new service', function (done) {
-      request(app)
-        .post('/api/services')
-        .set('Accept', 'application/json')
-        .send(helpers.services[3])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var service = resp.body;
-          expect(service).to.be.an('object');
-          expect(service.title).to.eql('MyLear Portal');
-          done();
-        });
-    });
-
-    it('should POST a new service', function (done) {
-      request(app)
-        .post('/api/services')
-        .set('Accept', 'application/json')
-        .send(helpers.services[4])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var service = resp.body;
-          expect(service).to.be.an('object');
-          expect(service.title).to.eql('EconClub.org');
+          expect(service.organization).to.eql('Forgotten Harvest');
           done();
         });
     });
@@ -95,7 +65,7 @@ describe('[SERVICE]   /api/services/', function () {
         .end(function (err, resp) {
           var service = resp.body;
           expect(service).to.be.an('object');
-          expect(service.title).to.eql('everyONE.lear.com');
+          expect(service.organization).to.eql('Metro Detroit Free Code Camp');
           done();
         });
     });
@@ -112,7 +82,7 @@ describe('[SERVICE]   /api/services/', function () {
         .end(function(err, resp) {
           var services = resp.body;
           expect(services).to.be.an('array');
-          expect(services.length).to.eql(5);
+          expect(services.length).to.eql(3);
           done();
         });
     });
@@ -122,14 +92,14 @@ describe('[SERVICE]   /api/services/', function () {
     it('should DELETE a service', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('/api/services/4')
+        .delete('/api/services/3')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
         .end(function(err, resp) {
           var service = resp.body;
           expect(service).to.be.an('object');
-          expect(service.id).to.eql(4);
+          expect(service.id).to.eql(3);
           done();
         });
     });
@@ -145,7 +115,7 @@ describe('[SERVICE]   /api/services/', function () {
         .end(function(err, resp) {
           var services = resp.body;
           expect(services).to.be.an('array');
-          expect(services.length).to.eql(4);
+          expect(services.length).to.eql(2);
           done();
         });
     });
@@ -162,7 +132,7 @@ describe('[SERVICE]   /api/services/', function () {
         .end(function(err, resp) {
           var service = resp.body;
           expect(service).to.be.an('object');
-          expect(service.endDate).to.eql(new Date('2017-09-01').toISOString());
+          expect(service.organization).to.eql('DevStudy.group');
           done();
         });
     });
