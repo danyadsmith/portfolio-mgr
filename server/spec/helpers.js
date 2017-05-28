@@ -100,6 +100,18 @@ module.exports = {
     {organization: 'Tutormate', role: 'Tutor'},
     {organization: 'Forgotten Harvest', role: 'Warehouse Crew Volunteer'},
   ],
+  profiles: [
+    { siteName: 'Twitter', username: 'danyadsmith', profileUrl: 'https://twitter.com/danyadsmith', visible: true},
+    { siteName: 'GitHub', username: 'danyadsmith', profileUrl: 'https://github.com/danyadsmith', visible: true},
+    { siteName: 'CodePen', username: 'danyadsmith', profileUrl: 'https://codepen.io/danyadsmith/', visible: true},
+    { siteName: 'LinkedIn', username: 'danyadsmith', profileUrl: 'https://www.linkedin.com/in/danyadsmith/', visible: true}
+  ],
+  portfolios: [
+    { image: 'photo01.png', url: 'http://localhost:3000/portfolios/1' },
+    { image: 'photo02.png', url: 'http://localhost:3000/portfolios/2' },
+    { image: 'photo03.png', url: 'http://localhost:3000/portfolios/3' },
+    { image: 'photo04.png', url: 'http://localhost:3000/portfolios/4' }
+  ],
   users: [
     {
       firstName: 'Danya',
@@ -137,6 +149,12 @@ module.exports = {
   ],
   jobUpdates: [
     { employer: 'American Axle & Manufacturing (AAM)'}
+  ],
+  profileUpdates: [
+    { visible: false }
+  ],
+  portfolioUpdates: [
+    {image: 'portfolio01.jpg'}
   ],
   projectUpdates: [
     {endDate: '2017-09-01'}

@@ -52,7 +52,8 @@ var CommunityService = db.define('CommunityService', {
 var SocialMediaAccount = db.define('SocialMediaAccount', {
   siteName: Sequelize.STRING,
   username: Sequelize.STRING,
-  profileUrl: Sequelize.STRING
+  profileUrl: Sequelize.STRING,
+  visible: Sequelize.BOOLEAN
 });
 
 var Portfolio = db.define('Portfolio', {

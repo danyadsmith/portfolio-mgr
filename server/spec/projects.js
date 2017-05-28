@@ -109,7 +109,7 @@ describe('[PROJECTS]   /api/projects/', function () {
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var projects = resp.body;
           expect(projects).to.be.an('array');
           expect(projects.length).to.eql(5);
@@ -126,7 +126,7 @@ describe('[PROJECTS]   /api/projects/', function () {
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var project = resp.body;
           expect(project).to.be.an('object');
           expect(project.id).to.eql(4);
@@ -142,7 +142,7 @@ describe('[PROJECTS]   /api/projects/', function () {
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var projects = resp.body;
           expect(projects).to.be.an('array');
           expect(projects.length).to.eql(4);
@@ -159,7 +159,7 @@ describe('[PROJECTS]   /api/projects/', function () {
         .send(helpers.projectUpdates[0])
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var project = resp.body;
           expect(project).to.be.an('object');
           expect(project.endDate).to.eql(new Date('2017-09-01').toISOString());
