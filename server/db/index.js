@@ -18,7 +18,8 @@ var Credential = db.define('Credential', {
   credential: Sequelize.STRING,
   major: Sequelize.STRING,
   minor: Sequelize.STRING,
-  dateCompleted: Sequelize.DATE
+  dateCompleted: Sequelize.DATE,
+  visible: Sequelize.BOOLEAN
 });
 
 var Job = db.define('Job', {
@@ -105,17 +106,17 @@ var Setting = db.define('Setting', {
 });
 
 Category.belongsToMany(Blog, {through: BlogCategory, onDelete: 'CASCADE'});
-Skill.belongsTo(Category, {as: 'category'});
-Blog.belongsTo(User, {as: 'user'});
-Skill.belongsTo(User, {as: 'user'});
-Credential.belongsTo(User, {as: 'user'});
-Job.belongsTo(User, {as: 'user'});
-Project.belongsTo(User, {as: 'user'});
-CommunityService.belongsTo(User, {as: 'user'});
-SocialMediaAccount.belongsTo(User, {as: 'user'});
-Portfolio.belongsTo(User, {as: 'user'});
-Blog.belongsTo(User, {as: 'user'});
-ProjectType.hasOne(Project, {as: 'type'});
+Skill.belongsTo(Category, {as: 'category', foreignKey: 'CategoryId'});
+Blog.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+Skill.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+Credential.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+Job.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+Project.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+CommunityService.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+SocialMediaAccount.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+Portfolio.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+Blog.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+ProjectType.hasOne(Project, {as: 'type', foreignKey: 'TypeId'});
 
 db.sync({force: config.db.sync}).then(function () {
   if (config.log.info) {
