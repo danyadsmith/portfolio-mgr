@@ -4,7 +4,9 @@ const sequelize = require('../../../db');
 
 module.exports = {
   param: function (req, res, next) {
-    return sequelize.CommunityService.findById(req.params.id)
+    return sequelize.CommunityService.findById(req.params.id, {attributes: {
+        exclude: ['UserId', 'TypeId']
+      }})
       .then(function (data) {
         if (data) {
           req.communityService = data.dataValues;
@@ -18,7 +20,9 @@ module.exports = {
   },
 
   get: function (req, res) {
-    return sequelize.CommunityService.findAll({where: {UserId: req.user.id}})
+    return sequelize.CommunityService.findAll({where: {UserId: req.user.id}, attributes: {
+        exclude: ['UserId', 'TypeId']
+      }})
       .then(function (communityServices) {
         res.json(communityServices);
       });

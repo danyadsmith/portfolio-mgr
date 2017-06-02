@@ -4,7 +4,9 @@ const sequelize = require('../../../db');
 
 module.exports = {
   param: function (req, res, next) {
-    return sequelize.Credential.findById(req.params.id)
+    return sequelize.Credential.findById(req.params.id, {attributes: {
+        exclude: ['UserId', 'TypeId']
+      }})
       .then(function (data) {
         if (data) {
           req.credential = data.dataValues;
@@ -18,7 +20,9 @@ module.exports = {
   },
 
   get: function (req, res) {
-    return sequelize.Credential.findAll({where: {UserId: req.user.id}})
+    return sequelize.Credential.findAll({where: {UserId: req.user.id}, attributes: {
+        exclude: ['UserId', 'TypeId']
+      }})
       .then(function (credentials) {
         res.json(credentials);
       });

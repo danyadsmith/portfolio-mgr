@@ -18,8 +18,11 @@ module.exports = {
   },
 
   get: function (req, res) {
-    return sequelize.Blog.findAll({where: {UserId: req.user.id}})
+    return sequelize.Blog.findAll({where: {UserId: req.user.id}, attributes: {
+        exclude: ['UserId', 'TypeId']
+      }})
       .then(function (blogs) {
+        console.log(req.user.id);
         res.json(blogs);
       });
   },

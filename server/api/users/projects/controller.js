@@ -4,7 +4,13 @@ const sequelize = require('../../../db');
 
 module.exports = {
   param: function (req, res, next) {
-    return sequelize.Project.findById(req.params.id)
+    return sequelize.Project.findById(req.params.id, {
+      include: [
+        { model: sequelize.ProjectType, as: 'type'}
+      ],
+      attributes: {
+        exclude: ['UserId', 'TypeId']
+      }})
       .then(function (data) {
         if (data) {
           req.project = data.dataValues;
@@ -18,7 +24,13 @@ module.exports = {
   },
 
   get: function (req, res) {
-    return sequelize.Project.findAll({where: {UserId: req.user.id}})
+    return sequelize.Project.findAll({where: {UserId: req.user.id},
+      include: [
+        { model: sequelize.ProjectType, as: 'type'}
+      ],
+      attributes: {
+        exclude: ['UserId', 'TypeId']
+      }})
       .then(function (projects) {
         res.json(projects);
       });

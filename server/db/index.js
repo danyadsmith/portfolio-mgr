@@ -116,7 +116,7 @@ CommunityService.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 SocialMediaAccount.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Portfolio.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Blog.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
-ProjectType.hasOne(Project, {as: 'type', foreignKey: 'TypeId'});
+Project.belongsTo(ProjectType, {as: 'type', foreignKey: 'TypeId'});
 
 db.sync({force: config.db.sync}).then(function () {
   if (config.log.info) {

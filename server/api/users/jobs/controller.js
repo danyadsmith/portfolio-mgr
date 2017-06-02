@@ -4,7 +4,9 @@ const sequelize = require('../../../db');
 
 module.exports = {
   param: function (req, res, next) {
-    return sequelize.Job.findById(req.params.id)
+    return sequelize.Job.findById(req.params.id, {attributes: {
+        exclude: ['UserId', 'TypeId']
+      }})
       .then(function (data) {
         if (data) {
           req.job = data.dataValues;
@@ -21,7 +23,9 @@ module.exports = {
     if (config.log.info) {
       console.log('User Object:', req.user);
     }
-    return sequelize.Job.findAll({where: {UserId: req.user.id}})
+    return sequelize.Job.findAll({where: {UserId: req.user.id},attributes: {
+        exclude: ['UserId', 'TypeId']
+      }})
       .then(function (jobs) {
         res.json(jobs);
       });
