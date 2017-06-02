@@ -6,12 +6,12 @@ const helpers = require('./helpers');
 const request = require('supertest');
 const expect = require('chai').expect;
 
-describe('[SKILLS]   /api/skills/', function () {
+describe('[SKILLS]   /api/users/1/skills/', function () {
 
   describe('Creates a skill in the database', function () {
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[0])
         .expect('Content-Type', /json/)
@@ -26,7 +26,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[1])
         .expect('Content-Type', /json/)
@@ -41,7 +41,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[2])
         .expect('Content-Type', /json/)
@@ -56,7 +56,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[3])
         .expect('Content-Type', /json/)
@@ -71,7 +71,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[4])
         .expect('Content-Type', /json/)
@@ -86,7 +86,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[5])
         .expect('Content-Type', /json/)
@@ -101,7 +101,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[6])
         .expect('Content-Type', /json/)
@@ -116,7 +116,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[7])
         .expect('Content-Type', /json/)
@@ -131,7 +131,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[8])
         .expect('Content-Type', /json/)
@@ -146,7 +146,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[9])
         .expect('Content-Type', /json/)
@@ -161,7 +161,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[10])
         .expect('Content-Type', /json/)
@@ -176,7 +176,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[11])
         .expect('Content-Type', /json/)
@@ -191,7 +191,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[12])
         .expect('Content-Type', /json/)
@@ -206,7 +206,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[13])
         .expect('Content-Type', /json/)
@@ -221,7 +221,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[14])
         .expect('Content-Type', /json/)
@@ -236,7 +236,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[15])
         .expect('Content-Type', /json/)
@@ -251,7 +251,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[16])
         .expect('Content-Type', /json/)
@@ -266,7 +266,7 @@ describe('[SKILLS]   /api/skills/', function () {
 
     it('should POST a new skill', function (done) {
       request(app)
-        .post('/api/skills')
+        .post('/api/users/1/skills')
         .set('Accept', 'application/json')
         .send(helpers.skills[17])
         .expect('Content-Type', /json/)
@@ -283,7 +283,7 @@ describe('[SKILLS]   /api/skills/', function () {
   describe('Retrieves a skill from the database', function () {
     it('should GET a skill by ID', function (done) {
       request(app)
-        .get('/api/skills/1')
+        .get('/api/users/1/skills/1')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -300,7 +300,7 @@ describe('[SKILLS]   /api/skills/', function () {
     it('should GET all skills', function (done) {
       this.timeout(3500);
       request(app)
-        .get('/api/skills')
+        .get('/api/users/1/skills')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -317,7 +317,7 @@ describe('[SKILLS]   /api/skills/', function () {
     it('should DELETE a skill', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('/api/skills/15')
+        .delete('/api/users/1/skills/15')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -333,7 +333,7 @@ describe('[SKILLS]   /api/skills/', function () {
   describe('Retrieves all skills from the database', function () {
     it('should GET all skills', function (done) {
       request(app)
-        .get('/api/skills')
+        .get('/api/users/1/skills')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -349,7 +349,7 @@ describe('[SKILLS]   /api/skills/', function () {
   describe('Updates a skill in the database', function () {
     it('should PUT updates for a skill into the database', function (done) {
       request(app)
-        .put('/api/skills/2')
+        .put('/api/users/1/skills/2')
         .set('Accept', 'application/json')
         .send(helpers.skillUpdates[0])
         .expect('Content-Type', /json/)

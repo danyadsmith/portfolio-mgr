@@ -6,12 +6,12 @@ const helpers = require('./helpers');
 const request = require('supertest');
 const expect = require('chai').expect;
 
-describe('[PROFILES]   /api/profiles/', function () {
+describe('[PROFILES]   /api/users/1/profiles/', function () {
 
   describe('Creates a profile in the database', function () {
     it('should POST a new profile', function (done) {
       request(app)
-        .post('/api/profiles')
+        .post('/api/users/1/profiles')
         .set('Accept', 'application/json')
         .send(helpers.profiles[0])
         .expect('Content-Type', /json/)
@@ -26,7 +26,7 @@ describe('[PROFILES]   /api/profiles/', function () {
 
     it('should POST a new profile', function (done) {
       request(app)
-        .post('/api/profiles')
+        .post('/api/users/1/profiles')
         .set('Accept', 'application/json')
         .send(helpers.profiles[1])
         .expect('Content-Type', /json/)
@@ -41,7 +41,7 @@ describe('[PROFILES]   /api/profiles/', function () {
 
     it('should POST a new profile', function (done) {
       request(app)
-        .post('/api/profiles')
+        .post('/api/users/1/profiles')
         .set('Accept', 'application/json')
         .send(helpers.profiles[2])
         .expect('Content-Type', /json/)
@@ -56,7 +56,7 @@ describe('[PROFILES]   /api/profiles/', function () {
 
     it('should POST a new profile', function (done) {
       request(app)
-        .post('/api/profiles')
+        .post('/api/users/1/profiles')
         .set('Accept', 'application/json')
         .send(helpers.profiles[3])
         .expect('Content-Type', /json/)
@@ -73,7 +73,7 @@ describe('[PROFILES]   /api/profiles/', function () {
   describe('Retrieves a profile from the database', function () {
     it('should GET a profile by ID', function (done) {
       request(app)
-        .get('/api/profiles/1')
+        .get('/api/users/1/profiles/1')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -90,7 +90,7 @@ describe('[PROFILES]   /api/profiles/', function () {
     it('should GET all profiles', function (done) {
       this.timeout(3500);
       request(app)
-        .get('/api/profiles')
+        .get('/api/users/1/profiles')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -107,7 +107,7 @@ describe('[PROFILES]   /api/profiles/', function () {
     it('should DELETE a profile', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('/api/profiles/3')
+        .delete('/api/users/1/profiles/3')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -123,7 +123,7 @@ describe('[PROFILES]   /api/profiles/', function () {
   describe('Retrieves all profiles from the database', function () {
     it('should GET all profiles', function (done) {
       request(app)
-        .get('/api/profiles')
+        .get('/api/users/1/profiles')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -139,7 +139,7 @@ describe('[PROFILES]   /api/profiles/', function () {
   describe('Updates a profile in the database', function () {
     it('should PUT updates for a profile into the database', function (done) {
       request(app)
-        .put('/api/profiles/4')
+        .put('/api/users/1/profiles/4')
         .set('Accept', 'application/json')
         .send(helpers.profileUpdates[0])
         .expect('Content-Type', /json/)

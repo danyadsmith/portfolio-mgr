@@ -6,12 +6,12 @@ const helpers = require('./helpers');
 const request = require('supertest');
 const expect = require('chai').expect;
 
-describe('[PORTFOLIOS]   /api/portfolios/', function () {
+describe('[PORTFOLIOS]   /api/users/1/portfolios/', function () {
 
   describe('Creates a portfolio in the database', function () {
     it('should POST a new portfolio', function (done) {
       request(app)
-        .post('/api/portfolios')
+        .post('/api/users/1/portfolios')
         .set('Accept', 'application/json')
         .send(helpers.portfolios[0])
         .expect('Content-Type', /json/)
@@ -26,7 +26,7 @@ describe('[PORTFOLIOS]   /api/portfolios/', function () {
 
     it('should POST a new portfolio', function (done) {
       request(app)
-        .post('/api/portfolios')
+        .post('/api/users/1/portfolios')
         .set('Accept', 'application/json')
         .send(helpers.portfolios[1])
         .expect('Content-Type', /json/)
@@ -41,7 +41,7 @@ describe('[PORTFOLIOS]   /api/portfolios/', function () {
 
     it('should POST a new portfolio', function (done) {
       request(app)
-        .post('/api/portfolios')
+        .post('/api/users/1/portfolios')
         .set('Accept', 'application/json')
         .send(helpers.portfolios[2])
         .expect('Content-Type', /json/)
@@ -56,7 +56,7 @@ describe('[PORTFOLIOS]   /api/portfolios/', function () {
 
     it('should POST a new portfolio', function (done) {
       request(app)
-        .post('/api/portfolios')
+        .post('/api/users/1/portfolios')
         .set('Accept', 'application/json')
         .send(helpers.portfolios[3])
         .expect('Content-Type', /json/)
@@ -73,7 +73,7 @@ describe('[PORTFOLIOS]   /api/portfolios/', function () {
   describe('Retrieves a portfolio from the database', function () {
     it('should GET a portfolio by ID', function (done) {
       request(app)
-        .get('/api/portfolios/4')
+        .get('/api/users/1/portfolios/4')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -90,7 +90,7 @@ describe('[PORTFOLIOS]   /api/portfolios/', function () {
     it('should GET all portfolios', function (done) {
       this.timeout(3500);
       request(app)
-        .get('/api/portfolios')
+        .get('/api/users/1/portfolios')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -107,7 +107,7 @@ describe('[PORTFOLIOS]   /api/portfolios/', function () {
     it('should DELETE a portfolio', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('/api/portfolios/4')
+        .delete('/api/users/1/portfolios/4')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -123,7 +123,7 @@ describe('[PORTFOLIOS]   /api/portfolios/', function () {
   describe('Retrieves all portfolios from the database', function () {
     it('should GET all portfolios', function (done) {
       request(app)
-        .get('/api/portfolios')
+        .get('/api/users/1/portfolios')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -139,7 +139,7 @@ describe('[PORTFOLIOS]   /api/portfolios/', function () {
   describe('Updates a portfolio in the database', function () {
     it('should PUT updates for a portfolio into the database', function (done) {
       request(app)
-        .put('/api/portfolios/1')
+        .put('/api/users/1/portfolios/1')
         .set('Accept', 'application/json')
         .send(helpers.portfolioUpdates[0])
         .expect('Content-Type', /json/)

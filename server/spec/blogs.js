@@ -6,12 +6,12 @@ const helpers = require('./helpers');
 const request = require('supertest');
 const expect = require('chai').expect;
 
-describe('[BLOGS]   /api/blogs/', function () {
+describe('[BLOGS]   /api/users/:id/blogs/', function () {
 
   describe('Creates a blog in the database', function () {
     it('should POST a new blog', function (done) {
       request(app)
-        .post('/api/blogs')
+        .post('/api/users/1/blogs')
         .set('Accept', 'application/json')
         .send(helpers.blogs[0])
         .expect('Content-Type', /json/)
@@ -26,7 +26,7 @@ describe('[BLOGS]   /api/blogs/', function () {
 
     it('should POST a new blog', function (done) {
       request(app)
-        .post('/api/blogs')
+        .post('/api/users/1/blogs')
         .set('Accept', 'application/json')
         .send(helpers.blogs[1])
         .expect('Content-Type', /json/)
@@ -41,7 +41,7 @@ describe('[BLOGS]   /api/blogs/', function () {
 
     it('should POST a new blog', function (done) {
       request(app)
-        .post('/api/blogs')
+        .post('/api/users/1/blogs')
         .set('Accept', 'application/json')
         .send(helpers.blogs[2])
         .expect('Content-Type', /json/)
@@ -56,7 +56,7 @@ describe('[BLOGS]   /api/blogs/', function () {
 
     it('should POST a new blog', function (done) {
       request(app)
-        .post('/api/blogs')
+        .post('/api/users/1/blogs')
         .set('Accept', 'application/json')
         .send(helpers.blogs[3])
         .expect('Content-Type', /json/)
@@ -71,7 +71,7 @@ describe('[BLOGS]   /api/blogs/', function () {
 
     it('should POST a new blog', function (done) {
       request(app)
-        .post('/api/blogs')
+        .post('/api/users/1/blogs')
         .set('Accept', 'application/json')
         .send(helpers.blogs[4])
         .expect('Content-Type', /json/)
@@ -88,7 +88,7 @@ describe('[BLOGS]   /api/blogs/', function () {
   describe('Retrieves a blog from the database', function () {
     it('should GET a blog by ID', function (done) {
       request(app)
-        .get('/api/blogs/1')
+        .get('/api/users/1/blogs/1')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -105,11 +105,11 @@ describe('[BLOGS]   /api/blogs/', function () {
     it('should GET all blogs', function (done) {
       this.timeout(3500);
       request(app)
-        .get('/api/blogs')
+        .get('/api/users/1/blogs')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var blogs = resp.body;
           expect(blogs).to.be.an('array');
           expect(blogs.length).to.eql(5);
@@ -122,11 +122,11 @@ describe('[BLOGS]   /api/blogs/', function () {
     it('should DELETE a blog', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('/api/blogs/4')
+        .delete('/api/users/1/blogs/4')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var blog = resp.body;
           expect(blog).to.be.an('object');
           expect(blog.id).to.eql(4);
@@ -138,11 +138,11 @@ describe('[BLOGS]   /api/blogs/', function () {
   describe('Retrieves all blogs from the database', function () {
     it('should GET all blogs', function (done) {
       request(app)
-        .get('/api/blogs')
+        .get('/api/users/1/blogs')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var blogs = resp.body;
           expect(blogs).to.be.an('array');
           expect(blogs.length).to.eql(4);
@@ -154,12 +154,12 @@ describe('[BLOGS]   /api/blogs/', function () {
   describe('Updates a blog in the database', function () {
     it('should PUT updates for a blog into the database', function (done) {
       request(app)
-        .put('/api/blogs/1')
+        .put('/api/users/1/blogs/1')
         .set('Accept', 'application/json')
         .send(helpers.blogUpdates[0])
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function(err, resp) {
+        .end(function (err, resp) {
           var blog = resp.body;
           expect(blog).to.be.an('object');
           expect(blog.title).to.eql('From SQL to NoSQL: Getting Started with MongoDB and Mongoose');

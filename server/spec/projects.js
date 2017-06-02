@@ -6,12 +6,12 @@ const helpers = require('./helpers');
 const request = require('supertest');
 const expect = require('chai').expect;
 
-describe('[PROJECTS]   /api/projects/', function () {
+describe('[PROJECTS]   /api/users/1/projects/', function () {
 
   describe('Creates a project in the database', function () {
     it('should POST a new project', function (done) {
       request(app)
-        .post('/api/projects')
+        .post('/api/users/1/projects')
         .set('Accept', 'application/json')
         .send(helpers.projects[0])
         .expect('Content-Type', /json/)
@@ -26,7 +26,7 @@ describe('[PROJECTS]   /api/projects/', function () {
 
     it('should POST a new project', function (done) {
       request(app)
-        .post('/api/projects')
+        .post('/api/users/1/projects')
         .set('Accept', 'application/json')
         .send(helpers.projects[1])
         .expect('Content-Type', /json/)
@@ -41,7 +41,7 @@ describe('[PROJECTS]   /api/projects/', function () {
 
     it('should POST a new project', function (done) {
       request(app)
-        .post('/api/projects')
+        .post('/api/users/1/projects')
         .set('Accept', 'application/json')
         .send(helpers.projects[2])
         .expect('Content-Type', /json/)
@@ -56,7 +56,7 @@ describe('[PROJECTS]   /api/projects/', function () {
 
     it('should POST a new project', function (done) {
       request(app)
-        .post('/api/projects')
+        .post('/api/users/1/projects')
         .set('Accept', 'application/json')
         .send(helpers.projects[3])
         .expect('Content-Type', /json/)
@@ -71,7 +71,7 @@ describe('[PROJECTS]   /api/projects/', function () {
 
     it('should POST a new project', function (done) {
       request(app)
-        .post('/api/projects')
+        .post('/api/users/1/projects')
         .set('Accept', 'application/json')
         .send(helpers.projects[4])
         .expect('Content-Type', /json/)
@@ -88,7 +88,7 @@ describe('[PROJECTS]   /api/projects/', function () {
   describe('Retrieves a project from the database', function () {
     it('should GET a project by ID', function (done) {
       request(app)
-        .get('/api/projects/1')
+        .get('/api/users/1/projects/1')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -105,7 +105,7 @@ describe('[PROJECTS]   /api/projects/', function () {
     it('should GET all projects', function (done) {
       this.timeout(3500);
       request(app)
-        .get('/api/projects')
+        .get('/api/users/1/projects')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -122,7 +122,7 @@ describe('[PROJECTS]   /api/projects/', function () {
     it('should DELETE a project', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('/api/projects/4')
+        .delete('/api/users/1/projects/4')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -138,7 +138,7 @@ describe('[PROJECTS]   /api/projects/', function () {
   describe('Retrieves all projects from the database', function () {
     it('should GET all projects', function (done) {
       request(app)
-        .get('/api/projects')
+        .get('/api/users/1/projects')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -154,7 +154,7 @@ describe('[PROJECTS]   /api/projects/', function () {
   describe('Updates a project in the database', function () {
     it('should PUT updates for a project into the database', function (done) {
       request(app)
-        .put('/api/projects/1')
+        .put('/api/users/1/projects/1')
         .set('Accept', 'application/json')
         .send(helpers.projectUpdates[0])
         .expect('Content-Type', /json/)

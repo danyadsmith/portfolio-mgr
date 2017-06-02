@@ -6,12 +6,12 @@ const helpers = require('./helpers');
 const request = require('supertest');
 const expect = require('chai').expect;
 
-describe('[SERVICE]   /api/services/', function () {
+describe('[SERVICE]   /api/users/1/services/', function () {
 
   describe('Creates a service in the database', function () {
     it('should POST a new service', function (done) {
       request(app)
-        .post('/api/services')
+        .post('/api/users/1/services')
         .set('Accept', 'application/json')
         .send(helpers.services[0])
         .expect('Content-Type', /json/)
@@ -26,7 +26,7 @@ describe('[SERVICE]   /api/services/', function () {
 
     it('should POST a new service', function (done) {
       request(app)
-        .post('/api/services')
+        .post('/api/users/1/services')
         .set('Accept', 'application/json')
         .send(helpers.services[1])
         .expect('Content-Type', /json/)
@@ -41,7 +41,7 @@ describe('[SERVICE]   /api/services/', function () {
 
     it('should POST a new service', function (done) {
       request(app)
-        .post('/api/services')
+        .post('/api/users/1/services')
         .set('Accept', 'application/json')
         .send(helpers.services[2])
         .expect('Content-Type', /json/)
@@ -58,7 +58,7 @@ describe('[SERVICE]   /api/services/', function () {
   describe('Retrieves a service from the database', function () {
     it('should GET a service by ID', function (done) {
       request(app)
-        .get('/api/services/1')
+        .get('/api/users/1/services/1')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -75,7 +75,7 @@ describe('[SERVICE]   /api/services/', function () {
     it('should GET all services', function (done) {
       this.timeout(3500);
       request(app)
-        .get('/api/services')
+        .get('/api/users/1/services')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -92,7 +92,7 @@ describe('[SERVICE]   /api/services/', function () {
     it('should DELETE a service', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('/api/services/3')
+        .delete('/api/users/1/services/3')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -108,7 +108,7 @@ describe('[SERVICE]   /api/services/', function () {
   describe('Retrieves all services from the database', function () {
     it('should GET all services', function (done) {
       request(app)
-        .get('/api/services')
+        .get('/api/users/1/services')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -124,7 +124,7 @@ describe('[SERVICE]   /api/services/', function () {
   describe('Updates a service in the database', function () {
     it('should PUT updates for a service into the database', function (done) {
       request(app)
-        .put('/api/services/1')
+        .put('/api/users/1/services/1')
         .set('Accept', 'application/json')
         .send(helpers.serviceUpdates[0])
         .expect('Content-Type', /json/)

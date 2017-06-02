@@ -6,12 +6,12 @@ const helpers = require('./helpers');
 const request = require('supertest');
 const expect = require('chai').expect;
 
-describe('[JOBS]   /api/jobs/', function () {
+describe('[JOBS]   /api/users/1/jobs/', function () {
 
   describe('Creates a job in the database', function () {
     it('should POST a new job', function (done) {
       request(app)
-        .post('/api/jobs')
+        .post('/api/users/1/jobs')
         .set('Accept', 'application/json')
         .send(helpers.jobs[0])
         .expect('Content-Type', /json/)
@@ -26,7 +26,7 @@ describe('[JOBS]   /api/jobs/', function () {
 
     it('should POST a new job', function (done) {
       request(app)
-        .post('/api/jobs')
+        .post('/api/users/1/jobs')
         .set('Accept', 'application/json')
         .send(helpers.jobs[1])
         .expect('Content-Type', /json/)
@@ -41,7 +41,7 @@ describe('[JOBS]   /api/jobs/', function () {
 
     it('should POST a new job', function (done) {
       request(app)
-        .post('/api/jobs')
+        .post('/api/users/1/jobs')
         .set('Accept', 'application/json')
         .send(helpers.jobs[2])
         .expect('Content-Type', /json/)
@@ -56,7 +56,7 @@ describe('[JOBS]   /api/jobs/', function () {
 
     it('should POST a new job', function (done) {
       request(app)
-        .post('/api/jobs')
+        .post('/api/users/1/jobs')
         .set('Accept', 'application/json')
         .send(helpers.jobs[3])
         .expect('Content-Type', /json/)
@@ -73,7 +73,7 @@ describe('[JOBS]   /api/jobs/', function () {
   describe('Retrieves a job from the database', function () {
     it('should GET a job by ID', function (done) {
       request(app)
-        .get('/api/jobs/1')
+        .get('/api/users/1/jobs/1')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -90,7 +90,7 @@ describe('[JOBS]   /api/jobs/', function () {
     it('should GET all jobs', function (done) {
       this.timeout(3500);
       request(app)
-        .get('/api/jobs')
+        .get('/api/users/1/jobs')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -107,7 +107,7 @@ describe('[JOBS]   /api/jobs/', function () {
     it('should DELETE a job', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('/api/jobs/3')
+        .delete('/api/users/1/jobs/3')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -123,7 +123,7 @@ describe('[JOBS]   /api/jobs/', function () {
   describe('Retrieves job history from the database', function () {
     it('should GET all jobs', function (done) {
       request(app)
-        .get('/api/jobs')
+        .get('/api/users/1/jobs')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -139,7 +139,7 @@ describe('[JOBS]   /api/jobs/', function () {
   describe('Updates a job in the database', function () {
     it('should PUT updates for a job into the database', function (done) {
       request(app)
-        .put('/api/jobs/2')
+        .put('/api/users/1/jobs/2')
         .set('Accept', 'application/json')
         .send(helpers.jobUpdates[0])
         .expect('Content-Type', /json/)
