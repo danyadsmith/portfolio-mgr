@@ -4,7 +4,13 @@ const sequelize = require('../../../db');
 
 module.exports = {
   param: function (req, res, next) {
-    return sequelize.Skill.findById(req.params.id)
+    return sequelize.Skill.findById(req.params.id, {
+      include: [
+        { model: sequelize.Category, as: 'category'}
+      ],
+      attributes: {
+        exclude: ['UserId', 'CategoryId']
+      }})
       .then(function (data) {
         if (data) {
           req.skill = data.dataValues;
@@ -18,7 +24,14 @@ module.exports = {
   },
 
   get: function (req, res) {
-    return sequelize.Skill.findAll({where: {UserId: req.user.id}})
+    return sequelize.Skill.findAll({where: {UserId: req.user.id},
+      include: [
+        { model: sequelize.Category, as: 'category'}
+      ],
+      attributes: {
+        exclude: ['UserId', 'CategoryId']
+      }
+    })
       .then(function (skills) {
         res.json(skills);
       });
