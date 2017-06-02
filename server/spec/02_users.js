@@ -13,13 +13,13 @@ describe('[USERS]   /api/users/', function () {
       request(app)
         .post('/api/users')
         .set('Accept', 'application/json')
-        .send(helpers.users[0])
+        .send(helpers.users[1])
         .expect('Content-Type', /json/)
         .expect(200)
         .end(function (err, resp) {
           var user = resp.body;
           expect(user).to.be.an('object');
-          expect(user.username).to.eql('danyadsmith');
+          expect(user.username).to.eql('administrator');
           done();
         });
     });
@@ -29,13 +29,13 @@ describe('[USERS]   /api/users/', function () {
       request(app)
         .post('/api/users')
         .set('Accept', 'application/json')
-        .send(helpers.users[1])
+        .send(helpers.users[2])
         .expect('Content-Type', /json/)
         .expect(200)
         .end(function (err, resp) {
           var user = resp.body;
           expect(user).to.be.an('object');
-          expect(user.username).to.eql('administrator');
+          expect(user.username).to.eql('guest');
           done();
         });
     });
@@ -69,7 +69,7 @@ describe('[USERS]   /api/users/', function () {
         .end(function (err, resp) {
           var users = resp.body;
           expect(users).to.be.an('array');
-          expect(users.length).to.eql(2);
+          expect(users.length).to.eql(3);
           done();
         });
     });
@@ -103,7 +103,7 @@ describe('[USERS]   /api/users/', function () {
         .end(function (err, resp) {
           var users = resp.body;
           expect(users).to.be.an('array');
-          expect(users.length).to.eql(1);
+          expect(users.length).to.eql(2);
           done();
         });
     });

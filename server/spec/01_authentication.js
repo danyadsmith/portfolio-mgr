@@ -13,7 +13,7 @@ describe('[SERVER AUTHENTICATION]   /signup', function () {
       request(app)
         .post('/signup')
         .set('Accept', 'application/json')
-        .send(helpers.users[2])
+        .send(helpers.users[0])
         .expect('Content-Type', /json/)
         .expect(201)
         .end(function(err, res) {

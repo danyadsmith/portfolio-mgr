@@ -116,7 +116,7 @@ module.exports = {
   users: [
     {
       firstName: 'Danya',
-      middleName: 'D.',
+      middleName: 'B.',
       lastName: 'Smith',
       username: 'danyadsmith',
       password: 'password'
@@ -181,6 +181,6 @@ module.exports = {
     {organization: 'DevStudy.group'}
   ],
   userUpdates: [
-    {middleName: 'Excellent'}
+    {middleName: 'D.'}
   ]
 };
