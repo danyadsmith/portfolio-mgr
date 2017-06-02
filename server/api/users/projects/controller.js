@@ -1,6 +1,6 @@
 const chalk = require('chalk');
-const config = require('../../config');
-const sequelize = require('../../db');
+const config = require('../../../config');
+const sequelize = require('../../../db');
 
 module.exports = {
   param: function (req, res, next) {
@@ -18,7 +18,7 @@ module.exports = {
   },
 
   get: function (req, res) {
-    return sequelize.Project.findAll()
+    return sequelize.Project.findAll({where: {UserId: req.user.id}})
       .then(function (projects) {
         res.json(projects);
       });
