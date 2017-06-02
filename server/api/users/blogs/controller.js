@@ -22,7 +22,7 @@ module.exports = {
         exclude: ['UserId', 'TypeId']
       }})
       .then(function (blogs) {
-        console.log(req.user.id);
+        //console.log(req.user.id);
         res.json(blogs);
       });
   },
