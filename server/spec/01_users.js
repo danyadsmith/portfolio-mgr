@@ -10,7 +10,6 @@ describe('[USERS]   /api/users/', function () {
 
   describe('Creates a user in the database', function () {
     it('should POST a new user', function (done) {
-      this.timeout(4500);
       request(app)
         .post('/api/users')
         .set('Accept', 'application/json')
@@ -37,22 +36,6 @@ describe('[USERS]   /api/users/', function () {
           var user = resp.body;
           expect(user).to.be.an('object');
           expect(user.username).to.eql('administrator');
-          done();
-        });
-    });
-
-    it('should POST a new user', function (done) {
-      this.timeout(4500);
-      request(app)
-        .post('/api/users')
-        .set('Accept', 'application/json')
-        .send(helpers.users[2])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var user = resp.body;
-          expect(user).to.be.an('object');
-          expect(user.username).to.eql('guest');
           done();
         });
     });
@@ -86,7 +69,7 @@ describe('[USERS]   /api/users/', function () {
         .end(function (err, resp) {
           var users = resp.body;
           expect(users).to.be.an('array');
-          expect(users.length).to.eql(3);
+          expect(users.length).to.eql(2);
           done();
         });
     });
@@ -94,16 +77,16 @@ describe('[USERS]   /api/users/', function () {
 
   describe('Deletes a user from the database', function () {
     it('should DELETE a user', function (done) {
-      this.timeout(3500);
+      this.timeout(7500);
       request(app)
-        .delete('/api/users/3')
+        .delete('/api/users/2')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
         .end(function (err, resp) {
           var user = resp.body;
           expect(user).to.be.an('object');
-          expect(user.username).to.eql('guest');
+          expect(user.username).to.eql('administrator');
           done();
         });
     });
@@ -111,7 +94,7 @@ describe('[USERS]   /api/users/', function () {
 
   describe('Retrieves all users from the database', function () {
     it('should GET all users', function (done) {
-      this.timeout(3500);
+      this.timeout(7500);
       request(app)
         .get('/api/users')
         .set('Accept', 'application/json')
@@ -120,7 +103,7 @@ describe('[USERS]   /api/users/', function () {
         .end(function (err, resp) {
           var users = resp.body;
           expect(users).to.be.an('array');
-          expect(users.length).to.eql(2);
+          expect(users.length).to.eql(1);
           done();
         });
     });
@@ -128,7 +111,7 @@ describe('[USERS]   /api/users/', function () {
 
   describe('Updates a user in the database', function () {
     it('should PUT updates for a user into the database', function (done) {
-      this.timeout(3500);
+      this.timeout(5500);
       request(app)
         .put('/api/users/1')
         .set('Accept', 'application/json')
@@ -138,7 +121,7 @@ describe('[USERS]   /api/users/', function () {
         .end(function (err, resp) {
           var user = resp.body;
           expect(user).to.be.an('object');
-          expect(user.middleName).to.be.null;
+          expect(user.middleName).to.eql('D.');
           done();
         });
     });

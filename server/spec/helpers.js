@@ -9,7 +9,8 @@ module.exports = {
     {name: 'UX and Design'},
     {name: 'Project Management'},
     {name: 'Business Software'},
-    {name: 'Other'}
+    {name: 'Other'},
+    {name: 'Content Management Systems'}
   ],
   skills: [
     {UserId: 1, CategoryId: 1, name: 'C#', expertise: 1},
@@ -41,7 +42,7 @@ module.exports = {
   credentials: [
     {organization: 'Oakland University', school: 'School of Business Administration',credential: 'Bachelor of Arts', major: 'Management Information Systems', minor: 'Applied Technology in Business', dateCompleted: '2003-04-26', UserId: 1, visible: true},
     {organization: 'Hack Reactor', school: 'Remote', credential: 'Advanced Software Engineering Immersive Program', dateCompleted: '2017-05-06', UserId: 1, visible: true},
-    {organization: 'Bloc', school: 'Remote', credential: 'Full Stack Developer Track', dateCompleted: '2017-07-06', UserId: 2, visible: true}
+    {organization: 'Bloc', school: 'Remote', credential: 'Full Stack Developer Track', dateCompleted: '2017-07-06', UserId: 1, visible: true}
   ],
   jobs: [
     { employer: 'Lear Corporation', city: 'Southfield', state: 'MI', jobTitle: 'Enterprise Portal Developer, Administrator and UX Designer', startDate: '2003-06-02', logoImage: '', UserId: 1 },
@@ -180,6 +181,6 @@ module.exports = {
     {organization: 'DevStudy.group'}
   ],
   userUpdates: [
-    {middleName: null}
+    {middleName: 'Excellent'}
   ]
 };

@@ -44,7 +44,7 @@ module.exports = {
       console.log(chalk.white('Current User:', JSON.stringify(req.user, null, 2)));
       console.log(chalk.blue('New User:', JSON.stringify(req.body, null, 2)));
     }
-    return sequelize.User.findById(req.params.userid)
+    return sequelize.User.findById(req.user.id)
       .then(function (user) {
         return user.updateAttributes(req.body)
           .then(function (user) {
@@ -61,7 +61,7 @@ module.exports = {
 
   delete: function (req, res) {
     //console.log(req.user);
-    return sequelize.User.findById(req.params.userid)
+    return sequelize.User.findById(req.user.id)
       .then(function (user) {
         return user.destroy()
         .then(function () {

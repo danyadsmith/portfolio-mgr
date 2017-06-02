@@ -19,7 +19,7 @@ describe('[PROJECT TYPES]   /api/types', function () {
         .end(function (err, resp) {
           var type = resp.body;
           expect(type).to.be.an('object');
-          expect(type.title).to.eql('Work');
+          expect(type.name).to.eql('Work');
           done();
         });
     });
@@ -34,7 +34,7 @@ describe('[PROJECT TYPES]   /api/types', function () {
         .end(function (err, resp) {
           var type = resp.body;
           expect(type).to.be.an('object');
-          expect(type.title).to.eql('Open Source');
+          expect(type.name).to.eql('Open Source');
           done();
         });
     });
@@ -49,7 +49,7 @@ describe('[PROJECT TYPES]   /api/types', function () {
         .end(function (err, resp) {
           var type = resp.body;
           expect(type).to.be.an('object');
-          expect(type.title).to.eql('Community Service');
+          expect(type.name).to.eql('Community Service');
           done();
         });
     });

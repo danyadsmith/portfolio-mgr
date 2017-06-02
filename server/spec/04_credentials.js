@@ -41,7 +41,7 @@ describe('[CREDENTIALS]   /api/users/:id/credentials/', function () {
 
     it('should POST a new credential', function (done) {
       request(app)
-        .post('/api/users/2/credentials')
+        .post('/api/users/1/credentials')
         .set('Accept', 'application/json')
         .send(helpers.credentials[2])
         .expect('Content-Type', /json/)
@@ -90,7 +90,7 @@ describe('[CREDENTIALS]   /api/users/:id/credentials/', function () {
 
   describe('Deletes a credential from the database', function () {
     it('should DELETE a credential', function (done) {
-      this.timeout(3500);
+      this.timeout(5500);
       request(app)
         .delete('/api/users/1/credentials/3')
         .set('Accept', 'application/json')

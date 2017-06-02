@@ -143,6 +143,21 @@ describe('[CATEGORIES]   /api/categories/', function () {
           done();
         });
     });
+
+    it('should POST a new category', function (done) {
+      request(app)
+        .post('/api/categories')
+        .set('Accept', 'application/json')
+        .send(helpers.categories[9])
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end(function (err, resp) {
+          var category = resp.body;
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Content Management Systems');
+          done();
+        });
+    });
   });
 
   describe('Retrieves a category from the database', function () {
@@ -172,7 +187,7 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .end(function(err, resp) {
           var categories = resp.body;
           expect(categories).to.be.an('array');
-          expect(categories.length).to.eql(9);
+          expect(categories.length).to.eql(10);
           done();
         });
     });2
@@ -182,14 +197,14 @@ describe('[CATEGORIES]   /api/categories/', function () {
     it('should DELETE a category', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('/api/categories/9')
+        .delete('/api/categories/10')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
         .end(function(err, resp) {
           var category = resp.body;
           expect(category).to.be.an('object');
-          expect(category.id).to.eql(9);
+          expect(category.id).to.eql(10);
           done();
         });
     });
@@ -205,7 +220,7 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .end(function(err, resp) {
           var categories = resp.body;
           expect(categories).to.be.an('array');
-          expect(categories.length).to.eql(8);
+          expect(categories.length).to.eql(9);
           done();
         });
     });
