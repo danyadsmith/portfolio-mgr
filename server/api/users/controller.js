@@ -22,7 +22,9 @@ module.exports = {
   },
 
   get: function (req, res) {
-    return sequelize.User.findAll()
+    return sequelize.User.findAll({ attributes: {
+        exclude: ['password', 'address1', 'address2', 'city', 'stateProvince', 'country', 'postalCode', 'location', 'phone', 'email']
+      }})
       .then(function (users) {
         res.json(users);
       });
