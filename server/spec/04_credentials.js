@@ -41,7 +41,7 @@ describe('[CREDENTIALS]   /api/users/:id/credentials/', function () {
 
     it('should POST a new credential', function (done) {
       request(app)
-        .post('/api/users/1/credentials')
+        .post('/api/users/2/credentials')
         .set('Accept', 'application/json')
         .send(helpers.credentials[2])
         .expect('Content-Type', /json/)

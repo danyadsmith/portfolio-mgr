@@ -7,16 +7,16 @@ const request = require('supertest');
 const expect = require('chai').expect;
 
 describe('[SERVER AUTHENTICATION]   /signup', function () {
-  describe('Creates a user account and authenticates the user when the username is unique', function () {
+  describe('Creates a user account and authenticates the user when the username is unique', function (){
     it('returns a 201 status code and stores the user in the database', function (done) {
       this.timeout(1000);
       request(app)
         .post('/signup')
         .set('Accept', 'application/json')
-        .send(helpers.users[2])
+        .send(helpers.users[0])
         .expect('Content-Type', /json/)
         .expect(201)
-        .end(function (err, res) {
+        .end(function(err, res) {
           expect(res.body).to.be.an('object');
           expect(res.body).to.have.property('token');
           done();
@@ -33,7 +33,7 @@ describe('[SERVER AUTHENTICATION]   /signup', function () {
         .send(helpers.users[0])
         .expect('Content-Type', /json/)
         .expect(409)
-        .end(function (err, res) {
+        .end(function(err, res) {
           expect(res.body).to.be.an('object');
           done();
         });
@@ -51,7 +51,7 @@ describe('[SERVER AUTHENTICATION]   /signin', function () {
         .send(helpers.users[0])
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function (err, res) {
+        .end(function(err, res) {
           expect(res.body).to.be.an('object');
           done();
         });
@@ -65,7 +65,7 @@ describe('[SERVER AUTHENTICATION]   /signin', function () {
         .send(helpers.users[0])
         .expect('Content-Type', /json/)
         .expect(200)
-        .end(function (err, res) {
+        .end(function(err, res) {
           expect(res.body).to.be.an('object');
           done();
         });
@@ -80,7 +80,7 @@ describe('[SERVER AUTHENTICATION]   /signin', function () {
         .send(helpers.badUsers[0])
         .expect('Content-Type', /json/)
         .expect(401)
-        .end(function (err, res) {
+        .end(function(err, res) {
           expect(res.body).to.be.an('object');
           done();
         });
@@ -93,7 +93,7 @@ describe('[SERVER AUTHENTICATION]   /signin', function () {
         .send(helpers.badUsers[1])
         .expect('Content-Type', /json/)
         .expect(401)
-        .end(function (err, res) {
+        .end(function(err, res) {
           expect(res.body).to.be.an('object');
           done();
         });
@@ -106,7 +106,7 @@ describe('[SERVER AUTHENTICATION]   /signin', function () {
         .send(helpers.badUsers[2])
         .expect('Content-Type', /json/)
         .expect(400)
-        .end(function (err, res) {
+        .end(function(err, res) {
           expect(res.body).to.be.an('object');
           done();
         });
