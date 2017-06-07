@@ -19,7 +19,7 @@ gulp.task('browsersync', function (cb) {
 });
 
 gulp.task('clean', function (cb) {
-  return del(['assets/*'], cb);
+  return del(['client/css/*', 'client/js/*', 'client/img/*'], cb);
 });
 
 gulp.task('images', function () {
