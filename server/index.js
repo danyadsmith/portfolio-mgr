@@ -20,6 +20,8 @@ if (config.env !== 'testing') {
 
 app.use(middleware.headers);
 
+app.use(express.static('client'));
+
 app.use('/', authRouter);
 app.use('/api', api);
 

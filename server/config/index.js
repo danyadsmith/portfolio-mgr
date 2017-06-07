@@ -1,11 +1,11 @@
 var _ = require('lodash');
-require('dotenv').config()
+require('dotenv').config();
 
 var config = {
   dev: 'development',
   test: 'testing',
   prod: 'production',
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 8080,
   jwt: {
     secret: process.env.JWT_SECRET || 'supersecret',
     expiry: 24 * 60 * 10
