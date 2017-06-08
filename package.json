@@ -45,6 +45,7 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
     "request": "^2.81.0",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "susy": "^2.2.12"
   }
 }

@@ -18,6 +18,10 @@ angular.module('portfolio', [
         'headerView': {
           controller: 'HomeController',
           templateUrl: '../partials/home/header.html'
+        },
+        'aboutView': {
+          controller: 'AboutController',
+          templateUrl: '../partials/home/about.html'
         }
       }
     });

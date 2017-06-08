@@ -2,3 +2,17 @@ body {
   margin: 0;
   padding: 0;
 }
+
+section {
+  @include container;
+  article {
+    @include span(16 of 24);
+    margin: 0 span(4 of 24);
+
+    p {
+      text-align: justify;
+    }
+  }
+}
+
+

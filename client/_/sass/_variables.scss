@@ -39,4 +39,4 @@ $magenta:    hsla(330, 100%, 50%, 1); // #ff0080
 // Theme Colors
 /////////////////////////////////////////////////////////////////////
 
-$accent: $viridian;
+$accent: lighten(mix($viridian, $blue, 85%), 10%);

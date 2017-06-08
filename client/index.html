@@ -14,16 +14,18 @@
   <nav>
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
       <li><a href="#">Blog</a></li>
       <li><a href="#">Portfolio</a></li>
       <li><a href="#">Resume</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
   </nav>
-  <div class="header" ui-view="headerView">
-  </div>
+  <section class="header" ui-view="headerView">
+  </section>
+  <section class="about" ui-view="aboutView">
+  </section>
   <script src='js/controllers/HomeController.js'></script>
+  <script src='js/controllers/AboutController.js'></script>
   <script src='js/app.js'></script>
   <script id="__bs_script__">
     //<![CDATA[

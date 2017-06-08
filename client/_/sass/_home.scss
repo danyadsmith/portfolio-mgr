@@ -1,4 +1,4 @@
-header {
+.header {
   background-image: url('../img/iStock-681993416.jpg');
   background-size: cover;
   border-bottom: 1px solid $silver;
@@ -11,14 +11,20 @@ header {
     color: $white;
     padding: 20px;
     position: absolute;
-    top: 355px;
-    width: 365px;
+    top: 330px;
+    width: 385px;
     z-index: 20;
   }
 
   .tagline {
+    color: $black;
     font-size: 22px;
-    margin: -22px 0 0 115px;
+    margin: 0 0 0 115px;
+    padding: 10px 0;
+  }
+
+  .tagline::after {
+    display: none;
   }
 
   h1 {
@@ -27,14 +33,32 @@ header {
   }
 
   h2 {
+    color: $white;
     font-family: 'Poppins';
     font-size: 14px;
     font-weight: 100;
+    letter-spacing: .08em;
     margin: 15px 0 15px 110px;
+  }
+
+  h2::after {
+    display: none;
   }
 }
 
+.about {
+  margin: 50px 0;
 
+  img {
+    @include span(8 of 24);
+  }
+
+  header,
+  p {
+    @include span(14 of 24);
+    margin: 0 0 0 span(2 of 24);
+  }
+}
 
 
 
