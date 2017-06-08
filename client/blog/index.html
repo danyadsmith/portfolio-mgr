@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="homepage">
+<html ng-app="blog">
   <head>
   <meta charset='utf-8'>
   <title>Portfolio</title>
@@ -7,25 +7,25 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
   <script src=' https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js'></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <link href='assets/css/main.css' rel='stylesheet' />
+  <link href='../assets/css/main.css' rel='stylesheet' />
   </head>
-  <body class="home">
+  <body class="blog">
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="http://localhost/blog/">Blog</a></li>
+      <li><a href="/blog/">Blog</a></li>
       <li><a href="#">Portfolio</a></li>
       <li><a href="#">Resume</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
   </nav>
-  <section class="header" ui-view="headerView">
+  <section class="header" ui-view="blogHeaderView">
   </section>
-  <section class="about" ui-view="aboutView">
+  <section class="about" ui-view="blogAboutView">
   </section>
-  <script src='assets/js/controllers/home/AboutController.js'></script>
-  <script src='assets/js/controllers/home/HomeController.js'></script>
-  <script src='assets/js/modules/home.js'></script>
+  <script src='../assets/js/controllers/blog/AboutController.js'></script>
+  <script src='../assets/js/controllers/blog/HomeController.js'></script>
+  <script src='../assets/js/modules/blog.js'></script>
   <script id="__bs_script__">
     //<![CDATA[
     document.write('<script async src=\'http://HOST:3001/browser-sync/browser-sync-client.js?v=2.18.12\'><\/script>'.replace('HOST', location.hostname));

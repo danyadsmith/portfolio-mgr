@@ -19,25 +19,25 @@ gulp.task('browsersync', function (cb) {
 });
 
 gulp.task('clean', function (cb) {
-  return del(['client/css/*', 'client/js/*', 'client/img/*'], cb);
+  return del(['client/assets/*'], cb);
 });
 
 gulp.task('images', function () {
-  return gulp.src('client/_/img/*')
+  return gulp.src('_/img/*')
     .pipe(imagemin())
-    .pipe(gulp.dest('client/img'));
+    .pipe(gulp.dest('client/assets/img'));
 });
 
 gulp.task('scripts', function () {
-  return gulp.src('client/_/js/**/*.js')
+  return gulp.src('_/js/**/*.js')
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
-    .pipe(gulp.dest('client/js'));
+    .pipe(gulp.dest('client/assets/js'));
 });
 
 gulp.task('styles', function () {
-  return gulp.src('client/_/sass/*.scss')
+  return gulp.src('_/sass/*.scss')
     .pipe(plumber({
       errorHandler: onError
     }))
@@ -45,7 +45,12 @@ gulp.task('styles', function () {
       outputStyle: 'compressed',
       includePaths: ['node_modules/susy/sass']
     }).on('error', sass.logError))
-    .pipe(gulp.dest('client/css'));
+    .pipe(gulp.dest('client/assets/css'));
+});
+
+gulp.task('partials', function () {
+  return gulp.src('_/partials/**/*')
+    .pipe(gulp.dest('client/assets/partials'));
 });
 
 gulp.task('watch', function () {
@@ -53,18 +58,22 @@ gulp.task('watch', function () {
     browsersync.reload();
     done();
   });
-  gulp.watch('client/_/sass/**/*', gulp.series('styles', function (done) {
+  gulp.watch('_/sass/**/*', gulp.series('styles', function (done) {
     browsersync.reload();
     done();
   }));
-  gulp.watch('client/_/js/*.js', gulp.series('scripts', function (done) {
+  gulp.watch('_/js/**/*.js', gulp.series('scripts', function (done) {
     browsersync.reload();
     done();
   }));
-  gulp.watch('client/_/img/*', gulp.series('images', function (done) {
+  gulp.watch('_/img/*', gulp.series('images', function (done) {
+    browsersync.reload();
+    done();
+  }));
+  gulp.watch('_/partials/**/*', gulp.series('partials', function (done) {
     browsersync.reload();
     done();
   }));
 });
 
-gulp.task('default', gulp.parallel('browsersync', 'styles', 'scripts', 'images', 'watch'));
+gulp.task('default', gulp.parallel('browsersync', 'styles', 'scripts', 'images', 'partials', 'watch'));
