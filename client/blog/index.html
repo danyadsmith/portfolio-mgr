@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="blog">
+<html>
   <head>
   <meta charset='utf-8'>
-  <title>Portfolio</title>
+  <title>Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
   <script src=' https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js'></script>
@@ -13,16 +13,18 @@
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/blog/index.html">Blog</a></li>
       <li><a href="#">Portfolio</a></li>
       <li><a href="#">Resume</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
   </nav>
+  <div ng-app="blog">
   <section class="header" ui-view="blogHeaderView">
   </section>
   <section class="about" ui-view="blogAboutView">
   </section>
+  </div>
   <script src='../assets/js/controllers/blog/AboutController.js'></script>
   <script src='../assets/js/controllers/blog/HomeController.js'></script>
   <script src='../assets/js/modules/blog.js'></script>
