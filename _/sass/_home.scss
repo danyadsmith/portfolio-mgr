@@ -1,10 +1,11 @@
 .home {
-  .header {
-    background-image: url('../img/iStock-681993416.jpg');
-    background-size: cover;
-    border-bottom: 1px solid $silver;
-    filter: grayscale(100%);
+  header.home {
+    background-image: url('../img/concrete_seamless.png');
+    // background-size: cover;
+    // border-bottom: 1px solid $silver;
+    // filter: grayscale(100%);
     height: 780px;
+    padding-top: 0;
     z-index: -1;
 
     .keywords {
@@ -13,8 +14,12 @@
       padding: 20px;
       position: absolute;
       top: 330px;
-      width: 385px;
+      width: 400px;
       z-index: 20;
+
+      h2 {
+        min-width: 300px;
+      }
     }
 
     .tagline {
@@ -40,7 +45,7 @@
       font-size: 14px;
       font-weight: 100;
       letter-spacing: .08em;
-      margin: 15px 0 15px 110px;
+      margin: 0 0 15px 110px;
     }
 
     h2::after {
@@ -49,16 +54,29 @@
   }
 
   .about {
-    margin: 50px 0;
+    header {
+      background-image: none;
+      height: auto;
+      margin: 50px 0;
+      padding-bottom: 50px;
+    }
 
     img {
       @include span(8 of 24);
+      padding-top:100px;
+      min-height: 400px;
     }
 
     header,
     p {
       @include span(14 of 24);
       margin: 0 0 0 span(2 of 24);
+    }
+
+    h2,
+    .tagline {
+      @include span(24 of 24);
+      margin: 0;
     }
   }
 }

@@ -15,4 +15,16 @@ section {
   }
 }
 
+header {
+  background-image: url('../img/concrete_seamless.png');
+  height: 150px;
+  padding-top: 100px;
+
+  h2,
+  .tagline {
+    @include span(16 of 24);
+    margin: 0 span(4 of 24);
+  }
+}
+
 
