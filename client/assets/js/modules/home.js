@@ -3,6 +3,7 @@
 angular.module('homepage', [
   'homepage.main',
   'homepage.about',
+  'homepage.portfolio',
   'ui.router'
 ])
 .config(function ($stateProvider, $locationProvider) {
@@ -24,6 +25,10 @@ angular.module('homepage', [
         'aboutView': {
           controller: 'AboutController',
           templateUrl: '../../assets/partials/home/about.html'
+        },
+        'portfolioView': {
+          controller: 'PortfolioController',
+          templateUrl: '../../assets/partials/home/portfolio.html'
         }
       }
     });
