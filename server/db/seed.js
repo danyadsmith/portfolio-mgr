@@ -197,7 +197,7 @@ var seedData = function () {
     { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/348x340', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 11},
     { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/348x486', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10},
     { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/726x710', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 11},
-    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/726x340', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10}
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/726x340', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10},
     { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/348x194', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10}
   ]));
 };
