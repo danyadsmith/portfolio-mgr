@@ -2,7 +2,7 @@
 
 angular.module('blog', [
   'blog.main',
-  'blog.about',
+  'blog.sidebar',
   'ui.router'
 ])
 .config(function ($stateProvider, $locationProvider) {
@@ -20,9 +20,9 @@ angular.module('blog', [
           controller: 'HomeController',
           templateUrl: '../../assets/partials/blog/header.html'
         },
-        'blogAboutView': {
-          controller: 'AboutController',
-          templateUrl: '../../assets/partials/blog/about.html'
+        'blogSidebarView': {
+          controller: 'SidebarController',
+          templateUrl: '../../assets/partials/blog/sidebar.html'
         }
       }
     });
