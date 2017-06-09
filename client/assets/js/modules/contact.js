@@ -2,7 +2,7 @@
 
 angular.module('contact', [
   'contact.main',
-  'contact.about',
+  'contact.form',
   'ui.router'
 ])
 .config(function ($stateProvider, $locationProvider) {
@@ -20,9 +20,9 @@ angular.module('contact', [
           controller: 'HomeController',
           templateUrl: '../../assets/partials/contact/header.html'
         },
-        'contactAboutView': {
-          controller: 'AboutController',
-          templateUrl: '../../assets/partials/contact/about.html'
+        'contactFormView': {
+          controller: 'FormController',
+          templateUrl: '../../assets/partials/contact/form.html'
         }
       }
     });
