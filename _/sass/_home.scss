@@ -13,7 +13,7 @@
       color: $white;
       padding: 20px;
       position: absolute;
-      top: 330px;
+      top: 370px;
       width: 400px;
       z-index: 20;
 
@@ -54,6 +54,10 @@
   }
 
   .about {
+    article {
+      padding: 100px 0;
+    }
+
     header {
       background-image: none;
       height: auto;
@@ -63,7 +67,6 @@
 
     img {
       @include span(8 of 24);
-      padding-top:100px;
       min-height: 400px;
     }
 

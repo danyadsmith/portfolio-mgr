@@ -5,6 +5,19 @@ body {
 
 section {
   @include container;
+
+  &.header header {
+    background-image: url('../img/concrete_seamless.png');
+    height: 150px;
+    padding-top: 60px;
+
+    h2,
+    .tagline {
+      @include span(16 of 24);
+      margin: 0 span(4 of 24);
+    }
+  }
+
   article {
     @include span(16 of 24);
     margin: 0 span(4 of 24);
@@ -13,18 +26,6 @@ section {
       text-align: justify;
     }
   }
+
 }
-
-header {
-  background-image: url('../img/concrete_seamless.png');
-  height: 150px;
-  padding-top: 100px;
-
-  h2,
-  .tagline {
-    @include span(16 of 24);
-    margin: 0 span(4 of 24);
-  }
-}
-
 
