@@ -1,29 +1,74 @@
 /* globals angular */
 
-angular.module('portfolio', [
-  'portfolio.main',
-  'portfolio.about',
-  'ui.router'
-])
-.config(function ($stateProvider, $locationProvider) {
-  $locationProvider
-    .html5Mode({
-      enabled: true,
-      requireBase: false
-    });
-  $stateProvider
-    .state('portfolio', {
-      name: 'portfolio',
-      url: '/portfolio/',
-      views: {
-        'portfolioHeaderView': {
-          controller: 'HomeController',
-          templateUrl: '../../assets/partials/portfolio/header.html'
-        },
-        'portfolioAboutView': {
-          controller: 'AboutController',
-          templateUrl: '../../assets/partials/portfolio/about.html'
-        }
-      }
-    });
-});
+angular.module('portfolio.service', [])
+  .factory('Portfolio', function ($http) {
+    var data;
+
+    var getCommunityService = function (userID) {
+      userID = userID || 1;
+      return $http({
+        method: 'GET',
+        url: '/api/users/' + userID + '/services'
+      }).then(function (response) {
+        data = response.data;
+        console.log(JSON.stringify(data));
+        return data;
+      });
+    };
+
+    var getCredentials = function (userID) {
+      userID = userID || 1;
+      return $http({
+        method: 'GET',
+        url: '/api/users/' + userID + '/credentials'
+      }).then(function (response) {
+        data = response.data;
+        console.log(JSON.stringify(data));
+        return data;
+      });
+    };
+
+    var getProjects = function (userID) {
+      userID = userID || 1;
+      return $http({
+        method: 'GET',
+        url: '/api/users/' + userID + '/projects'
+      }).then(function (response) {
+        data = response.data;
+        console.log(JSON.stringify(data));
+        return data;
+      });
+    };
+
+    var getSkills = function (userID) {
+      userID = userID || 1;
+      return $http({
+        method: 'GET',
+        url: '/api/users/' + userID + '/skills'
+      }).then(function (response) {
+        data = response.data;
+        console.log(JSON.stringify(data));
+        return data;
+      });
+    };
+
+    var getWorkHistory = function (userID) {
+      userID = userID || 1;
+      return $http({
+        method: 'GET',
+        url: '/api/users/' + userID + '/jobs'
+      }).then(function (response) {
+        data = response.data;
+        console.log(JSON.stringify(data));
+        return data;
+      });
+    };
+
+    return {
+      getCommunityService: getCommunityService,
+      getCredentials: getCredentials,
+      getProjects: getProjects,
+      getSkills: getSkills,
+      getWorkHistory: getWorkHistory
+    };
+  });
