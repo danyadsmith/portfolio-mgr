@@ -4,7 +4,14 @@ const sequelize = require('../../../db');
 
 module.exports = {
   param: function (req, res, next) {
-    return sequelize.Portfolio.findById(req.params.id)
+    return sequelize.Portfolio.findById(req.params.id, {
+      include: [
+        { model: sequelize.Category, as: 'category'}
+      ],
+      attributes: {
+        exclude: ['UserId', 'CategoryId']
+      }
+    })
       .then(function (data) {
         if (data) {
           req.portfolio = data.dataValues;
@@ -18,7 +25,14 @@ module.exports = {
   },
 
   get: function (req, res) {
-    return sequelize.Portfolio.findAll({where: {UserId: req.user.id}})
+    return sequelize.Portfolio.findAll({where: {UserId: req.user.id},
+      include: [
+        { model: sequelize.Category, as: 'category'}
+      ],
+      attributes: {
+        exclude: ['UserId', 'CategoryId']
+      }
+    })
       .then(function (portfolios) {
         res.json(portfolios);
       });

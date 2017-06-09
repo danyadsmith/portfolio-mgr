@@ -58,7 +58,9 @@ var seedData = function () {
     {name: 'UX and Design'},
     {name: 'Project Management'},
     {name: 'Business Software'},
-    {name: 'Other'}
+    {name: 'Other'},
+    {name: 'Project'},
+    {name: 'Process'}
   ]))
   .then(() => console.log(chalk.magenta('Seeding Skills')))
   .then(() => Skill.bulkCreate([
@@ -188,5 +190,13 @@ var seedData = function () {
       'Worked with a team to customize and deploy the iMIS e-Series e-commerce application',
       'Migrated DOS-based membership database to iMIS Membership Management Software'
     ], startDate: '2017-03-15', endDate: '2017-03-27', UserId: 1}
+  ]))
+  .then(() => console.log(chalk.magenta('Seeding Portfolio')))
+  .then(() => Portfolio.bulkCreate([
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/325x455', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10},
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/325x455', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 11},
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/325x455', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10},
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/325x455', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 11},
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/325x455', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10}
   ]));
 };

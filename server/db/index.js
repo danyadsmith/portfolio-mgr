@@ -58,8 +58,10 @@ var SocialMediaAccount = db.define('SocialMediaAccount', {
 });
 
 var Portfolio = db.define('Portfolio', {
+  title: Sequelize.STRING,
   image: Sequelize.STRING,
-  url: Sequelize.STRING
+  url: Sequelize.STRING,
+  abstract: Sequelize.STRING
 });
 
 var Blog = db.define('Blog', {
@@ -115,6 +117,7 @@ Project.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 CommunityService.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 SocialMediaAccount.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Portfolio.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+Portfolio.belongsTo(Category, {as: 'category', foreignKey: 'CategoryId'});
 Blog.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Project.belongsTo(ProjectType, {as: 'type', foreignKey: 'TypeId'});
 
