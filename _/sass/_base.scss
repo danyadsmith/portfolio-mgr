@@ -13,8 +13,8 @@ section {
 
     h2,
     .tagline {
-      @include span(16 of 24);
-      margin: 0 span(4 of 24);
+      @include span(18 of 24);
+      margin: 0 span(2 of 24);
     }
   }
 

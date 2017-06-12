@@ -3,6 +3,7 @@
 angular.module('resume', [
   'resume.main',
   'resume.about',
+  'resume.service',
   'ui.router'
 ])
 .config(function ($stateProvider, $locationProvider) {

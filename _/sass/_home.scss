@@ -83,24 +83,35 @@
     }
   }
 
-  .portfolio header {
-    background-image: url('../img/concrete_seamless.png');
-    padding: 20px 0 10px 0;
-    text-align: center;
+  .portfolio {
 
-    .tagline {
-      padding: 0;
+    header {
+      background-image: url('../img/concrete_seamless.png');
+      padding: 20px 0 10px;
+      text-align: center;
+
+      .tagline {
+        padding: 0;
+      }
+
+      h2::after {
+        margin: 0 auto;
+        margin-top: 25px;
+        position: static;
+        width: 10%;
+      }
     }
 
-    h2::after {
-      margin: 0 auto;
-      margin-top: 25px;
-      position: static;
-      width: 5%;
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 50px;
+
+      img {
+        align-content: stretch;
+        margin: 25px;
+      }
     }
   }
 }
-
-
-
-

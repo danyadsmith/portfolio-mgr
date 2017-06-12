@@ -17,10 +17,14 @@ nav {
       color: $dove-grey;
       padding: 0 10px;
       text-decoration: none;
-    }
 
-    a:hover {
-      color: $accent;
+      &:hover,
+      &:link.selected,
+      &:active.selected,
+      &:hover.selected,
+      &:visited.selected {
+        color: $accent;
+      }
     }
   }
 }

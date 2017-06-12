@@ -193,11 +193,11 @@ var seedData = function () {
   ]))
   .then(() => console.log(chalk.magenta('Seeding Portfolio')))
   .then(() => Portfolio.bulkCreate([
-    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/348x340', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10},
-    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/348x340', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 11},
-    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/348x486', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10},
-    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/726x710', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 11},
-    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/726x340', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10},
-    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/348x194', url: '/blog/', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10}
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/500x300', url: 'users/1/blog/1', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10},
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/500x300', url: 'users/1/blog/2', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 11},
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/500x300', url: 'users/1/blog/3', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10},
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/500x300', url: 'users/1/blog/4', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 11},
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/500x300', url: 'users/1/blog/5', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10},
+    { title: 'This Cool Thing I Did', image: 'http://via.placeholder.com/500x300', url: 'users/1/blog/6', abstract: 'A brief paragraph that describes the project or process.', UserId: 1, CategoryId: 10}
   ]));
 };
