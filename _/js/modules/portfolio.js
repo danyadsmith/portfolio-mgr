@@ -2,7 +2,8 @@
 
 angular.module('portfolio', [
   'portfolio.main',
-  'portfolio.about',
+  'portfolio.service',
+  'portfolio.gallery',
   'ui.router'
 ])
 .config(function ($stateProvider, $locationProvider) {
@@ -21,9 +22,9 @@ angular.module('portfolio', [
           controller: 'HomeController',
           templateUrl: '../../assets/partials/portfolio/header.html'
         },
-        'portfolioAboutView': {
-          controller: 'AboutController',
-          templateUrl: '../../assets/partials/portfolio/about.html'
+        'portfolioGalleryView': {
+          controller: 'GalleryController',
+          templateUrl: '../../assets/partials/portfolio/gallery.html'
         }
       }
     });

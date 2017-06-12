@@ -4,59 +4,11 @@ angular.module('portfolio.service', [])
   .factory('Portfolio', function ($http) {
     var data;
 
-    var getCommunityService = function (userID) {
+    var getPortfolioItems = function (userID) {
       userID = userID || 1;
       return $http({
         method: 'GET',
-        url: '/api/users/' + userID + '/services'
-      }).then(function (response) {
-        data = response.data;
-        console.log(JSON.stringify(data));
-        return data;
-      });
-    };
-
-    var getCredentials = function (userID) {
-      userID = userID || 1;
-      return $http({
-        method: 'GET',
-        url: '/api/users/' + userID + '/credentials'
-      }).then(function (response) {
-        data = response.data;
-        console.log(JSON.stringify(data));
-        return data;
-      });
-    };
-
-    var getProjects = function (userID) {
-      userID = userID || 1;
-      return $http({
-        method: 'GET',
-        url: '/api/users/' + userID + '/projects'
-      }).then(function (response) {
-        data = response.data;
-        console.log(JSON.stringify(data));
-        return data;
-      });
-    };
-
-    var getSkills = function (userID) {
-      userID = userID || 1;
-      return $http({
-        method: 'GET',
-        url: '/api/users/' + userID + '/skills'
-      }).then(function (response) {
-        data = response.data;
-        console.log(JSON.stringify(data));
-        return data;
-      });
-    };
-
-    var getWorkHistory = function (userID) {
-      userID = userID || 1;
-      return $http({
-        method: 'GET',
-        url: '/api/users/' + userID + '/jobs'
+        url: '/api/users/' + userID + '/portfolios'
       }).then(function (response) {
         data = response.data;
         console.log(JSON.stringify(data));
@@ -65,10 +17,6 @@ angular.module('portfolio.service', [])
     };
 
     return {
-      getCommunityService: getCommunityService,
-      getCredentials: getCredentials,
-      getProjects: getProjects,
-      getSkills: getSkills,
-      getWorkHistory: getWorkHistory
+      getPortfolioItems: getPortfolioItems
     };
   });
