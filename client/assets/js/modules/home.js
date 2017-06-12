@@ -4,6 +4,7 @@ angular.module('homepage', [
   'homepage.main',
   'homepage.about',
   'homepage.portfolio',
+  'portfolio.service',
   'ui.router'
 ])
 .config(function ($stateProvider, $locationProvider) {
