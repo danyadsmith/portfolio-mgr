@@ -6,6 +6,12 @@ body {
 section {
   @include container;
 
+  header {
+    h2 {
+      // padding-top: 10px;
+    }
+  }
+
   &.header header {
     background-image: url('../img/concrete_seamless.png');
     height: 150px;

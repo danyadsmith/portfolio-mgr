@@ -1,0 +1,5 @@
+<ul class="social-icons">
+  <li ng-controller="FooterController" ng-repeat='profile in data.profiles' ng-if="profile.visible = true">
+    <a href="{{ profile.profileUrl }}"></a>
+  </li>
+</ul>

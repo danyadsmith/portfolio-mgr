@@ -3,8 +3,11 @@
 angular.module('homepage', [
   'homepage.main',
   'homepage.about',
+  'homepage.blog',
   'homepage.portfolio',
+  'homepage.footer',
   'portfolio.service',
+  'profile.service',
   'ui.router'
 ])
 .config(function ($stateProvider, $locationProvider) {
@@ -30,6 +33,14 @@ angular.module('homepage', [
         'portfolioView': {
           controller: 'PortfolioController',
           templateUrl: '../../assets/partials/home/portfolio.html'
+        },
+        'recentBlogView': {
+          controller: 'BlogController',
+          templateUrl: '../../assets/partials/home/recent-blog-post.html'
+        },
+        'footerView': {
+          controller: 'FooterController',
+          templateUrl: '../../assets/partials/global/footer.html'
         }
       }
     });
