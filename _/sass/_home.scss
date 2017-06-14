@@ -103,15 +103,84 @@
     }
 
     .gallery {
+      display: -ms-flexbox;
+      display: -webkit-box;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      margin: 50px;
+      flex-flow: row wrap;
+      font-size: 0;
+      -ms-flex-direction: column;
+      -ms-flex-wrap: wrap;
+      -webkit-flex-flow: row wrap;
 
-      img {
-        align-content: stretch;
-        margin: 25px;
+      a {
+        -webkit-box-flex: auto;
+        -ms-flex: auto;
+        flex: auto;
+        margin: 5px;
+        width: 300px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
       }
+    }
+
+    footer {
+      background-image: url('../img/concrete_seamless.png');
+      color: $accent;
+      height: 171px;
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        margin: 0;
+        padding: 50px 150px 0;
+        position: relative;
+      }
+
+      li {
+        color: $mineshaft;
+        font-size: 13px;
+        height: 2em;
+        padding-left: 10px;
+        padding-top: 30px;
+        text-transform: uppercase;
+        width: 220px;
+
+        span.number {
+          color: $accent;
+          font-size: 30px;
+          font-weight: 100;
+          position: absolute;
+          top: 70px;
+        }
+      }
+
+      li::before {
+        color: $accent;
+        font-family: 'FontAwesome';
+        font-size: 3.15em;
+        margin-bottom: 5px;
+        padding-right: 8px;
+      }
+    }
+
+    li.experience::before {
+      content: '\f133';
+    }
+
+    li.clients::before {
+      content: '\f0f7';
+    }
+
+    li.projects::before {
+      content: '\f121';
+    }
+
+    li.education::before {
+      content: '\f19d';
     }
   }
 }
