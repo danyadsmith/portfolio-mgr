@@ -1,8 +1,10 @@
 /* globals angular */
 
 angular.module('contact', [
+  'global.footer',
   'contact.main',
   'contact.form',
+  'profile.service',
   'ui.router'
 ])
 .config(function ($stateProvider, $locationProvider) {
@@ -23,6 +25,10 @@ angular.module('contact', [
         'contactFormView': {
           controller: 'FormController',
           templateUrl: '../../assets/partials/contact/form.html'
+        },
+        'footerView': {
+          controller: 'FooterController',
+          templateUrl: '../../assets/partials/global/footer.html'
         }
       }
     });
