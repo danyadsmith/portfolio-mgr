@@ -24,10 +24,14 @@
   </section>
   <section class="about" ui-view="blogAboutView">
   </section>
+  <footer class="global" ui-view="footerView">
+  </footer>
   </div>
   <script src='../assets/js/controllers/blog/AboutController.js'></script>
   <script src='../assets/js/controllers/blog/HomeController.js'></script>
+  <script src='../assets/js/controllers/global/FooterController.js'></script>
   <script src='../assets/js/modules/blog.js'></script>
+  <script src='../assets/js/services/profile.js'></script>
   <script id="__bs_script__">
     //<![CDATA[
     document.write('<script async src=\'http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12\'><\/script>'.replace('HOST', location.hostname));

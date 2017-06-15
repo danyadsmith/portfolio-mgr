@@ -1,8 +1,10 @@
 /* globals angular */
 
 angular.module('blog', [
+  'global.footer',
   'blog.main',
   'blog.sidebar',
+  'profile.service',
   'ui.router'
 ])
 .config(function ($stateProvider, $locationProvider) {
@@ -23,6 +25,10 @@ angular.module('blog', [
         'blogSidebarView': {
           controller: 'SidebarController',
           templateUrl: '../../assets/partials/blog/sidebar.html'
+        },
+        'footerView': {
+          controller: 'FooterController',
+          templateUrl: '../../assets/partials/global/footer.html'
         }
       }
     });
