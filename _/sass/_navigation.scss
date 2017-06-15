@@ -10,7 +10,7 @@ nav {
     li {
       display: inline-block;
       font-size: 13px;
-      padding: 10px 5px;
+      padding: 10px 20px;
     }
 
     a {
@@ -25,6 +25,101 @@ nav {
       &:visited.selected {
         color: $accent;
       }
+    }
+  }
+}
+
+footer.global {
+  background-color: $charcoal;
+  min-height: 399px;
+  position: relative;
+
+  ul.social-icons {
+    background-color: $black;
+    border-top: 1px dotted $dove-grey;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    margin: -1;
+    padding: 15px 0 20px;
+    position: absolute;
+    width: 99%;
+
+    li {
+      background-color: transparent;
+      height: 34px;
+      line-height: 34px;
+      text-align: center;
+      width: 34px;
+      padding: 0 20px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+
+    a {
+      text-decoration: none;
+      width: 34px;
+    }
+
+    a:hover {
+      &::before {
+      color: $accent;
+      outline: none;
+      text-decoration: none;
+      }
+    }
+
+    a::before {
+      color: $dove-grey;
+      font-family: 'FontAwesome';
+      font-size: 34px;
+      padding: -1 0 0 5px;
+    }
+
+
+    a[href*='codepen']::before {
+      content: '\f1cb';
+    }
+
+    a[href*='dribble']::before {
+      content: '\f17d';
+    }
+
+    a[href*='facebook']::before {
+      content: '\f230';
+    }
+
+    a[href*='github']::before {
+      content: '\f09b';
+    }
+
+    a[href*='instagram']::before {
+      content: '\f16d';
+    }
+
+    a[href*='linkedin']::before {
+      content: '\f0e1';
+    }
+
+    a[href*='medium']::before {
+      content: '\f23a';
+    }
+
+    a[href*='pinterest']::before {
+      content: '\f0d2';
+    }
+
+    a[href*='twitter']::before {
+      content: '\f099';
+    }
+
+    a[href*='youtube']::before {
+      content: '\f167';
     }
   }
 }
