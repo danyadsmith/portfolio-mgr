@@ -22,9 +22,15 @@ module.exports = {
   },
 
   get: function (req, res) {
-    return sequelize.SocialMediaAccount.findAll({where: {UserId: req.user.id}, attributes: {
+    return sequelize.SocialMediaAccount.findAll({
+      where: {UserId: req.user.id},
+      attributes: {
         exclude: ['UserId', 'TypeId']
-      }})
+      },
+      order: [
+        ['siteName', 'ASC']
+      ]
+    })
       .then(function (profiles) {
         res.json(profiles);
       });
