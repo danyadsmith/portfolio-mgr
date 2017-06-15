@@ -1,9 +1,11 @@
 /* globals angular */
 
 angular.module('resume', [
+  'global.footer',
   'resume.main',
   'resume.about',
   'resume.service',
+  'profile.service',
   'ui.router'
 ])
 .config(function ($stateProvider, $locationProvider) {
@@ -24,6 +26,10 @@ angular.module('resume', [
         'resumeAboutView': {
           controller: 'AboutController',
           templateUrl: '../../assets/partials/resume/about.html'
+        },
+        'footerView': {
+          controller: 'FooterController',
+          templateUrl: '../../assets/partials/global/footer.html'
         }
       }
     });
