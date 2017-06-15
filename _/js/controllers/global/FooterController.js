@@ -1,6 +1,6 @@
 /* globals angular */
 
-angular.module('homepage.footer', [])
+angular.module('global.footer', [])
   .controller('FooterController', function ($scope, Profile) {
     $scope.name = 'Footer';
     $scope.data = {};

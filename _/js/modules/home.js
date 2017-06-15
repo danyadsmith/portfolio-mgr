@@ -1,11 +1,11 @@
 /* globals angular */
 
 angular.module('homepage', [
+  'global.footer',
   'homepage.main',
   'homepage.about',
   'homepage.blog',
   'homepage.portfolio',
-  'homepage.footer',
   'portfolio.service',
   'profile.service',
   'ui.router'
