@@ -1,9 +1,11 @@
 /* globals angular */
 
 angular.module('portfolio', [
+  'global.footer',
   'portfolio.main',
   'portfolio.service',
   'portfolio.gallery',
+  'profile.service',
   'ui.router'
 ])
 .config(function ($stateProvider, $locationProvider) {
@@ -25,6 +27,10 @@ angular.module('portfolio', [
         'portfolioGalleryView': {
           controller: 'GalleryController',
           templateUrl: '../../assets/partials/portfolio/gallery.html'
+        },
+        'footerView': {
+          controller: 'FooterController',
+          templateUrl: '../../assets/partials/global/footer.html'
         }
       }
     });
