@@ -1,0 +1,25 @@
+.home {
+  .about {
+    article {
+      padding: 100px 0;
+    }
+
+    header {
+      background-image: none;
+      height: auto;
+      margin: 50px 0;
+      padding-bottom: 50px;
+    }
+
+    img {
+      @include span(8 of 24);
+      min-height: 400px;
+    }
+
+    header,
+    p {
+      @include span(14 of 24);
+      margin: 0 0 0 span(2 of 24);
+    }
+  }
+}

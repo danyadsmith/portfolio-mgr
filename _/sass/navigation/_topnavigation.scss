@@ -1,0 +1,30 @@
+nav {
+  font-family: 'Poppins';
+  margin-top: 0;
+  text-transform: uppercase;
+
+  ul {
+    margin: 20px;
+    text-align: right;
+
+    li {
+      display: inline-block;
+      font-size: 13px;
+      padding: 10px 20px;
+    }
+
+    a {
+      color: $dove-grey;
+      padding: 0 10px;
+      text-decoration: none;
+
+      &:hover,
+      &:link.selected,
+      &:active.selected,
+      &:hover.selected,
+      &:visited.selected {
+        color: $accent;
+      }
+    }
+  }
+}
