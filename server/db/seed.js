@@ -41,10 +41,16 @@ var seedData = function () {
     firstName: 'Danya',
     middleName: 'D.',
     lastName: 'Smith',
+    displayName: 'Danya D. Smith',
     username: 'danyadsmith',
     email: 'danyadsmith@email.com',
     photoUrl: 'http://portfolio.pspu.ru/uploads/avatars/noimage.png',
     password: '$2a$10$17kLnuJc/J/KEvKCro6NVOPcOCld6/jD2zwX.SOwJZ4GNbzYnIOx6',
+    location: 'Metro Detroit',
+    desiredJobTitle: 'Full Stack Software Engineer',
+    seekingNewOpportunities: true,
+    willingToRelocate: false,
+    acceptingFreelanceWork: true,
     createdAt: new Date(),
     updatedAt: new Date()
   }))
@@ -139,10 +145,10 @@ var seedData = function () {
   ]))
   .then(() => console.log(chalk.magenta('Seeding Social Media Accounts')))
   .then(() => SocialMediaAccount.bulkCreate([
-    { siteName: 'Twitter', username: 'danyadsmith', profileUrl: 'https://twitter.com/danyadsmith', visible: true, UserId: 1},
-    { siteName: 'GitHub', username: 'danyadsmith', profileUrl: 'https://github.com/danyadsmith', visible: true, UserId: 1},
-    { siteName: 'CodePen', username: 'danyadsmith', profileUrl: 'https://codepen.io/danyadsmith/', visible: true, UserId: 1},
-    { siteName: 'LinkedIn', username: 'danyadsmith', profileUrl: 'https://www.linkedin.com/in/danyadsmith/', visible: true, UserId: 1}
+    { siteName: 'Twitter', username: 'danyadsmith', profileUrl: 'https://twitter.com/danyadsmith', visible: true, showOnResume: false, UserId: 1},
+    { siteName: 'GitHub', username: 'danyadsmith', profileUrl: 'https://github.com/danyadsmith', visible: true, showOnResume: true, UserId: 1},
+    { siteName: 'CodePen', username: 'danyadsmith', profileUrl: 'https://codepen.io/danyadsmith/', visible: true, showOnResume: false, UserId: 1},
+    { siteName: 'LinkedIn', username: 'danyadsmith', profileUrl: 'https://www.linkedin.com/in/danyadsmith/', visible: true, showOnResume: true, UserId: 1}
   ]))
   .then(() => console.log(chalk.magenta('Seeding Project Types')))
   .then(() => ProjectType.bulkCreate([

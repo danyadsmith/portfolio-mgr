@@ -54,7 +54,8 @@ var SocialMediaAccount = db.define('SocialMediaAccount', {
   siteName: Sequelize.STRING,
   username: Sequelize.STRING,
   profileUrl: Sequelize.STRING,
-  visible: Sequelize.BOOLEAN
+  visible: Sequelize.BOOLEAN,
+  showOnResume: Sequelize.BOOLEAN
 });
 
 var Portfolio = db.define('Portfolio', {
@@ -81,6 +82,7 @@ var User = db.define('User', {
   firstName: Sequelize.STRING,
   middleName: Sequelize.STRING,
   lastName: Sequelize.STRING,
+  displayName: Sequelize.STRING,
   address1: Sequelize.STRING,
   address2: Sequelize.STRING,
   city: Sequelize.STRING,
@@ -91,6 +93,10 @@ var User = db.define('User', {
   phone: Sequelize.STRING,
   email: Sequelize.STRING,
   photoUrl: Sequelize.STRING,
+  desiredJobTitle: Sequelize.STRING,
+  acceptingFreelanceWork: Sequelize.BOOLEAN,
+  seekingNewOpportunities: Sequelize.BOOLEAN,
+  willingToRelocate: Sequelize.BOOLEAN,
   username: Sequelize.STRING,
   password: Sequelize.STRING
 });
