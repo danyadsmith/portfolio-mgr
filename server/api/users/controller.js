@@ -6,7 +6,7 @@ module.exports = {
   param: function (req, res, next) {
     return sequelize.User.findById(req.params.userid, {
       attributes: {
-        exclude: ['password', 'address1', 'address2', 'city', 'stateProvince', 'country', 'postalCode', 'location', 'phone', 'email']
+        exclude: ['password', 'address1', 'address2', 'city', 'stateProvince', 'country', 'postalCode', 'phone', 'email']
       }
     })
       .then(function (data) {
@@ -23,8 +23,8 @@ module.exports = {
 
   get: function (req, res) {
     return sequelize.User.findAll({ attributes: {
-        exclude: ['password', 'address1', 'address2', 'city', 'stateProvince', 'country', 'postalCode', 'location', 'phone', 'email']
-      }})
+      exclude: ['password', 'address1', 'address2', 'city', 'stateProvince', 'country', 'postalCode', 'location', 'phone', 'email']
+    }})
       .then(function (users) {
         res.json(users);
       });
