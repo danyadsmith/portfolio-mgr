@@ -2,8 +2,10 @@
 
 angular.module('resume', [
   'global.footer',
+  'resume.header',
+  'resume.intro',
   'resume.main',
-  'resume.about',
+  'resume.sidebar',
   'resume.service',
   'profile.service',
   'ui.router'
@@ -20,12 +22,20 @@ angular.module('resume', [
       url: '/resume/',
       views: {
         'resumeHeaderView': {
-          controller: 'HomeController',
+          controller: 'HeaderController',
           templateUrl: '../../assets/partials/resume/header.html'
         },
-        'resumeAboutView': {
-          controller: 'AboutController',
-          templateUrl: '../../assets/partials/resume/about.html'
+        'resumeIntroView': {
+          controller: 'IntroController',
+          templateUrl: '../../assets/partials/resume/intro.html'
+        },
+        'resumeMainView': {
+          controller: 'MainController',
+          templateUrl: '../../assets/partials/resume/main.html'
+        },
+        'resumeSidebarView': {
+          controller: 'SidebarController',
+          templateUrl: '../../assets/partials/resume/sidebar.html'
         },
         'footerView': {
           controller: 'FooterController',

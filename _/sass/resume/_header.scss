@@ -1,0 +1,19 @@
+.resume {
+  .main {
+    header {
+      h1 {
+        font-size: 3.25em;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 1.8em;
+        margin-top: 0;
+      }
+
+      h2::after {
+        display: none;
+      }
+    }
+  }
+}

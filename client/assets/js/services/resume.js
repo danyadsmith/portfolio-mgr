@@ -4,6 +4,18 @@ angular.module('resume.service', [])
   .factory('Resume', function ($http) {
     var data;
 
+    var getUserData = function (userID) {
+      userID = userID || 1;
+      return $http({
+        method: 'GET',
+        url: '/api/users/' + userID
+      }).then(function (response) {
+        data = response.data;
+        console.log(JSON.stringify(data));
+        return data;
+      });
+    };
+
     var getCommunityService = function (userID) {
       userID = userID || 1;
       return $http({
@@ -65,6 +77,7 @@ angular.module('resume.service', [])
     };
 
     return {
+      getUserData: getUserData,
       getCommunityService: getCommunityService,
       getCredentials: getCredentials,
       getProjects: getProjects,
