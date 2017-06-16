@@ -4,7 +4,13 @@ angular.module('resume.sidebar', [])
   .controller('SidebarController', function ($scope, Resume) {
     $scope.name = 'Sidebar';
     $scope.data = {};
-    Resume.getUserData().then(function (userProfile) {
-      $scope.data.user = userProfile;
+    Resume.getCrednentials().then(function (credentials) {
+      $scope.data.credentials = credentials;
+    });
+    Resume.getSkills().then(function (skills) {
+      $scope.data.skills = skills;
+    });
+    Resume.getCommunityService().then(function (communityService) {
+      $scope.data.communityService = communityService;
     });
   });

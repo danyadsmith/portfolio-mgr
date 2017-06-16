@@ -1,5 +1,31 @@
+  <section>
   <h3>Work Experience</h3>
 
+  <article class="project" ng-controller="MainController" ng-repeat='project in data.projects' ng-if='project.type.name == "Work"'>
+    <h4>{{ project.title }} <span class="role">/ {{ project.role }}</span></h4>
+    <ul>
+      <li ng-repeat='bullet in project.highlights'>{{ bullet }}</li>
+    </ul>
+  </article>
+  </section>
+
+  <section>
   <h3>Open Source Projects</h3>
 
+  <article class="project" ng-controller="MainController" ng-repeat='project in data.projects' ng-if='project.type.name == "Open Source"'>
+    <h4>{{ project.title }} <span class="role">/ {{ project.role }}</span></h4>
+    <ul>
+      <li ng-repeat='bullet in project.highlights'>{{ bullet }}</li>
+    </ul>
+  </article>
+  </section>
+
+  <section>
   <h3>Work History</h3>
+
+  <p class="work-history" ng-controller="MainController" ng-repeat='job in data.workHistory'>
+    <span class="company">{{ job.employer }}</span>
+    {{ job.jobTitle }}
+    ({{ job.startDate | date: 'MMMM yyyy' }} - {{ (job.endDate | date: 'MMMM yyyy') || 'Present' }})
+  </p>
+  </section>

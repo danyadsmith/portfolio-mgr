@@ -9,6 +9,11 @@
         bottom: -10px;
       }
     }
+
+    article {
+      @include span(24 of 24);
+
+    }
   }
 
   article.main {
