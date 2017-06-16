@@ -12,9 +12,9 @@ em {
 
 h1 {
   color: $cod-grey;
-  font-family: 'Abril Fatface';
+  //font-family: 'Abril Fatface';
   font-size: 66px;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 h2,
@@ -60,4 +60,8 @@ h2::after {
   content: '   //';
   font-size: .75em;
   padding-left: 10px;
+}
+
+.highlight {
+  color: $accent;
 }

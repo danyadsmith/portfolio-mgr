@@ -1,5 +1,27 @@
+  <section>
   <h3>Education</h3>
+  <article class="credential" ng-controller="SidebarController" ng-repeat='credential in data.credentials' ng-if='credential.visible == true'>
+    <h4>
+      {{ credential.organization}}
+      <span class="year-completed">| {{ credential.dateCompleted | date: 'yyyy' }}</span>
+    </h4>
+    <p class="credential-title">{{ credential.credential }}</p>
+    <p class="degree-major" ng-if="credential.major">{{ credential.major }}</p>
+    <p class="degree-minor" ng-if="credential.minor">{{ credential.minor }}</p>
+  </article>
+  </section>
 
+  <section>
   <h3>Skills</h3>
 
+  <article class="skill-category" ng-controller="SidebarController" ng-repeat="skill in data.skills">
+    <h4>{{ skill.category.name }}</h4>
+    <p><span ng-repeat="skill">{{ skill }}</span></p>
+  </article>
+
+  </section>
+
+  <section>
   <h3>Community Service</h3>
+
+  </section>
