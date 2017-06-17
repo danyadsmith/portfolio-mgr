@@ -1,0 +1,23 @@
+article.skill {
+  h4 {
+    font-family: 'Pathway Gothic One';
+    font-size: 16px;
+    margin: 5px 0 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-family: 'Arial';
+    font-size: .85em;
+    margin: 5px 0;
+    text-align: left;
+  }
+
+  span::after {
+    content: ', ';
+  }
+
+  span:last-child::after {
+    content: '';
+  }
+}

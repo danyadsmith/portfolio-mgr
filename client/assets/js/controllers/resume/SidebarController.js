@@ -4,7 +4,7 @@ angular.module('resume.sidebar', [])
   .controller('SidebarController', function ($scope, Resume) {
     $scope.name = 'Sidebar';
     $scope.data = {};
-    Resume.getCrednentials().then(function (credentials) {
+    Resume.getCredentials().then(function (credentials) {
       $scope.data.credentials = credentials;
     });
     Resume.getSkills().then(function (skills) {

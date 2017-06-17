@@ -1,6 +1,7 @@
 /* globals angular */
 
 angular.module('resume', [
+  'angular.filter',
   'global.footer',
   'resume.header',
   'resume.intro',
