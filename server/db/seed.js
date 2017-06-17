@@ -57,7 +57,7 @@ var seedData = function () {
   .then(() => console.log(chalk.magenta('Seeding Categories')))
   .then(() => Category.bulkCreate([
     {name: 'Programming Languages'},
-    {name: 'Web'},
+    {name: 'Web Standards'},
     {name: 'Front-end Frameworks'},
     {name: 'Server-side Frameworks'},
     {name: 'Databases and ORMs'},
@@ -71,7 +71,7 @@ var seedData = function () {
   .then(() => console.log(chalk.magenta('Seeding Skills')))
   .then(() => Skill.bulkCreate([
     {UserId: 1, CategoryId: 1, name: 'C#', expertise: 1},
-    {UserId: 1, CategoryId: 1, name: 'Java', expertise: 1},
+    {UserId: 1, CategoryId: 1, name: 'JavaScript', expertise: 1},
     {UserId: 1, CategoryId: 1, name: 'Ruby', expertise: 0},
     {UserId: 1, CategoryId: 2, name: 'HTML', expertise: 1},
     {UserId: 1, CategoryId: 2, name: 'CSS', expertise: 1},
