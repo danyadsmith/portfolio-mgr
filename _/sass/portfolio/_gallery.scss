@@ -1,0 +1,44 @@
+.portfolio {
+  article {
+    border: 5px solid transparent;
+    margin-top: 100px;
+
+    &:nth-child(odd) img {
+      float: right;
+      margin-left: 50px;
+    }
+
+    &:nth-child(even) img {
+      float: left;
+      margin-right: 50px;
+    }
+
+    &:last-child {
+      margin-bottom: 100px;
+    }
+
+    a {
+      color: $tundora;
+      outline: none;
+      text-decoration: none;
+    }
+
+    h3 {
+      font-size: 32px;
+      line-height: 35px;
+      margin-top: 20px;
+    }
+
+    img {
+      border-bottom: 5px solid transparent;
+    }
+
+    &:hover h3 {
+      color: $accent;
+    }
+
+    &:hover img {
+      border-bottom: 5px solid $accent;
+    }
+  }
+}

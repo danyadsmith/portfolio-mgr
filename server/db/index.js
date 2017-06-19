@@ -62,7 +62,7 @@ var Portfolio = db.define('Portfolio', {
   title: Sequelize.STRING,
   image: Sequelize.STRING,
   url: Sequelize.STRING,
-  abstract: Sequelize.STRING
+  abstract: Sequelize.TEXT
 });
 
 var Blog = db.define('Blog', {
