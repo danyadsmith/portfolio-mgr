@@ -13,6 +13,7 @@
 
   <section>
   <h3>Skills</h3>
+  <h4>Experienced | <span class="exposed">Some Exposure</span></h4>
   <article class="skill" ng-controller="SidebarController" ng-repeat="(key, value) in data.skills | groupBy: 'category.name'">
     <h4>{{ key }}</h4>
     <p><span ng-repeat="skill in value" ng-class="{ experienced: skill.expertise, exposed: !skill.expertise }">{{ skill.name }}</span></p>

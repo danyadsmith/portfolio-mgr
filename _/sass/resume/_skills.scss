@@ -20,8 +20,15 @@ article.skill {
   span:last-child::after {
     content: '';
   }
+}
 
-  .exposed {
-    color: $silver;
-  }
+.exposed {
+  color: $silver;
+}
+
+section h4 {
+  font-family: 'Arial';
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
 }
