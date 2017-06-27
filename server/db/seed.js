@@ -56,17 +56,26 @@ var seedData = function () {
   }))
   .then(() => console.log(chalk.magenta('Seeding Categories')))
   .then(() => Category.bulkCreate([
-    {name: 'Programming Languages'},
-    {name: 'Web Standards'},
-    {name: 'Front-end Frameworks'},
-    {name: 'Server-side Frameworks'},
-    {name: 'Databases and ORMs'},
-    {name: 'UX and Design'},
-    {name: 'Project Management'},
-    {name: 'Business Software'},
-    {name: 'Other'},
-    {name: 'Project'},
-    {name: 'Process'}
+    {name: 'Programming Languages'}, // 1
+    {name: 'Web Standards'}, // 2
+    {name: 'Front-end Frameworks'}, // 3
+    {name: 'Server-side Frameworks'}, // 4
+    {name: 'Databases and ORMs'}, // 5
+    {name: 'UX and Design'}, // 6
+    {name: 'Project Management'}, // 7
+    {name: 'Business Software'}, // 8
+    {name: 'Other'}, // 9
+    {name: 'Project'}, // 10
+    {name: 'Process'}, // 11
+    {name: 'Code'}, // 12
+    {name: 'Frameworks'}, // 13
+    {name: 'Styling'}, // 14
+    {name: 'Markup'}, // 15
+    {name: 'Workflow'}, // 16
+    {name: 'Picks'}, // 17
+    {name: 'Books'}, // 18
+    {name: 'Resources'}, // 19
+    {name: 'Content'}, // 20
   ]))
   .then(() => console.log(chalk.magenta('Seeding Skills')))
   .then(() => Skill.bulkCreate([
@@ -205,5 +214,41 @@ var seedData = function () {
     { title: 'Project Name', image: 'http://via.placeholder.com/450X300', url: 'users/1/blog/4', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 11},
     { title: 'Project Name', image: 'http://via.placeholder.com/450X300', url: 'users/1/blog/5', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10},
     { title: 'Project Name', image: 'http://via.placeholder.com/450X300', url: 'users/1/blog/6', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 9 }
+  ]))
+  .then(() => console.log(chalk.magenta('Seeding Blog Posts')))
+  .then(() => Blog.bulkCreate([
+    { title: 'A Blog Post', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id efficitur leo, id lacinia elit. Sed vitae magna sed mauris hendrerit interdum vel a eros. Vivamus ac finibus magna, in ornare orci. Phasellus libero libero, laoreet vel purus vitae, iaculis hendrerit velit. Pellentesque odio ex, euismod a sem a, interdum fringilla sapien. Cras bibendum urna massa, eget rhoncus velit luctus in. Nulla facilisi. Nunc tincidunt lacus a diam eleifend, placerat posuere felis venenatis. Quisque sem nisl, vehicula vel elit a, tincidunt accumsan elit. Pellentesque cursus erat nec orci pellentesque efficitur. Etiam vitae auctor tellus. Suspendisse in est porttitor, ultricies libero elementum, auctor enim.
+
+Fusce porttitor quam sed dolor rutrum, vitae sodales arcu pellentesque. Proin et ligula ultricies, finibus augue eu, convallis diam. Nam ut sapien eget diam dictum iaculis ut vitae tellus. Suspendisse sit amet rutrum felis. Vivamus lorem turpis, facilisis eget arcu in, elementum ornare felis. In ultrices velit sed augue ultrices, nec facilisis mauris elementum. Fusce et eros in odio pharetra vehicula eu ac nunc. Phasellus sed fermentum mi. Aliquam congue velit pretium sapien dictum placerat. Pellentesque vehicula ligula massa, non scelerisque tellus viverra at.
+
+Sed ut diam nibh. Sed porta magna eros, a dignissim mauris porttitor eget. Sed tempus lacus quis dui condimentum, placerat iaculis nunc varius. Pellentesque pretium ultrices vulputate. In ut porttitor velit, ac congue dui. Nam magna orci, maximus at commodo quis, fringilla non nisl. Sed massa neque, pulvinar et ligula sit amet, rutrum eleifend lectus. Maecenas ultrices consequat hendrerit. Quisque non augue non est tristique pretium. Duis suscipit ipsum eu sapien consectetur tincidunt.
+
+Etiam elementum eros at ligula lobortis rhoncus. Integer eget cursus leo, eu tincidunt lacus. Phasellus posuere aliquet urna, vitae porta enim luctus at. Nam sit amet orci id urna ultrices tempor nec id mi. Nulla facilisi. Etiam et quam vel tortor consectetur condimentum. Quisque pharetra venenatis erat in tristique. Nam convallis est sit amet dictum blandit. Nunc ut est a justo varius hendrerit in at justo. Cras condimentum ex sit amet aliquam mollis.
+
+Aliquam interdum hendrerit sem et aliquet. Morbi non odio dignissim metus vestibulum porttitor. Vestibulum ornare blandit mi, quis consequat orci pellentesque ac. Duis sollicitudin risus non elit porttitor accumsan eget iaculis justo. Phasellus luctus auctor massa, quis venenatis tortor pellentesque a. Nam porttitor orci enim, eu ultrices magna ultricies ut. Donec vestibulum, eros eget ornare dictum, turpis purus vestibulum orci, at mattis mi arcu id turpis. Nullam id arcu tristique, viverra sem sed, tristique odio. Suspendisse a congue diam, in lacinia massa. Mauris maximus et odio at venenatis. Sed id ipsum ut nisl pellentesque vestibulum. Mauris in sodales ante.`, published: false, datePublished: '2017-06-27' },
+    { title: 'A Blog Post', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id efficitur leo, id lacinia elit. Sed vitae magna sed mauris hendrerit interdum vel a eros. Vivamus ac finibus magna, in ornare orci. Phasellus libero libero, laoreet vel purus vitae, iaculis hendrerit velit. Pellentesque odio ex, euismod a sem a, interdum fringilla sapien. Cras bibendum urna massa, eget rhoncus velit luctus in. Nulla facilisi. Nunc tincidunt lacus a diam eleifend, placerat posuere felis venenatis. Quisque sem nisl, vehicula vel elit a, tincidunt accumsan elit. Pellentesque cursus erat nec orci pellentesque efficitur. Etiam vitae auctor tellus. Suspendisse in est porttitor, ultricies libero elementum, auctor enim.
+
+Fusce porttitor quam sed dolor rutrum, vitae sodales arcu pellentesque. Proin et ligula ultricies, finibus augue eu, convallis diam. Nam ut sapien eget diam dictum iaculis ut vitae tellus. Suspendisse sit amet rutrum felis. Vivamus lorem turpis, facilisis eget arcu in, elementum ornare felis. In ultrices velit sed augue ultrices, nec facilisis mauris elementum. Fusce et eros in odio pharetra vehicula eu ac nunc. Phasellus sed fermentum mi. Aliquam congue velit pretium sapien dictum placerat. Pellentesque vehicula ligula massa, non scelerisque tellus viverra at.
+
+Sed ut diam nibh. Sed porta magna eros, a dignissim mauris porttitor eget. Sed tempus lacus quis dui condimentum, placerat iaculis nunc varius. Pellentesque pretium ultrices vulputate. In ut porttitor velit, ac congue dui. Nam magna orci, maximus at commodo quis, fringilla non nisl. Sed massa neque, pulvinar et ligula sit amet, rutrum eleifend lectus. Maecenas ultrices consequat hendrerit. Quisque non augue non est tristique pretium. Duis suscipit ipsum eu sapien consectetur tincidunt.
+
+Etiam elementum eros at ligula lobortis rhoncus. Integer eget cursus leo, eu tincidunt lacus. Phasellus posuere aliquet urna, vitae porta enim luctus at. Nam sit amet orci id urna ultrices tempor nec id mi. Nulla facilisi. Etiam et quam vel tortor consectetur condimentum. Quisque pharetra venenatis erat in tristique. Nam convallis est sit amet dictum blandit. Nunc ut est a justo varius hendrerit in at justo. Cras condimentum ex sit amet aliquam mollis.
+
+Aliquam interdum hendrerit sem et aliquet. Morbi non odio dignissim metus vestibulum porttitor. Vestibulum ornare blandit mi, quis consequat orci pellentesque ac. Duis sollicitudin risus non elit porttitor accumsan eget iaculis justo. Phasellus luctus auctor massa, quis venenatis tortor pellentesque a. Nam porttitor orci enim, eu ultrices magna ultricies ut. Donec vestibulum, eros eget ornare dictum, turpis purus vestibulum orci, at mattis mi arcu id turpis. Nullam id arcu tristique, viverra sem sed, tristique odio. Suspendisse a congue diam, in lacinia massa. Mauris maximus et odio at venenatis. Sed id ipsum ut nisl pellentesque vestibulum. Mauris in sodales ante.`, published: false, datePublished: '2017-06-27' },
+    { title: 'A Blog Post', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id efficitur leo, id lacinia elit. Sed vitae magna sed mauris hendrerit interdum vel a eros. Vivamus ac finibus magna, in ornare orci. Phasellus libero libero, laoreet vel purus vitae, iaculis hendrerit velit. Pellentesque odio ex, euismod a sem a, interdum fringilla sapien. Cras bibendum urna massa, eget rhoncus velit luctus in. Nulla facilisi. Nunc tincidunt lacus a diam eleifend, placerat posuere felis venenatis. Quisque sem nisl, vehicula vel elit a, tincidunt accumsan elit. Pellentesque cursus erat nec orci pellentesque efficitur. Etiam vitae auctor tellus. Suspendisse in est porttitor, ultricies libero elementum, auctor enim.
+
+Fusce porttitor quam sed dolor rutrum, vitae sodales arcu pellentesque. Proin et ligula ultricies, finibus augue eu, convallis diam. Nam ut sapien eget diam dictum iaculis ut vitae tellus. Suspendisse sit amet rutrum felis. Vivamus lorem turpis, facilisis eget arcu in, elementum ornare felis. In ultrices velit sed augue ultrices, nec facilisis mauris elementum. Fusce et eros in odio pharetra vehicula eu ac nunc. Phasellus sed fermentum mi. Aliquam congue velit pretium sapien dictum placerat. Pellentesque vehicula ligula massa, non scelerisque tellus viverra at.
+
+Sed ut diam nibh. Sed porta magna eros, a dignissim mauris porttitor eget. Sed tempus lacus quis dui condimentum, placerat iaculis nunc varius. Pellentesque pretium ultrices vulputate. In ut porttitor velit, ac congue dui. Nam magna orci, maximus at commodo quis, fringilla non nisl. Sed massa neque, pulvinar et ligula sit amet, rutrum eleifend lectus. Maecenas ultrices consequat hendrerit. Quisque non augue non est tristique pretium. Duis suscipit ipsum eu sapien consectetur tincidunt.
+
+Etiam elementum eros at ligula lobortis rhoncus. Integer eget cursus leo, eu tincidunt lacus. Phasellus posuere aliquet urna, vitae porta enim luctus at. Nam sit amet orci id urna ultrices tempor nec id mi. Nulla facilisi. Etiam et quam vel tortor consectetur condimentum. Quisque pharetra venenatis erat in tristique. Nam convallis est sit amet dictum blandit. Nunc ut est a justo varius hendrerit in at justo. Cras condimentum ex sit amet aliquam mollis.
+
+Aliquam interdum hendrerit sem et aliquet. Morbi non odio dignissim metus vestibulum porttitor. Vestibulum ornare blandit mi, quis consequat orci pellentesque ac. Duis sollicitudin risus non elit porttitor accumsan eget iaculis justo. Phasellus luctus auctor massa, quis venenatis tortor pellentesque a. Nam porttitor orci enim, eu ultrices magna ultricies ut. Donec vestibulum, eros eget ornare dictum, turpis purus vestibulum orci, at mattis mi arcu id turpis. Nullam id arcu tristique, viverra sem sed, tristique odio. Suspendisse a congue diam, in lacinia massa. Mauris maximus et odio at venenatis. Sed id ipsum ut nisl pellentesque vestibulum. Mauris in sodales ante.`, published: true, datePublished: '2017-06-27' }
+  ]))
+  .then(() => console.log(chalk.magenta('Seeding Blog Categories')))
+  .then(() => BlogCategory.bulkCreate([
+    { BlogId: 1, CategoryId: 12 },
+    { BlogId: 2, CategoryId: 13 },
+    { BlogId: 3, CategoryId: 20 }
   ]));
 };
