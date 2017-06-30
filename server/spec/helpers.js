@@ -10,7 +10,10 @@ module.exports = {
     {name: 'Project Management'},
     {name: 'Business Software'},
     {name: 'Other'},
-    {name: 'Content Management Systems'}
+    {name: 'Content Management Systems'},
+    {name: 'Code'},
+    {name: 'Content'},
+    {name: 'Resources'}
   ],
   skills: [
     {UserId: 1, CategoryId: 1, name: 'C#', expertise: 1},
@@ -38,6 +41,13 @@ module.exports = {
     {title: 'Grid-Based Web Design: A History', published: false, UserId: 1},
     {title: 'Color Management Strategies in Sass', published: true, datePublished:'2017-05-21', UserId: 1},
     {title: 'Managing Environment Variables in Node.js', published: true, datePublished:'2017-04-21', UserId: 1}
+  ],
+  blogCategories: [
+    { BlogId: 1, CategoryId: 5 },
+    { BlogId: 2, CategoryId: 5 },
+    { BlogId: 3, CategoryId: 6 },
+    { BlogId: 3, CategoryId: 7 },
+    { BlogId: 3, CategoryId: 13 }
   ],
   credentials: [
     {organization: 'Oakland University', school: 'School of Business Administration',credential: 'Bachelor of Arts', major: 'Management Information Systems', minor: 'Applied Technology in Business', dateCompleted: '2003-04-26', UserId: 1, visible: true},

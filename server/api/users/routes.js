@@ -14,6 +14,7 @@ router.route('/:userid')
   .delete(controller.delete);
 
 router.use('/:userid/blogs', require('./blogs/routes'));
+router.use('/:userid/blogcategories', require('./blogcategories/routes'));
 router.use('/:userid/credentials', require('./credentials/routes'));
 router.use('/:userid/jobs', require('./jobs/routes'));
 router.use('/:userid/portfolios', require('./portfolios/routes'));
