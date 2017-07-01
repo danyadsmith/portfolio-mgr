@@ -7,9 +7,9 @@ const request = require('supertest');
 const expect = require('chai').expect;
 
 describe('[BLOG CATEGORIES]   /api/users/:id/blogcategories/', function () {
-
   describe('Creates a blog category in the database', function () {
     it('should POST a new blog category', function (done) {
+      this.timeout(5000);
       request(app)
         .post('api/users/1/blogcategories')
         .set('Accept', 'application/json')
@@ -18,6 +18,7 @@ describe('[BLOG CATEGORIES]   /api/users/:id/blogcategories/', function () {
         .expect(200)
         .end(function (err, resp) {
           var blogCategory = resp.body;
+          //console.log(chalk.yellow(JSON.stringify(blogCategory)));
           expect(blogCategory).to.be.an('object');
           expect(blogCategory.BlogId).to.eql(1);
           expect(blogCategory.CategoryId).to.eql(5);
@@ -67,22 +68,6 @@ describe('[BLOG CATEGORIES]   /api/users/:id/blogcategories/', function () {
         .end(function (err, resp) {
           var blogCategory = resp.body;
           expect(blogCategory).to.be.an('object');
-          expect(blogCategory.BlogId).to.eql(4);
-          expect(blogCategory.CategoryId).to.eql(7);
-          done();
-        });
-    });
-
-    it('should POST a new blog category', function (done) {
-      request(app)
-        .post('/api/users/1/blogcategories')
-        .set('Accept', 'application/json')
-        .send(helpers.blogCategories[4])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var blogCategory = resp.body;
-          expect(blogCategory).to.be.an('object');
           expect(blogCategory.BlogId).to.eql(5);
           expect(blogCategory.CategoryId).to.eql(13);
           done();
@@ -91,7 +76,7 @@ describe('[BLOG CATEGORIES]   /api/users/:id/blogcategories/', function () {
   });
 
   describe('Retrieves a blog category from the database', function () {
-    it('should GET a blog by ID', function (done) {
+    it('should GET a blog category by ID', function (done) {
       request(app)
         .get('api/users/1/blogcategories/1')
         .set('Accept', 'application/json')
@@ -106,7 +91,7 @@ describe('[BLOG CATEGORIES]   /api/users/:id/blogcategories/', function () {
     });
   });
 
-  describe('Retrieves all blog categories from the database', function () {
+  describe('Retrieves all blog categories for posts created by a specific user', function () {
     it('should GET all blog categories', function (done) {
       this.timeout(3500);
       request(app)
@@ -132,7 +117,7 @@ describe('[BLOG CATEGORIES]   /api/users/:id/blogcategories/', function () {
         .end(function (err, resp) {
           var blogCategories = resp.body;
           expect(blogCategories).to.be.an('array');
-          expect(blogCategories[0].name).to.eql(5);
+          expect(blogCategories[0].name).to.be.below(blogCategories[1].name);
           done();
         });
     });
@@ -142,7 +127,7 @@ describe('[BLOG CATEGORIES]   /api/users/:id/blogcategories/', function () {
     it('should DELETE a blog category', function (done) {
       this.timeout(3500);
       request(app)
-        .delete('api/users/1/blogcategories/4')
+        .delete('api/users/1/blogcategories/')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200)
@@ -155,7 +140,7 @@ describe('[BLOG CATEGORIES]   /api/users/:id/blogcategories/', function () {
     });
   });
 
-  describe('Retrieves all blog categories from the database', function () {
+  describe('Retrieves all blog categories for posts created by a specific user', function () {
     it('should GET all blog categories', function (done) {
       request(app)
         .get('api/users/1/blogcategories')
@@ -165,7 +150,7 @@ describe('[BLOG CATEGORIES]   /api/users/:id/blogcategories/', function () {
         .end(function (err, resp) {
           var blogCategories = resp.body;
           expect(blogCategories).to.be.an('array');
-          expect(blogCategories.length).to.eql(4);
+          expect(blogCategories.length).to.eql(3);
           done();
         });
     });

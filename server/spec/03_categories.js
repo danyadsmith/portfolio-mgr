@@ -158,6 +158,51 @@ describe('[CATEGORIES]   /api/categories/', function () {
           done();
         });
     });
+
+    it('should POST a new category', function (done) {
+      request(app)
+        .post('/api/categories')
+        .set('Accept', 'application/json')
+        .send(helpers.categories[10])
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end(function (err, resp) {
+          var category = resp.body;
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Code');
+          done();
+        });
+    });
+
+    it('should POST a new category', function (done) {
+      request(app)
+        .post('/api/categories')
+        .set('Accept', 'application/json')
+        .send(helpers.categories[11])
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end(function (err, resp) {
+          var category = resp.body;
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Content');
+          done();
+        });
+    });
+
+    it('should POST a new category', function (done) {
+      request(app)
+        .post('/api/categories')
+        .set('Accept', 'application/json')
+        .send(helpers.categories[12])
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end(function (err, resp) {
+          var category = resp.body;
+          expect(category).to.be.an('object');
+          expect(category.name).to.eql('Resources');
+          done();
+        });
+    });
   });
 
   describe('Retrieves a category from the database', function () {
@@ -187,7 +232,7 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .end(function(err, resp) {
           var categories = resp.body;
           expect(categories).to.be.an('array');
-          expect(categories.length).to.eql(10);
+          expect(categories.length).to.eql(13);
           done();
         });
     });2
@@ -220,7 +265,7 @@ describe('[CATEGORIES]   /api/categories/', function () {
         .end(function(err, resp) {
           var categories = resp.body;
           expect(categories).to.be.an('array');
-          expect(categories.length).to.eql(9);
+          expect(categories.length).to.eql(12);
           done();
         });
     });

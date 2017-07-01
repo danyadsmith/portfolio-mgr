@@ -43,11 +43,10 @@ module.exports = {
     {title: 'Managing Environment Variables in Node.js', published: true, datePublished:'2017-04-21', UserId: 1}
   ],
   blogCategories: [
-    { BlogId: 1, CategoryId: 5 },
+    { BlogId: 1, CategoryId: 4 },
     { BlogId: 2, CategoryId: 5 },
     { BlogId: 3, CategoryId: 6 },
-    { BlogId: 3, CategoryId: 7 },
-    { BlogId: 3, CategoryId: 13 }
+    { BlogId: 5, CategoryId: 13 }
   ],
   credentials: [
     {organization: 'Oakland University', school: 'School of Business Administration',credential: 'Bachelor of Arts', major: 'Management Information Systems', minor: 'Applied Technology in Business', dateCompleted: '2003-04-26', UserId: 1, visible: true},

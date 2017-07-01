@@ -12,7 +12,7 @@ module.exports = {
           //console.log(req.category);
           next();
         } else {
-          var error = new Error('There is no category category with that id');
+          var error = new Error('There is no blog category with that id');
           next(error);
         }
       });
@@ -51,7 +51,7 @@ module.exports = {
       console.log(chalk.white('Current category:', JSON.stringify(req.category, null, 2)));
       console.log(chalk.blue('New category:', JSON.stringify(req.body, null, 2)));
     }
-    return sequelize.BlogCategory.findById(req.params.id)
+    return sequelize.BlogCategory.findOne(req.body)
       .then(function (category) {
         return category.updateAttributes(req.body)
           .then(function (category) {
@@ -68,7 +68,7 @@ module.exports = {
 
   delete: function (req, res) {
     //console.log(req.category);
-    return sequelize.BlogCategory.findById(req.params.id)
+    return sequelize.BlogCategory.findOne(req.body)
       .then(function (category) {
         return category.destroy()
         .then(function () {
