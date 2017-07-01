@@ -46,28 +46,8 @@ module.exports = {
       });
   },
 
-  put: function (req, res) {
-    if (config.log.debug) {
-      console.log(chalk.white('Current category:', JSON.stringify(req.category, null, 2)));
-      console.log(chalk.blue('New category:', JSON.stringify(req.body, null, 2)));
-    }
-    return sequelize.BlogCategory.findOne(req.body)
-      .then(function (category) {
-        return category.updateAttributes(req.body)
-          .then(function (category) {
-            res.status(200).send(category);
-          })
-          .catch(function (error) {
-            res.status(400).send(error);
-          });
-      })
-      .catch(function (error) {
-        res.status(400).send(error);
-      });
-  },
-
   delete: function (req, res) {
-    //console.log(req.category);
+    console.log(req.body);
     return sequelize.BlogCategory.findOne(req.body)
       .then(function (category) {
         return category.destroy()

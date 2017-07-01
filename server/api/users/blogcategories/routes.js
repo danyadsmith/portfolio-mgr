@@ -6,11 +6,10 @@ router.param('id', controller.param);
 
 router.route('/')
   .get(controller.get)
-  .post(controller.post);
+  .post(controller.post)
+  .delete(controller.delete);
 
 router.route('/:id')
-  .get(controller.one)
-  .put(controller.put)
-  .delete(controller.delete);
+  .get(controller.one);
 
 module.exports = router;

@@ -156,20 +156,4 @@ describe('[BLOG CATEGORIES]   /api/users/:id/blogcategories/', function () {
     });
   });
 
-  describe('Updates a blog category in the database', function () {
-    it('should PUT updates for a blog category into the database', function (done) {
-      request(app)
-        .put('api/users/1/blogcategories/1')
-        .set('Accept', 'application/json')
-        .send(helpers.blogCategoryUpdates[0])
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .end(function (err, resp) {
-          var blogCategory = resp.body;
-          expect(blogCategory).to.be.an('object');
-          expect(blogCategory.title).to.eql('From SQL to NoSQL: Getting Started with MongoDB and Mongoose');
-          done();
-        });
-    });
-  });
 });

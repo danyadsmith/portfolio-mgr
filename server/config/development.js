@@ -1,8 +1,8 @@
 module.exports = {
   url: 'http://localhost',
   log: {
-    debug    : false,
-    info     : false
+    debug    : true,
+    info     : true
   },
   db: {
     dialect  : 'postgres',
