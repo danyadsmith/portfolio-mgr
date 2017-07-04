@@ -1,1 +1,4 @@
-
+  <h3>Categories</h3>
+  <ul class="categories" ng-controller="BlogSidebarController">
+    <li ng-repeat='category in data.categories'><a href="/blog/categories/{{ category.id }}">{{ category.name }}</a></li>
+  </ul>

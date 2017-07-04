@@ -1,0 +1,19 @@
+<div class="post" ng-controller="BlogMainController" ng-repeat='post in data.posts' ng-if="post.published">
+  <header>
+  <h2>{{ post.title }}</h2>
+  <h3>
+    <span class="author">{{ post.author.displayName }}</span>
+  </h3>
+  </header>
+  <md ng-model="post.body"></md>
+  <footer>
+    <h3>
+      <span class="date">{{ post.datePublished | date: 'dd MMMM yyyy' }}</span>
+      <span class="categories">
+        <span class="category" ng-repeat='category in post.Categories'>
+          <a href="/blog/categories/{{ category.id }}">{{ category.name }}</a>
+        </span>
+      </span>
+    </h3>
+  </footer>
+</div>

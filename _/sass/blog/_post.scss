@@ -1,0 +1,116 @@
+.post {
+  h2 {
+    color: $black;
+    font-size: 32px;
+    margin-bottom: 5px;
+    text-transform: none;
+  }
+
+  h2::after {
+    display: none;
+  }
+
+  h3 {
+    border-bottom: 1px solid $alto;
+    border-top: 1px solid $alto;
+    color: $dusty;
+    font-size: 12px;
+    font-weight: normal;
+    margin: .5em 0 1em;
+    padding: 3px 0;
+
+    span.date::before {
+      // color: $accent;
+      content: '\f133';
+      font-family: 'FontAwesome';
+      margin-right: 5px;
+    }
+
+    span.author {
+      &::before {
+        // content: '\f007';
+        content: 'by';
+        font-family: 'Poppins';
+        font-style: normal;
+        margin-right: 5px;
+      }
+    }
+
+    span.categories {
+      margin: 0 25px;
+
+      &::before {
+        // color: $accent;
+        content: '\f02c';
+        font-family: 'FontAwesome';
+        margin-right: 5px;
+      }
+    }
+
+    span.category {
+      margin: 2px;
+
+      &::after {
+        content: ', ';
+      }
+
+      &:last-child::after {
+        content: '';
+      }
+
+      a:link,
+      a:visited {
+        color: inherit;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:active {
+        color: $accent;
+      }
+    }
+  }
+
+  header {
+    h3 {
+      border-top: 0;
+      font-size: 14px;
+    }
+  }
+
+  [ng-model='post.body'] {
+    a {
+      color: $silver;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:active,
+    a:hover {
+      color: $accent;
+    }
+
+    blockquote {
+      background-color: lighten($accent, 50%);
+      margin: 0;
+      padding: 10px 50px;
+
+      > p {
+        margin-top: 0;
+      }
+
+      &::before {
+        content: '\f10d';
+        font-family: 'FontAwesome';
+        font-size: 20px;
+        font-style: normal;
+        left: -30px;
+        position: relative;
+        top: 20px;
+      }
+    }
+
+  }
+
+}

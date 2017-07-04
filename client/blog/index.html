@@ -5,9 +5,12 @@
   <title>Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
-  <script src=' https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js'></script>
+  <script src='/bower_components/angular-md/dist/angular-md.min.js'></script>
+  <script src='/bower_components/marked/lib/marked.js'></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <link href='../assets/css/main.css' rel='stylesheet' />
+  <link href='../assets/css/blog.css' rel='stylesheet' />
   </head>
   <body class="blog">
   <nav>
@@ -22,15 +25,21 @@
   <div ng-app="blog">
   <section class="header" ui-view="blogHeaderView">
   </section>
-  <section class="about" ui-view="blogAboutView">
+  <section class="page">
+  <section class="main" ui-view="blogMainView">
+  </section>
+  <section class="sidebar" ui-view="blogSidebarView">
+  </section>
   </section>
   <footer class="global" ui-view="footerView">
   </footer>
   </div>
-  <script src='../assets/js/controllers/blog/AboutController.js'></script>
+  <script src='../assets/js/controllers/blog/SidebarController.js'></script>
+  <script src='../assets/js/controllers/blog/MainController.js'></script>
   <script src='../assets/js/controllers/blog/HomeController.js'></script>
   <script src='../assets/js/controllers/global/FooterController.js'></script>
   <script src='../assets/js/modules/blog.js'></script>
+  <script src='../assets/js/services/blog.js'></script>
   <script src='../assets/js/services/profile.js'></script>
   <script id="__bs_script__">
     //<![CDATA[

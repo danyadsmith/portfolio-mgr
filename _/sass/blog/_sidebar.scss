@@ -1,0 +1,39 @@
+.sidebar {
+  h3::after {
+    border-bottom: 1px solid $accent;
+    border-top: 1px solid $accent;
+    bottom: -5px;
+    content: '';
+    display: block;
+    height: 3px;
+    left: 0;
+    position: relative;
+    width: 20px;
+  }
+
+  ul.categories {
+    list-style: none;
+    padding: 10px 0;
+
+    li {
+      padding: 10px 0;
+      border-bottom: 1px solid $alto;
+
+      a:link,
+      a:visited {
+        color: inherit;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:active {
+        color: $accent;
+      }
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+  }
+}

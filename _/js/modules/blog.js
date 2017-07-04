@@ -2,10 +2,13 @@
 
 angular.module('blog', [
   'global.footer',
+  'blog.home',
   'blog.main',
   'blog.sidebar',
+  'blog.service',
   'profile.service',
-  'ui.router'
+  'ui.router',
+  'yaru22.md'
 ])
 .config(function ($stateProvider, $locationProvider) {
   $locationProvider
@@ -23,8 +26,12 @@ angular.module('blog', [
           templateUrl: '../../assets/partials/blog/header.html'
         },
         'blogSidebarView': {
-          controller: 'SidebarController',
+          controller: 'BlogSidebarController',
           templateUrl: '../../assets/partials/blog/sidebar.html'
+        },
+        'blogMainView': {
+          controller: 'BlogMainController',
+          templateUrl: '../../assets/partials/blog/main.html'
         },
         'footerView': {
           controller: 'FooterController',

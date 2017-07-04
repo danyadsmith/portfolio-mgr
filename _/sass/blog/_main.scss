@@ -1,0 +1,17 @@
+.blog {
+  @include container;
+
+  section.page {
+    margin: 100px 0;
+
+    section.main {
+      @include prefix(1 of 24 first);
+      @include span(16 of 24);
+      @include suffix(1 of 24);
+    }
+
+    section.sidebar {
+      @include span(6 of 24 last);
+    }
+  }
+}
