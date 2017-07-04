@@ -51,6 +51,14 @@ footer.global {
     }
 
 
+    a[href*='angel']::before {
+      content: '\f209';
+    }
+
+    a[href*='behance']::before {
+      content: '\f1b4';
+    }
+
     a[href*='codepen']::before {
       content: '\f1cb';
     }
@@ -81,6 +89,22 @@ footer.global {
 
     a[href*='pinterest']::before {
       content: '\f0d2';
+    }
+
+    a[href*='slideshare']::before {
+      content: '\f1b4';
+    }
+
+    a[href*='snapchat']::before {
+      content: '\f2ab';
+    }
+
+    a[href*='stackoverflow']::before {
+      content: '\f16c';
+    }
+
+    a[href*='tumblr']::before {
+      content: '\f173';
     }
 
     a[href*='twitter']::before {
