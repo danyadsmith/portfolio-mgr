@@ -113,7 +113,7 @@ var Setting = db.define('Setting', {
   enableSignup: Sequelize.BOOLEAN
 });
 
-Category.belongsToMany(Blog, {through: BlogCategory, onDelete: 'CASCADE'});
+Blog.belongsToMany(Category, {through: BlogCategory, onDelete: 'CASCADE'});
 Skill.belongsTo(Category, {as: 'category', foreignKey: 'CategoryId'});
 Blog.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Skill.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
@@ -124,7 +124,7 @@ CommunityService.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 SocialMediaAccount.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Portfolio.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Portfolio.belongsTo(Category, {as: 'category', foreignKey: 'CategoryId'});
-Blog.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+Blog.belongsTo(User, {as: 'author', foreignKey: 'UserId'});
 Project.belongsTo(ProjectType, {as: 'type', foreignKey: 'TypeId'});
 
 db.sync({force: config.db.sync}).then(function () {
