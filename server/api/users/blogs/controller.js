@@ -4,7 +4,21 @@ const sequelize = require('../../../db');
 
 module.exports = {
   param: function (req, res, next) {
-    return sequelize.Blog.findById(req.params.id)
+    return sequelize.Blog.findById(req.params.id, {
+      include: [
+        {
+          model: sequelize.User,
+          attributes: ['firstName', 'middleName', 'lastName', 'displayName'],
+          as: 'author'
+        },
+        {
+          model: sequelize.Category
+        }
+      ],
+      attributes: {
+        exclude: ['UserId']
+      }
+    })
       .then(function (data) {
         if (data) {
           req.blog = data.dataValues;
@@ -18,9 +32,22 @@ module.exports = {
   },
 
   get: function (req, res) {
-    return sequelize.Blog.findAll({where: {UserId: req.user.id}, attributes: {
-        exclude: ['UserId', 'TypeId']
-      }})
+    return sequelize.Blog.findAll({
+      where: { UserId: req.user.id },
+      include: [
+        {
+          model: sequelize.User,
+          attributes: ['firstName', 'middleName', 'lastName', 'displayName'],
+          as: 'author'
+        },
+        {
+          model: sequelize.Category
+        }
+      ],
+      attributes: {
+        exclude: ['UserId']
+      }
+    })
       .then(function (blogs) {
         //console.log(req.user.id);
         res.json(blogs);
