@@ -114,18 +114,17 @@ var Setting = db.define('Setting', {
 });
 
 Blog.belongsToMany(Category, {through: BlogCategory, onDelete: 'CASCADE'});
-Skill.belongsTo(Category, {as: 'category', foreignKey: 'CategoryId'});
-Blog.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
-Skill.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+Blog.belongsTo(User, {as: 'author', foreignKey: 'UserId'});
+CommunityService.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Credential.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Job.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
-Project.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
-CommunityService.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
-SocialMediaAccount.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Portfolio.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Portfolio.belongsTo(Category, {as: 'category', foreignKey: 'CategoryId'});
-Blog.belongsTo(User, {as: 'author', foreignKey: 'UserId'});
+Project.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 Project.belongsTo(ProjectType, {as: 'type', foreignKey: 'TypeId'});
+Skill.belongsTo(Category, {as: 'category', foreignKey: 'CategoryId'});
+Skill.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
+SocialMediaAccount.belongsTo(User, {as: 'user', foreignKey: 'UserId'});
 
 db.sync({force: config.db.sync}).then(function () {
   if (config.log.info) {

@@ -251,6 +251,7 @@ Aliquam interdum hendrerit sem et aliquet. Morbi non odio dignissim metus vestib
     { BlogId: 2, CategoryId: 13 },
     { BlogId: 3, CategoryId: 3 },
     { BlogId: 3, CategoryId: 16 },
-    { BlogId: 3, CategoryId: 18 }
+    { BlogId: 3, CategoryId: 18 },
+    { BlogId: 3, CategoryId: 13 }
   ]));
 };
