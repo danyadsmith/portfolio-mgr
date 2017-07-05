@@ -51,67 +51,67 @@ footer.global {
     }
 
 
-    a[href*='angel']::before {
+    [href*='angel']::before {
       content: '\f209';
     }
 
-    a[href*='behance']::before {
+    [href*='behance']::before {
       content: '\f1b4';
     }
 
-    a[href*='codepen']::before {
+    [href*='codepen']::before {
       content: '\f1cb';
     }
 
-    a[href*='dribble']::before {
+    [href*='dribble']::before {
       content: '\f17d';
     }
 
-    a[href*='facebook']::before {
+    [href*='facebook']::before {
       content: '\f230';
     }
 
-    a[href*='github']::before {
+    [href*='github']::before {
       content: '\f09b';
     }
 
-    a[href*='instagram']::before {
+    [href*='instagram']::before {
       content: '\f16d';
     }
 
-    a[href*='linkedin']::before {
+    [href*='linkedin']::before {
       content: '\f0e1';
     }
 
-    a[href*='medium']::before {
+    [href*='medium']::before {
       content: '\f23a';
     }
 
-    a[href*='pinterest']::before {
+    [href*='pinterest']::before {
       content: '\f0d2';
     }
 
-    a[href*='slideshare']::before {
+    [href*='slideshare']::before {
       content: '\f1b4';
     }
 
-    a[href*='snapchat']::before {
+    [href*='snapchat']::before {
       content: '\f2ab';
     }
 
-    a[href*='stackoverflow']::before {
+    [href*='stackoverflow']::before {
       content: '\f16c';
     }
 
-    a[href*='tumblr']::before {
+    [href*='tumblr']::before {
       content: '\f173';
     }
 
-    a[href*='twitter']::before {
+    [href*='twitter']::before {
       content: '\f099';
     }
 
-    a[href*='youtube']::before {
+    [href*='youtube']::before {
       content: '\f167';
     }
   }
