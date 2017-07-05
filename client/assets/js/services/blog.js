@@ -4,11 +4,10 @@ angular.module('blog.service', [])
   .factory('Blog', function ($http) {
     var data;
 
-    var getBlogCategories = function (userID) {
-      userID = userID || 1;
+    var getBlogCategories = function () {
       return $http({
         method: 'GET',
-        url: '/api/users/' + userID + '/blogcategories'
+        url: '/api/blogs/categories'
       }).then(function (response) {
         data = response.data;
         console.log(JSON.stringify(data));
@@ -16,11 +15,21 @@ angular.module('blog.service', [])
       });
     };
 
-    var getBlogPosts = function (userID) {
-      userID = userID || 1;
+    var getBlogPostsByCategory = function () {
       return $http({
         method: 'GET',
-        url: '/api/users/' + userID + '/blogs'
+        url: '/api/blogs/categories/:id'
+      }).then(function (response) {
+        data = response.data;
+        console.log(JSON.stringify(data));
+        return data;
+      });
+    };
+
+    var getBlogPosts = function () {
+      return $http({
+        method: 'GET',
+        url: '/api/blogs/posts'
       }).then(function (response) {
         data = response.data;
         console.log(JSON.stringify(data));
@@ -30,6 +39,7 @@ angular.module('blog.service', [])
 
     return {
       getBlogCategories: getBlogCategories,
-      getBlogPosts: getBlogPosts
+      getBlogPosts: getBlogPosts,
+      getBlogPostsByCategory: getBlogPostsByCategory
     };
   });
