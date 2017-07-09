@@ -1,5 +1,6 @@
 var db    = require('./index');
 var chalk = require('chalk');
+var helpers = require('./seedHelpers');
 
 var User = db.User;
 var Category = db.Category;
@@ -217,33 +218,31 @@ var seedData = function () {
   ]))
   .then(() => console.log(chalk.magenta('Seeding Blog Posts')))
   .then(() => Blog.bulkCreate([
-    { title: 'A Blog Post', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id efficitur leo, id lacinia elit. Sed vitae magna sed mauris hendrerit interdum vel a eros. Vivamus ac finibus magna, in ornare orci. Phasellus libero libero, laoreet vel purus vitae, iaculis hendrerit velit. Pellentesque odio ex, euismod a sem a, interdum fringilla sapien. Cras bibendum urna massa, eget rhoncus velit luctus in. Nulla facilisi. Nunc tincidunt lacus a diam eleifend, placerat posuere felis venenatis. Quisque sem nisl, vehicula vel elit a, tincidunt accumsan elit. Pellentesque cursus erat nec orci pellentesque efficitur. Etiam vitae auctor tellus. Suspendisse in est porttitor, ultricies libero elementum, auctor enim.
-
-Fusce porttitor quam sed dolor rutrum, vitae sodales arcu pellentesque. Proin et ligula ultricies, finibus augue eu, convallis diam. Nam ut sapien eget diam dictum iaculis ut vitae tellus. Suspendisse sit amet rutrum felis. Vivamus lorem turpis, facilisis eget arcu in, elementum ornare felis. In ultrices velit sed augue ultrices, nec facilisis mauris elementum. Fusce et eros in odio pharetra vehicula eu ac nunc. Phasellus sed fermentum mi. Aliquam congue velit pretium sapien dictum placerat. Pellentesque vehicula ligula massa, non scelerisque tellus viverra at.
-
-Sed ut diam nibh. Sed porta magna eros, a dignissim mauris porttitor eget. Sed tempus lacus quis dui condimentum, placerat iaculis nunc varius. Pellentesque pretium ultrices vulputate. In ut porttitor velit, ac congue dui. Nam magna orci, maximus at commodo quis, fringilla non nisl. Sed massa neque, pulvinar et ligula sit amet, rutrum eleifend lectus. Maecenas ultrices consequat hendrerit. Quisque non augue non est tristique pretium. Duis suscipit ipsum eu sapien consectetur tincidunt.
-
-Etiam elementum eros at ligula lobortis rhoncus. Integer eget cursus leo, eu tincidunt lacus. Phasellus posuere aliquet urna, vitae porta enim luctus at. Nam sit amet orci id urna ultrices tempor nec id mi. Nulla facilisi. Etiam et quam vel tortor consectetur condimentum. Quisque pharetra venenatis erat in tristique. Nam convallis est sit amet dictum blandit. Nunc ut est a justo varius hendrerit in at justo. Cras condimentum ex sit amet aliquam mollis.
-
-Aliquam interdum hendrerit sem et aliquet. Morbi non odio dignissim metus vestibulum porttitor. Vestibulum ornare blandit mi, quis consequat orci pellentesque ac. Duis sollicitudin risus non elit porttitor accumsan eget iaculis justo. Phasellus luctus auctor massa, quis venenatis tortor pellentesque a. Nam porttitor orci enim, eu ultrices magna ultricies ut. Donec vestibulum, eros eget ornare dictum, turpis purus vestibulum orci, at mattis mi arcu id turpis. Nullam id arcu tristique, viverra sem sed, tristique odio. Suspendisse a congue diam, in lacinia massa. Mauris maximus et odio at venenatis. Sed id ipsum ut nisl pellentesque vestibulum. Mauris in sodales ante.`, published: false, datePublished: '2017-06-27', UserId: 1 },
-    { title: 'A Blog Post', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id efficitur leo, id lacinia elit. Sed vitae magna sed mauris hendrerit interdum vel a eros. Vivamus ac finibus magna, in ornare orci. Phasellus libero libero, laoreet vel purus vitae, iaculis hendrerit velit. Pellentesque odio ex, euismod a sem a, interdum fringilla sapien. Cras bibendum urna massa, eget rhoncus velit luctus in. Nulla facilisi. Nunc tincidunt lacus a diam eleifend, placerat posuere felis venenatis. Quisque sem nisl, vehicula vel elit a, tincidunt accumsan elit. Pellentesque cursus erat nec orci pellentesque efficitur. Etiam vitae auctor tellus. Suspendisse in est porttitor, ultricies libero elementum, auctor enim.
-
-Fusce porttitor quam sed dolor rutrum, vitae sodales arcu pellentesque. Proin et ligula ultricies, finibus augue eu, convallis diam. Nam ut sapien eget diam dictum iaculis ut vitae tellus. Suspendisse sit amet rutrum felis. Vivamus lorem turpis, facilisis eget arcu in, elementum ornare felis. In ultrices velit sed augue ultrices, nec facilisis mauris elementum. Fusce et eros in odio pharetra vehicula eu ac nunc. Phasellus sed fermentum mi. Aliquam congue velit pretium sapien dictum placerat. Pellentesque vehicula ligula massa, non scelerisque tellus viverra at.
-
-Sed ut diam nibh. Sed porta magna eros, a dignissim mauris porttitor eget. Sed tempus lacus quis dui condimentum, placerat iaculis nunc varius. Pellentesque pretium ultrices vulputate. In ut porttitor velit, ac congue dui. Nam magna orci, maximus at commodo quis, fringilla non nisl. Sed massa neque, pulvinar et ligula sit amet, rutrum eleifend lectus. Maecenas ultrices consequat hendrerit. Quisque non augue non est tristique pretium. Duis suscipit ipsum eu sapien consectetur tincidunt.
-
-Etiam elementum eros at ligula lobortis rhoncus. **Integer eget cursus leo, eu tincidunt lacus.** Phasellus posuere aliquet urna, vitae porta enim luctus at. Nam sit amet orci id urna ultrices tempor nec id mi. Nulla facilisi. Etiam et quam vel tortor consectetur condimentum. Quisque pharetra venenatis erat in tristique. Nam convallis est sit amet dictum blandit. Nunc ut est a justo varius hendrerit in at justo. Cras condimentum ex sit amet aliquam mollis.
-
-Aliquam interdum hendrerit sem et aliquet. Morbi non odio dignissim metus vestibulum porttitor. Vestibulum ornare blandit mi, quis consequat orci pellentesque ac. Duis sollicitudin risus non elit porttitor accumsan eget iaculis justo. Phasellus luctus auctor massa, quis venenatis tortor pellentesque a. Nam porttitor orci enim, eu ultrices magna ultricies ut. Donec vestibulum, eros eget ornare dictum, turpis purus vestibulum orci, at mattis mi arcu id turpis. Nullam id arcu tristique, viverra sem sed, tristique odio. Suspendisse a congue diam, in lacinia massa. Mauris maximus et odio at venenatis. Sed id ipsum ut nisl pellentesque vestibulum. Mauris in sodales ante.`, published: true, datePublished: '2017-06-27', UserId: 1 },
-    { title: 'A Blog Post', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id efficitur leo, id lacinia elit. Sed vitae magna sed mauris hendrerit interdum vel a eros. Vivamus ac finibus magna, in ornare orci. Phasellus libero libero, laoreet vel purus vitae, iaculis hendrerit velit. Pellentesque odio ex, euismod a sem a, interdum fringilla sapien. Cras bibendum urna massa, eget rhoncus velit luctus in. Nulla facilisi. Nunc tincidunt lacus a diam eleifend, placerat posuere felis venenatis. Quisque sem nisl, vehicula vel elit a, tincidunt accumsan elit. Pellentesque cursus erat nec orci pellentesque efficitur. Etiam vitae auctor tellus. Suspendisse in est porttitor, ultricies libero elementum, auctor enim.
-
-Fusce porttitor quam sed _dolor rutrum_, vitae sodales arcu pellentesque. Proin et ligula ultricies, finibus augue eu, convallis diam. Nam ut sapien eget diam dictum iaculis ut vitae tellus. Suspendisse sit amet rutrum felis. Vivamus lorem turpis, facilisis eget arcu in, elementum ornare felis. In ultrices velit sed augue ultrices, nec facilisis mauris elementum. Fusce et eros in odio pharetra vehicula eu ac nunc. Phasellus sed fermentum mi. Aliquam congue velit pretium sapien dictum placerat. Pellentesque vehicula ligula massa, non scelerisque tellus viverra at.
-
-> Sed ut diam nibh. Sed porta magna eros, a dignissim mauris porttitor eget. Sed tempus lacus quis dui condimentum, placerat iaculis nunc varius. Pellentesque pretium ultrices vulputate. In ut porttitor velit, ac congue dui. Nam magna orci, maximus at commodo quis, fringilla non nisl. Sed massa neque, pulvinar et ligula sit amet, rutrum eleifend lectus. Maecenas ultrices consequat hendrerit. Quisque non augue non est tristique pretium. Duis suscipit ipsum eu sapien consectetur tincidunt.
-
-[Etiam elementum](http://www.google.com) eros at ligula lobortis rhoncus. Integer eget cursus leo, eu tincidunt lacus. Phasellus posuere aliquet urna, vitae porta enim luctus at. Nam sit amet orci id urna ultrices tempor nec id mi. Nulla facilisi. Etiam et quam vel tortor consectetur condimentum. Quisque pharetra venenatis erat in tristique. Nam convallis est sit amet dictum blandit. Nunc ut est a justo varius hendrerit in at justo. Cras condimentum ex sit amet aliquam mollis.
-
-Aliquam interdum hendrerit sem et aliquet. Morbi non odio dignissim metus vestibulum porttitor. Vestibulum ornare blandit mi, quis consequat orci pellentesque ac. Duis sollicitudin risus non elit porttitor accumsan eget iaculis justo. Phasellus luctus auctor massa, quis venenatis tortor pellentesque a. Nam porttitor orci enim, eu ultrices magna ultricies ut. Donec vestibulum, eros eget ornare dictum, turpis purus vestibulum orci, at mattis mi arcu id turpis. Nullam id arcu tristique, viverra sem sed, tristique odio. Suspendisse a congue diam, in lacinia massa. Mauris maximus et odio at venenatis. Sed id ipsum ut nisl pellentesque vestibulum. Mauris in sodales ante.`, published: true, datePublished: '2017-06-27', UserId: 1 }
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-19', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-20', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-21', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-22', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[1]['complex'], published: true, datePublished: '2017-06-23', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-24', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-25', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-26', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: false, datePublished: '2017-06-27', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[1]['complex'], published: true, datePublished: '2017-06-28', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-29', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-30', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-01', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-02', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[1]['complex'], published: true, datePublished: '2017-07-02', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-03', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-04', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-05', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-06', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[1]['complex'], published: true, datePublished: '2017-07-07', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-08', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-09', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-10', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-11', UserId: 1 },
+    { title: 'A Blog Post', body: helpers.blogPosts[1]['complex'], published: true, datePublished: '2017-07-12', UserId: 1 }
   ]))
   .then(() => console.log(chalk.magenta('Seeding Blog Categories')))
   .then(() => BlogCategory.bulkCreate([
@@ -252,6 +251,38 @@ Aliquam interdum hendrerit sem et aliquet. Morbi non odio dignissim metus vestib
     { BlogId: 3, CategoryId: 3 },
     { BlogId: 3, CategoryId: 16 },
     { BlogId: 3, CategoryId: 18 },
-    { BlogId: 3, CategoryId: 13 }
+    { BlogId: 3, CategoryId: 13 },
+    { BlogId: 4, CategoryId: 2 },
+    { BlogId: 5, CategoryId: 1 },
+    { BlogId: 6, CategoryId: 3 },
+    { BlogId: 7, CategoryId: 4 },
+    { BlogId: 8, CategoryId: 5 },
+    { BlogId: 9, CategoryId: 6 },
+    { BlogId: 9, CategoryId: 7 },
+    { BlogId: 10, CategoryId: 8 },
+    { BlogId: 11, CategoryId: 17 },
+    { BlogId: 12, CategoryId: 18 },
+    { BlogId: 12, CategoryId: 19 },
+    { BlogId: 13, CategoryId: 12 },
+    { BlogId: 14, CategoryId: 14 },
+    { BlogId: 15, CategoryId: 15 },
+    { BlogId: 15, CategoryId: 16 },
+    { BlogId: 16, CategoryId: 16 },
+    { BlogId: 17, CategoryId: 17 },
+    { BlogId: 18, CategoryId: 17 },
+    { BlogId: 19, CategoryId: 18 },
+    { BlogId: 20, CategoryId: 18 },
+    { BlogId: 20, CategoryId: 19 },
+    { BlogId: 21, CategoryId: 20 },
+    { BlogId: 21, CategoryId: 7 },
+    { BlogId: 22, CategoryId: 6 },
+    { BlogId: 22, CategoryId: 5 },
+    { BlogId: 22, CategoryId: 4 },
+    { BlogId: 23, CategoryId: 3 },
+    { BlogId: 23, CategoryId: 2 },
+    { BlogId: 23, CategoryId: 1 },
+    { BlogId: 24, CategoryId: 1 },
+    { BlogId: 25, CategoryId: 1 },
+    { BlogId: 25, CategoryId: 2 },
   ]));
 };
