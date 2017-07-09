@@ -27,8 +27,8 @@ module.exports = {
   },
 
   get: function (req, res) {
-    var limit = req.query.limit || 3;
-    var offset = req.query.page * limit - limit || 0;
+    let limit = req.query.limit || 3;
+    let offset = req.query.page * limit - limit || 0;
 
     return sequelize.Blog.findAndCountAll({
       where: { published: true },
@@ -50,7 +50,9 @@ module.exports = {
       ]
     })
       .then(function (blogs) {
-        //console.log(req.user.id);
+        blogs.limit = limit;
+        blogs.offset = offset;
+        blogs.page = req.query.page || 1;
         res.json(blogs);
       });
   }

@@ -38,5 +38,5 @@ angular.module('blog', [
           templateUrl: '../../assets/partials/global/footer.html'
         }
       }
-    })
+    });
 });
