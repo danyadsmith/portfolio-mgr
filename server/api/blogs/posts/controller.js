@@ -27,7 +27,14 @@ module.exports = {
   },
 
   get: function (req, res) {
-    return sequelize.Blog.findAll({
+    var limit = req.query.limit || 3;
+    var offset = req.query.page * limit - limit || 0;
+
+    return sequelize.Blog.findAndCountAll({
+      where: { published: true },
+      limit: limit,
+      offset: offset,
+      distinct: true,
       include: [
         {
           model: sequelize.User,
@@ -38,9 +45,6 @@ module.exports = {
           model: sequelize.Category
         }
       ],
-      attributes: {
-        exclude: ['UserId']
-      },
       order: [
         [ 'datePublished', 'DESC']
       ]
