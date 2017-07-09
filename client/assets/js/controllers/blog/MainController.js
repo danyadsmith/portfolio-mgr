@@ -5,6 +5,6 @@ angular.module('blog.main', [])
     $scope.name = 'Blog';
     $scope.data = {};
     Blog.getBlogPosts().then(function (posts) {
-      $scope.data.posts = posts;
+      $scope.data.posts = posts.rows;
     });
   });

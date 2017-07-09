@@ -26,10 +26,10 @@ angular.module('blog.service', [])
       });
     };
 
-    var getBlogPosts = function () {
+    var getBlogPosts = function (limit=3, offset=0) {
       return $http({
         method: 'GET',
-        url: '/api/blogs/posts'
+        url: '/api/blogs/posts?limit=' + limit + '&offset=' + offset
       }).then(function (response) {
         data = response.data;
         console.log(JSON.stringify(data));
