@@ -17,3 +17,10 @@
     </h3>
   </footer>
 </div>
+<footer ng-controller="BlogMainController">
+  Post Count: {{ data.count }}<br>
+  Page Count: {{ data.pages.length }}
+  <ul ng-repeat="page in data.pages">
+    <li><a ng-init="limit = data.limit" ng-click="loadData(page * limit)">{{page + 1}}</a></li>
+  </ul>
+</footer>
