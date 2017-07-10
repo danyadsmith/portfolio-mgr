@@ -1,4 +1,4 @@
-<div class="post" ng-controller="BlogMainController" ng-repeat='post in data.posts' ng-if="post.published">
+<div class="post" ng-controller="BlogController" ng-repeat='post in data.posts | filter:{Categories: {name: filterOnName}}' ng-if="post.published">
   <header>
   <h2>{{ post.title }}</h2>
   <h3>
@@ -17,10 +17,10 @@
     </h3>
   </footer>
 </div>
-<footer ng-controller="BlogMainController">
+<footer ng-controller="BlogController">
   Post Count: {{ data.count }}<br>
   Page Count: {{ data.pages.length }}
   <ul ng-repeat="page in data.pages">
-    <li><a ng-init="limit = data.limit" ng-click="loadData(page * limit)">{{page + 1}}</a></li>
+    <li><a ng-init="limit = data.limit" ng-click="loadData({{page * limit}})">{{page + 1}}</a></li>
   </ul>
 </footer>
