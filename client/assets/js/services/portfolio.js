@@ -11,7 +11,7 @@ angular.module('portfolio.service', [])
         url: '/api/users/' + userID + '/portfolios'
       }).then(function (response) {
         data = response.data;
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         return data;
       });
     };

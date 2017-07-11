@@ -24,14 +24,7 @@ section {
     }
   }
 
-  article {
-    @include span(16 of 24);
-    margin: 0 span(4 of 24);
 
-    p {
-      text-align: justify;
-    }
-  }
 
 }
 

@@ -11,7 +11,7 @@ angular.module('resume.service', [])
         url: '/api/users/' + userID
       }).then(function (response) {
         data = response.data;
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         return data;
       });
     };
@@ -23,7 +23,7 @@ angular.module('resume.service', [])
         url: '/api/users/' + userID + '/services'
       }).then(function (response) {
         data = response.data;
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         return data;
       });
     };
@@ -35,7 +35,7 @@ angular.module('resume.service', [])
         url: '/api/users/' + userID + '/credentials'
       }).then(function (response) {
         data = response.data;
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         return data;
       });
     };
@@ -47,7 +47,7 @@ angular.module('resume.service', [])
         url: '/api/users/' + userID + '/projects'
       }).then(function (response) {
         data = response.data;
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         return data;
       });
     };
@@ -59,7 +59,7 @@ angular.module('resume.service', [])
         url: '/api/users/' + userID + '/skills'
       }).then(function (response) {
         data = response.data;
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         return data;
       });
     };
@@ -71,7 +71,7 @@ angular.module('resume.service', [])
         url: '/api/users/' + userID + '/jobs'
       }).then(function (response) {
         data = response.data;
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         return data;
       });
     };

@@ -11,7 +11,7 @@ angular.module('profile.service', [])
         url: '/api/users/' + userID + '/profiles'
       }).then(function (response) {
         data = response.data;
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         return data;
       });
     };
