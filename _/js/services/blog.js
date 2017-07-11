@@ -10,7 +10,7 @@ angular.module('blog.service', [])
         url: '/api/blogs/categories'
       }).then(function (response) {
         data = response.data;
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         return data;
       });
     };
@@ -21,7 +21,7 @@ angular.module('blog.service', [])
         url: '/api/blogs/categories/:id'
       }).then(function (response) {
         data = response.data;
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         return data;
       });
     };
@@ -32,7 +32,7 @@ angular.module('blog.service', [])
         url: '/api/blogs/posts?limit=' + limit + '&offset=' + offset
       }).then(function (response) {
         data = response.data;
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         return data;
       });
     };
