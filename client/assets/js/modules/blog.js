@@ -3,6 +3,7 @@
 angular.module('blog', [
   'global.footer',
   'blog.main',
+  'blog.pagination',
   'blog.service',
   'profile.service',
   'ui.router',
@@ -20,7 +21,7 @@ angular.module('blog', [
       url: '/blog/',
       views: {
         'blogHeaderView': {
-          controller: 'HomeController',
+          //controller: 'HomeController',
           templateUrl: '../../assets/partials/blog/header.html'
         },
         'blogSidebarView': {
@@ -30,6 +31,10 @@ angular.module('blog', [
         'blogMainView': {
           controller: 'BlogController',
           templateUrl: '../../assets/partials/blog/main.html'
+        },
+        'blogPaginationView': {
+          controller: 'BlogController',
+          templateUrl: '../../assets/partials/blog/pagination.html'
         },
         'footerView': {
           controller: 'FooterController',

@@ -1,4 +1,18 @@
-<div class="post" ng-controller="BlogController" ng-repeat='post in data.posts | filter:{Categories: {name: filterOnName}}' ng-if="post.published">
+<header>
+  <h3 ng-if="filterOnName">
+    Category: <strong>{{ filterOnName }}</strong>
+    <span class="post-count">
+      <ng-pluralize count="filtered.length"
+        when="{
+          '0': '0 posts',
+          '1': '1 post',
+          'other': '{{ filtered.length }} posts'}">
+      </ng-pluralize>
+    </span>
+  </h3>
+</header>
+<div class="post" ng-repeat='post in filtered = (data.posts | filter:{Categories: {name: filterOnName}})' ng-if="post.published">
+<article>
   <header>
   <h2>{{ post.title }}</h2>
   <h3>
@@ -16,11 +30,5 @@
       </span>
     </h3>
   </footer>
+</article>
 </div>
-<footer ng-controller="BlogController">
-  Post Count: {{ data.count }}<br>
-  Page Count: {{ data.pages.length }}
-  <ul ng-repeat="page in data.pages">
-    <li><a ng-init="limit = data.limit" ng-click="loadData({{page * limit}})">{{page + 1}}</a></li>
-  </ul>
-</footer>

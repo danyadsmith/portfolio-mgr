@@ -13,4 +13,39 @@
       @include span(6 of 24 last);
     }
   }
+
+  header {
+    [ng-if="filterOnName"] {
+      color: $silver;
+
+      &::after {
+        border-bottom: 1px solid $accent;
+        border-top: 1px solid $accent;
+        bottom: -5px;
+        content: '';
+        display: block;
+        height: 3px;
+        left: 0;
+        position: relative;
+        width: 20px;
+      }
+
+      strong {
+        color: $charcoal;
+      }
+    }
+
+  }
+
+  .post-count {
+    border: 1px solid $gallery;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 0 $gallery;
+    color: $accent;
+    font-size: .5em;
+    font-weight: normal;
+    padding: 1px 5px;
+    position: relative;
+    top: -5px;
+  }
 }

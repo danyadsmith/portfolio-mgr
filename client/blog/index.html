@@ -23,22 +23,25 @@
     </ul>
   </nav>
   <div ng-app="blog">
+  <a href="#top"></a>
   <section class="header" ui-view="blogHeaderView">
   </section>
-  <section class="page">
-  <section class="main" ui-view="blogMainView">
-  </section>
-  <section class="sidebar" ui-view="blogSidebarView">
-  </section>
+  <section class="page" ng-controller="BlogController">
+    <section class="main">
+      <section ui-view="blogMainView"></section>
+      <footer ui-view="blogPaginationView"></footer>
+    </section>
+    <section class="sidebar" ui-view="blogSidebarView"></section>
   </section>
   <footer class="global" ui-view="footerView">
   </footer>
   </div>
   <script src='../assets/js/controllers/blog/MainController.js'></script>
+  <script src='../assets/js/controllers/blog/PaginationController.js'></script>
   <script src='../assets/js/controllers/global/FooterController.js'></script>
-  <script src='../assets/js/modules/blog.js'></script>
   <script src='../assets/js/services/blog.js'></script>
   <script src='../assets/js/services/profile.js'></script>
+  <script src='../assets/js/modules/blog.js'></script>
   <script id="__bs_script__">
     //<![CDATA[
     document.write('<script async src=\'http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12\'><\/script>'.replace('HOST', location.hostname));
