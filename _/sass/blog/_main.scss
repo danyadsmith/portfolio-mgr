@@ -38,10 +38,11 @@
   }
 
   .post-count {
-    border: 1px solid $gallery;
+    background-color: $accent;
+    border: 0;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 0 $gallery;
-    color: $accent;
+    color: $white;
     font-size: .5em;
     font-weight: normal;
     padding: 1px 5px;
