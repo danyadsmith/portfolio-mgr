@@ -25,7 +25,7 @@
       <span class="date">{{ post.datePublished | date: 'dd MMMM yyyy' }}</span>
       <span class="categories">
         <span class="category" ng-repeat='category in post.Categories'>
-          <a href="/blog/categories/{{ category.id }}">{{ category.name }}</a>
+          <a href="#top" ng-click="filterByCategory(category)">{{ category.name }}</a>
         </span>
       </span>
     </h3>
