@@ -44,43 +44,56 @@
     }
 
     footer {
+      align-items: center;
       background-image: url('../img/concrete_seamless.png');
       color: $accent;
-      height: 171px;
+      display: flex;
+      flex-wrap: wrap;
+      height: 170px;
+      justify-content: space-around;
 
       ul {
+        align-items: center;
         display: flex;
+        flex-wrap: wrap;
+        height: 80%;
         justify-content: space-around;
         list-style: none;
         margin: 0;
-        padding: 50px 150px 0;
-        position: relative;
+        padding: 0;
+        width: 100%;
       }
 
       li {
         color: $mineshaft;
         font-size: 13px;
-        height: 2em;
-        padding-left: 10px;
-        padding-top: 30px;
+        height: 40px;
         text-transform: uppercase;
-        width: 220px;
+        width: 250px;
 
-        span.number {
+        span.number,
+        span.heading {
           color: $accent;
+          display: block;
           font-size: 30px;
           font-weight: 100;
-          position: absolute;
-          top: 70px;
+          padding-bottom: 2px;
+        }
+
+        span.subheading {
+          display: block;
         }
       }
 
       li::before {
         color: $accent;
+        float: left;
         font-family: 'FontAwesome';
-        font-size: 3.15em;
-        margin-bottom: 5px;
+        font-size: 3.2em;
+        margin: 10px 3px;
         padding-right: 8px;
+        text-align: center;
+        width: 40px;
       }
     }
 
@@ -98,6 +111,22 @@
 
     li.education::before {
       content: '\f19d';
+    }
+
+    li.for-hire::before {
+      content: '\f0f7';
+    }
+
+    li.relocation::before {
+      content: '\f0d1';
+    }
+
+    li.freelance::before {
+      content: '\f0b1';
+    }
+
+    li.location::before {
+      content: '\f041';
     }
   }
 }
