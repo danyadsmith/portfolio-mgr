@@ -1,0 +1,8 @@
+[ui-view='contactFormView'] {
+  @include container;
+  padding: 50px 20%;
+}
+
+fieldset {
+  @include container;
+}

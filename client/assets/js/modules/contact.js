@@ -22,6 +22,10 @@ angular.module('contact', [
           controller: 'HomeController',
           templateUrl: '../../assets/partials/contact/header.html'
         },
+        'contactFrontMatterView': {
+          controller: 'HomeController',
+          templateUrl: '../../assets/partials/contact/frontmatter.html'
+        },
         'contactFormView': {
           controller: 'FormController',
           templateUrl: '../../assets/partials/contact/form.html'
