@@ -13,8 +13,8 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-  background-color: $accent;
-  border: .1rem solid $accent;
+  background-color: $dove;
+  border: .1rem solid $dove;
   border-radius: .4rem;
   color: $white;
   cursor: pointer;
@@ -40,8 +40,8 @@ input[type='reset']:focus,
 input[type='reset']:hover,
 input[type='submit']:focus,
 input[type='submit']:hover {
-  background-color: $dove;
-  border-color: $dove;
+  background-color: $accent;
+  border-color: $accent;
   color: $white;
   outline: 0;
 }
