@@ -27,13 +27,8 @@ module.exports = {
   },
 
   get: function (req, res) {
-    // let limit = req.query.limit || 3;
-    // let offset = req.query.page * limit - limit || 0;
-
     return sequelize.Blog.findAndCountAll({
       where: { published: true },
-      // limit: limit,
-      // offset: offset,
       distinct: true,
       include: [
         {
@@ -50,9 +45,37 @@ module.exports = {
       ]
     })
       .then(function (blogs) {
-        // blogs.limit = limit;
-        // blogs.offset = offset;
-        // blogs.page = req.query.page || 1;
+        res.json(blogs);
+      });
+  },
+
+  limit: function (req, res) {
+    let limit = req.params.limit || 3;
+    let offset = req.params.page * limit - limit || 0;
+
+    return sequelize.Blog.findAndCountAll({
+      where: { published: true },
+      limit: limit,
+      offset: offset,
+      distinct: true,
+      include: [
+        {
+          model: sequelize.User,
+          attributes: ['firstName', 'middleName', 'lastName', 'displayName'],
+          as: 'author'
+        },
+        {
+          model: sequelize.Category
+        }
+      ],
+      order: [
+        [ 'datePublished', 'DESC']
+      ]
+    })
+      .then(function (blogs) {
+        blogs.limit = limit;
+        blogs.offset = offset;
+        blogs.page = req.query.page || 1;
         res.json(blogs);
       });
   }
