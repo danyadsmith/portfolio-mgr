@@ -67,6 +67,7 @@ var Portfolio = db.define('Portfolio', {
 
 var Blog = db.define('Blog', {
   title: Sequelize.STRING,
+  teaser: Sequelize.STRING,
   body: Sequelize.TEXT,
   published: Sequelize.BOOLEAN,
   datePublished: Sequelize.DATE,

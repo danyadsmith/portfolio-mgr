@@ -210,18 +210,14 @@ var seedData = function () {
   ]))
   .then(() => console.log(chalk.magenta('Seeding Portfolio')))
   .then(() => Portfolio.bulkCreate([
-    { title: 'Project Name', image: 'http://via.placeholder.com/450X300', url: 'users/1/blog/1', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10},
-    { title: 'Project Name', image: 'http://via.placeholder.com/450X300', url: 'users/1/blog/2', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 11},
-    { title: 'Project Name', image: 'http://via.placeholder.com/450X300', url: 'users/1/blog/3', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10},
-    { title: 'Project Name', image: 'http://via.placeholder.com/450X300', url: 'users/1/blog/4', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 11},
-    { title: 'Project Name', image: 'http://via.placeholder.com/450X300', url: 'users/1/blog/5', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10},
-    { title: 'Project Name', image: 'http://via.placeholder.com/450X300', url: 'users/1/blog/6', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 9 }
+    { title: 'Singular Brand', image: 'http://via.placeholder.com/450X300', url: 'http://localhost:8080/blog/posts/?id=10', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10},
+    { title: 'Scope Hero', image: 'http://via.placeholder.com/450X300', url: 'http://localhost:8080/blog/posts/?id=9', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10}
   ]))
   .then(() => console.log(chalk.magenta('Seeding Blog Posts')))
   .then(() => Blog.bulkCreate([
-    { title: 'The Elements of Style for Developers', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2016-12-19', UserId: 1 },
+    { title: 'Color Mixing and Color Management in Sass', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2016-12-19', UserId: 1 },
     { title: 'Review: ng-admin', body: helpers.blogPosts[0]['simple'], published: false, datePublished: '2017-06-20', UserId: 1 },
-    { title: 'Architecting Solutions in AngularJS', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-21', UserId: 1 },
+    { title: 'Architecting Solutions in AngularJS', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2016-11-21', UserId: 1 },
     { title: 'Review: GitHub Issues CLI', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-22', UserId: 1 },
     { title: 'Git Workflows for Distributed Teams', body: helpers.blogPosts[1]['complex'], published: true, datePublished: '2017-06-23', UserId: 1 },
     { title: 'Getting Started with React', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-06-24', UserId: 1 },
@@ -241,13 +237,13 @@ var seedData = function () {
     { title: 'From SQL to NoSQL: Two Ways to Model and Seed a MongoDB Database', body: helpers.blogPosts[1]['complex'], published: true, datePublished: '2017-07-07', UserId: 1, mediumUrl: 'https://medium.com/p/770743a14910/edit' },
     { title: 'Working Through the n-Queens Problem: Thoughts on Recursion', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-08', UserId: 1 },
     { title: 'JavaScript String Methods: Review', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-09', UserId: 1 },
-    { title: 'JavaScript Array Methods: Review', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-10', UserId: 1 },
-    { title: 'Getting Started with Higher-Order Functions', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-11', UserId: 1 },
-    { title: 'Color Mixing and Color Management in Sass', body: helpers.blogPosts[1]['complex'], published: true, datePublished: '2017-07-12', UserId: 1 }
+    { title: 'JavaScript Array Methods: Review', teaser: 'Seventy-five percent of learning JavaScript involves mastering Array methods.', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-10', UserId: 1 },
+    { title: 'Getting Started with Higher-Order Functions', teaser: 'On functions that accept or return other functions as a means to creating modular, readable code.', body: helpers.blogPosts[0]['simple'], published: true, datePublished: '2017-07-11', UserId: 1 },
+    { title: 'The Elements of Style for Developers', teaser: 'As a college-bound teenager, I wanted to become a writer. I didn’t know at the time that I would later become a writer of code. Some of the seminal advice given to writers of words is just as applicable to writers of software.', body: helpers.blogPosts[1]['complex'], published: true, datePublished: '2017-07-12', UserId: 1 }
   ]))
   .then(() => console.log(chalk.magenta('Seeding Blog Categories')))
   .then(() => BlogCategory.bulkCreate([
-    { BlogId: 1, CategoryId: 12 },
+    { BlogId: 1, CategoryId: 6 },
     { BlogId: 2, CategoryId: 12 },
     { BlogId: 3, CategoryId: 3 },
     { BlogId: 3, CategoryId: 16 },
@@ -284,7 +280,6 @@ var seedData = function () {
     { BlogId: 23, CategoryId: 12 },
     { BlogId: 24, CategoryId: 12 },
     { BlogId: 25, CategoryId: 16 },
-    { BlogId: 25, CategoryId: 14 },
-    { BlogId: 25, CategoryId: 6 }
+    { BlogId: 25, CategoryId: 12 }
   ]));
 };
