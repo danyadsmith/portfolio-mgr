@@ -40,7 +40,7 @@
     span.date::before {
       // color: $accent;
       content: '\f133';
-      font-family: 'FontAwesome';
+      font-family: $icon-font;
       margin-right: 5px;
     }
 
@@ -48,30 +48,30 @@
       &::before {
         // content: '\f007';
         content: 'by';
-        font-family: 'Poppins';
+        font-family: $sans-font;
         font-style: normal;
         margin-right: 5px;
       }
     }
 
     span.categories {
-      margin: 0 25px;
+      margin: 0 0 0 25px;
 
       &::before {
         // color: $accent;
         content: '\f02c';
-        font-family: 'FontAwesome';
+        font-family: $icon-font;
         margin-right: 5px;
       }
     }
 
     span.comment {
-      margin: 0 25px;
+      margin: 0 0 0 25px;
 
       &::before {
         // color: $accent;
         content: '\f27b';
-        font-family: 'FontAwesome';
+        font-family: $icon-font;
         margin-right: 5px;
       }
     }
@@ -123,22 +123,28 @@
 
     blockquote {
       background-color: lighten($accent, 50%);
+      font-family: $sans-font;
       margin: 0;
       padding: 10px 50px;
 
       > p {
+        font-family: $sans-font;
         margin-top: 0;
       }
 
       &::before {
         content: '\f10d';
-        font-family: 'FontAwesome';
+        font-family: $icon-font;
         font-size: 20px;
         font-style: normal;
         left: -30px;
         position: relative;
         top: 20px;
       }
+    }
+
+    p {
+      font-family: $serif-font;
     }
 
   }

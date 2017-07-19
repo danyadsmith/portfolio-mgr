@@ -1,13 +1,13 @@
 article.skill {
   h4 {
-    font-family: 'Pathway Gothic One';
+    font-family: $alt-heading-font;
     font-size: 16px;
     margin: 5px 0 0;
     text-transform: uppercase;
   }
 
   p {
-    font-family: 'Arial';
+    font-family: $alt-sans-font;
     font-size: .85em;
     margin: 5px 0;
     text-align: left;
@@ -28,7 +28,7 @@ article.skill {
 }
 
 section h4 {
-  font-family: 'Arial';
+  font-family: $alt-sans-font;
   font-size: 12px;
   font-weight: normal;
   margin: 0;

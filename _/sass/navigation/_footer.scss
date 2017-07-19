@@ -45,7 +45,7 @@ footer.global {
 
     a::before {
       color: $dove;
-      font-family: 'FontAwesome';
+      font-family: $icon-font;
       font-size: 34px;
       padding: -1 0 0 5px;
     }

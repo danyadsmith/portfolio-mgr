@@ -1,5 +1,4 @@
 nav {
-  font-family: 'Poppins';
   margin-top: 0;
   text-transform: uppercase;
 
@@ -13,7 +12,9 @@ nav {
       padding: 10px 20px;
     }
 
-    a {
+    a,
+    a:link,
+    a:visited {
       color: $dove;
       padding: 0 10px;
       text-decoration: none;

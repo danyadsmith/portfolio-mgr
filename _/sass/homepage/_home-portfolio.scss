@@ -88,7 +88,7 @@
       li::before {
         color: $accent;
         float: left;
-        font-family: 'FontAwesome';
+        font-family: $icon-font;
         font-size: 3.2em;
         margin: 10px 3px;
         padding-right: 8px;
