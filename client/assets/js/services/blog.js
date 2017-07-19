@@ -15,10 +15,10 @@ angular.module('blog.service', [])
       });
     };
 
-    var getBlogPostsByCategory = function () {
+    var getBlogPostsByCategory = function (id) {
       return $http({
         method: 'GET',
-        url: '/api/blogs/categories/:id'
+        url: '/api/blogs/categories/' + id
       }).then(function (response) {
         data = response.data;
         //console.log(JSON.stringify(data));
@@ -37,9 +37,33 @@ angular.module('blog.service', [])
       });
     };
 
+    var getBlogPostById = function (id) {
+      return $http({
+        method: 'GET',
+        url: '/api/blogs/posts/' + id
+      }).then(function (response) {
+        data = response.data;
+        //console.log(JSON.stringify(data));
+        return data;
+      });
+    };
+
+    var getCategoryById = function (id) {
+      return $http({
+        method: 'GET',
+        url: '/api/categories/' + id
+      }).then(function (response) {
+        data = response.data;
+        //console.log(JSON.stringify(data));
+        return data;
+      });
+    };
+
     return {
       getBlogCategories: getBlogCategories,
       getBlogPosts: getBlogPosts,
-      getBlogPostsByCategory: getBlogPostsByCategory
+      getBlogPostsByCategory: getBlogPostsByCategory,
+      getBlogPostById: getBlogPostById,
+      getCategoryById: getCategoryById
     };
   });
