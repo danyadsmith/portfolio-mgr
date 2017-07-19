@@ -1,0 +1,33 @@
+.posts,
+.blog-posts,
+.blog-categories {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  td {
+    border-top: 1px solid $alto;
+    padding: 5px 0;
+  }
+
+  .published {
+    width: 15%;
+  }
+
+  .main {
+    h2 {
+      color: $black;
+      font-size: 28px;
+      text-transform: none;
+    }
+
+    h2::after {
+      display: none;
+    }
+  }
+}

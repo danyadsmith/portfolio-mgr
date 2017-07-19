@@ -14,7 +14,7 @@
 <div class="post" ng-repeat='post in filtered = (data.posts | filter:{Categories: {name: filterOnName}})' ng-if="post.published">
 <article>
   <header>
-  <h2>{{ post.title }}</h2>
+    <h2><a ng-href="/blog/posts/?id={{ post.id}}" target="_self">{{ post.title }}</a></h2>
   <h3>
     <span class="author">{{ post.author.displayName }}</span>
   </h3>
@@ -25,8 +25,11 @@
       <span class="date">{{ post.datePublished | date: 'dd MMMM yyyy' }}</span>
       <span class="categories">
         <span class="category" ng-repeat='category in post.Categories'>
-          <a href="#top" ng-click="filterByCategory(category)">{{ category.name }}</a>
+          <a href="/blog/categories/?id={{ category.id }}" target="_self">{{ category.name }}</a>
         </span>
+      </span>
+      <span class="comment" ng-if="post.mediumUrl">
+        <a href="{{ post.mediumUrl }}">Comment on Medium</a>
       </span>
     </h3>
   </footer>

@@ -41,4 +41,4 @@ $magenta:           hsla(330, 100%, 50%, 1);      // #ff0080
 /////////////////////////////////////////////////////////////////////
 
 $accent: lighten(mix($viridian, $blue, 85%), 10%);
-$complement: lighten(mix($orange, $amber, 85%), 10%);
+$complement: complement($accent);
