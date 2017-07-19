@@ -1,0 +1,49 @@
+<nav class="breadcrumbs">
+  <a ng-href="/blog/" target="_self">Blog</a><a ng-href="/blog/posts/" target="_self">Posts</a><span ng-if="data.post">{{ data.post.title }}</span>
+</nav>
+
+<div class="post" ng-model='data.post' ng-if="data.post.published">
+<article>
+  <header>
+  <h2>{{ data.post.title }}</h2>
+  <h3>
+    <span class="author">{{ data.post.author.displayName }}</span>
+  </h3>
+  </header>
+  <md ng-model="data.post.body"></md>
+  <footer>
+    <h3>
+      <span class="date">{{ data.post.datePublished | date: 'dd MMMM yyyy' }}</span>
+      <span class="categories">
+        <span class="category" ng-repeat='category in data.post.Categories'>
+          <a href="/blog/categories/?id={{ category.id }}" target="_self">{{ category.name }}</a>
+        </span>
+      </span>
+    </h3>
+  </footer>
+</article>
+</div>
+
+<div class="posts" ng-model="data.posts" ng-if="data.count > 0">
+  <h2>Posts</h2>
+<table class="posts">
+  <thead>
+    <th>Title</th>
+    <!-- <th>Categories</th> -->
+    <th class="published">Published</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="post in data.posts">
+      <td><a ng-href="/blog/posts/?id={{ post.id}}" target="_self">{{ post.title }}</a></td>
+      <!-- <td>
+        <span class="categories">
+          <span class="category" ng-repeat='category in post.Categories'>
+            <a href="#top" ng-click="filterByCategory(category)">{{ category.name }}</a>
+          </span>
+        </span>
+      </td> -->
+      <td>{{ post.datePublished | date: 'dd MMMM yyyy' }}
+    </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>
