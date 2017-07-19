@@ -4,44 +4,21 @@
 
 <h2 ng-if="data.posts">{{ category.name }}</h2>
 <h2 ng-if="!data.posts">Categories</h2>
-<table class="posts" ng-if="data.posts">
-  <thead>
-    <th>Title</th>
-    <!-- <th>Categories</th> -->
-    <th class="published">Published</th>
-  </thead>
-  <tbody>
-    <tr ng-repeat="post in data.posts">
-      <td><a ng-href="/blog/posts/?id={{ post.id}}" target="_self">{{ post.title }}</a></td>
-      <!-- <td>
-        <span class="categories">
-          <span class="category" ng-repeat='category in post.Categories'>
-            <a href="#top" ng-click="filterByCategory(category)">{{ category.name }}</a>
-          </span>
-        </span>
-      </td> -->
-      <td>{{ post.datePublished | date: 'dd MMMM yyyy' }}</td>
-    </tr>
-  </tbody>
-  <tfoot></tfoot>
-</table>
+<div class="posts-list">
+  <article ng-repeat="post in data.posts">
+  <div class="date">
+    <span class="day">{{ post.datePublished | date: 'dd' }}</span>
+    <span class="month">{{ post.datePublished | date: 'MMM' }}</span>
+    <!-- <span class="year">{{ post.datePublished | date: 'yyyy' }}</span> -->
+  </div>
+  <div class="post">
+    <h3><a ng-href="/blog/posts/?id={{ post.id}}" target="_self">{{ post.title }}</a></h3>
+    <p>{{ post.teaser }}</p>
+  </div>
+</article>
+</div>
 
-<table class="posts" ng-if="data.categories">
-  <thead>
-    <th>Name</th>
-  </thead>
-  <tbody>
-    <tr ng-repeat="category in data.categories">
-      <td><a ng-href="/blog/categories/?id={{ category.id}}" target="_self">{{ category.name }}</a></td>
-      <!-- <td>
-        <span class="categories">
-          <span class="category" ng-repeat='category in post.Categories'>
-            <a href="#top" ng-click="filterByCategory(category)">{{ category.name }}</a>
-          </span>
-        </span>
-      </td> -->
-      <td>{{ post.datePublished | date: 'dd MMMM yyyy' }}</td>
-    </tr>
-  </tbody>
-  <tfoot></tfoot>
-</table>
+<div class="categories-list" ng-if="data.categories">
+<article ng-repeat="category in data.categories">
+  <h3><a ng-href="/blog/categories/?id={{ category.id}}" target="_self">{{ category.name }}</a></h3>
+</article>
