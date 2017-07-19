@@ -22,7 +22,7 @@ module.exports = {
     return sequelize.Category.findAll({
       where: {
         id: {
-          $in: Sequelize.literal('(SELECT DISTINCT "CategoryId" FROM "BlogCategories" WHERE "BlogId" IN (SELECT DISTINCT "id" FROM "Blogs" WHERE "UserId" = ' + req.user.id + '))')
+          $in: Sequelize.literal('(SELECT DISTINCT "CategoryId" FROM "BlogCategories" WHERE "BlogId" IN (SELECT DISTINCT "id" FROM "Blogs" WHERE "UserId" = ' + req.user.id + ' AND "published" = true))')
         }
       },
       order: [
