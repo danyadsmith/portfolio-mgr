@@ -4,7 +4,7 @@
   <h2>Featured Projects</h2>
 </header>
   <div class="gallery">
-    <a  ng-controller="PortfolioController" ng-repeat='portfolio in data.portfolios' href="{{ portfolio.url }}">
+    <a  ng-controller="PortfolioController" ng-repeat='portfolio in data.portfolios' href="{{ portfolio.url }}" target="_self">
       <img src="{{ portfolio.image }}" alt="{{ portfolio.abstract }}"  />
     </a>
   </div>

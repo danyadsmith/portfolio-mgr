@@ -24,5 +24,11 @@
       @include span(14 of 24);
       margin: 0 0 0 span(2 of 24);
     }
+
+    p {
+      font-size: 1.25em;
+      font-weight: 100;
+      line-height: 1.4em;
+    }
   }
 }

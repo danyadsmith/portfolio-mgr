@@ -1,5 +1,5 @@
 <article ng-controller="GalleryController" ng-repeat="portfolio in data.portfolios" class="portfolio-card {{ portfolio.category.name }}">
-  <a href="{{ portfolio.url }}">
+  <a href="{{ portfolio.url }}" target="_self">
   <img src="{{ portfolio.image }}" class="portfolio-image" alt="{{ portfolio.title }}" />
   <h2>{{ portfolio.title }}</h2>
   <p>{{ portfolio.abstract }}</p>

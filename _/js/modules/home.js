@@ -6,6 +6,7 @@ angular.module('homepage', [
   'homepage.about',
   'homepage.blog',
   'homepage.portfolio',
+  'blog.service',
   'portfolio.service',
   'profile.service',
   'ui.router'

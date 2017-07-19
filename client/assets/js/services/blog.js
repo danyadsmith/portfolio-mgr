@@ -59,11 +59,24 @@ angular.module('blog.service', [])
       });
     };
 
+    var getLatestBlogPosts = function (limit) {
+      limit = limit || 3;
+      return $http({
+        method: 'GET',
+        url: '/api/blogs/posts/' + limit + '/0'
+      }).then(function (response) {
+        data = response.data;
+        //console.log(JSON.stringify(data));
+        return data;
+      });
+    };
+
     return {
       getBlogCategories: getBlogCategories,
       getBlogPosts: getBlogPosts,
       getBlogPostsByCategory: getBlogPostsByCategory,
       getBlogPostById: getBlogPostById,
-      getCategoryById: getCategoryById
+      getCategoryById: getCategoryById,
+      getLatestBlogPosts: getLatestBlogPosts
     };
   });

@@ -7,7 +7,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
   <script src=' https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js'></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <link href='assets/css/main.css' rel='stylesheet' />
+  <link href='assets/css/home.css' rel='stylesheet' />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -27,9 +27,9 @@
   </section>
   <section class="about" ui-view="aboutView">
   </section>
-  <section class="portfolio" ui-view="portfolioView">
-  </section>
   <section class="blog" ui-view="recentBlogView">
+  </section>
+  <section class="portfolio" ui-view="portfolioView">
   </section>
   <footer class="global" ui-view="footerView">
   </footer>
@@ -39,6 +39,7 @@
   <script src='assets/js/controllers/home/PortfolioController.js'></script>
   <script src='assets/js/controllers/home/BlogController.js'></script>
   <script src='assets/js/controllers/global/FooterController.js'></script>
+  <script src='assets/js/services/blog.js'></script>
   <script src='assets/js/services/portfolio.js'></script>
   <script src='assets/js/services/profile.js'></script>
   <script src='assets/js/modules/home.js'></script>
