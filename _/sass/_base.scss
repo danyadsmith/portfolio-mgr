@@ -23,8 +23,20 @@ section {
       margin: 0 span(2 of 24);
     }
   }
+}
 
+a,
+a:link {
+  color: $black;
+  text-decoration: none;
+}
 
+a:visited {
+  color: $silver;
+}
 
+a:hover,
+a:active {
+  color: $accent;
 }
 
