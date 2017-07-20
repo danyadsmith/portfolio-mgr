@@ -161,7 +161,9 @@
     }
 
     blockquote {
-      background-color: lighten($accent, 50%);
+      background-color: darken($accent, 5%);
+      color: $white;
+      font-size: .9em;
       margin: 0;
       padding: 10px 50px;
 

@@ -60,3 +60,20 @@ h2::after {
 .highlight {
   color: $accent;
 }
+
+strong {
+  font-weight: 600;
+}
+
+code,
+pre,
+samp {
+  font-family: 'PT Mono';
+  font-size: .85em;
+}
+
+pre {
+  background-color: $mineshaft;
+  color: $gallery;
+  padding: 10px;
+}

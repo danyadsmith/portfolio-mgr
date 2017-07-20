@@ -47,13 +47,14 @@ $complement: complement($accent);
 // Typography
 /////////////////////////////////////////////////////////////////////
 
-$sans-font: 'Poppins';
-$alt-sans-font: 'Arial';
-$serif-font: 'Libre Baskerville';
-$serif-stack: 'Baskerville', 'Libre Baskerville';
+$sans-font: 'Poppins', sans-serif;
+$alt-sans-font: 'Arial', sans-serif;
+$serif-font: 'Libre Baskerville', serif;
+$serif-stack: 'Baskerville', 'Libre Baskerville', serif;
 $alt-heading-font: 'Pathway Gothic One';
 $icon-font: 'FontAwesome';
-$blog-serif: 'PT Serif';
+$blog-serif: 'PT Serif', serif;
+$mono-font: 'PT Mono', monospace;
 
 /////////////////////////////////////////////////////////////////////
 // Backgrounds
