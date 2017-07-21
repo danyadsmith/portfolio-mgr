@@ -5,21 +5,22 @@
 <div class="post" ng-model='data.post' ng-if="data.post.published">
 <article>
   <header>
-  <h2>{{ data.post.title }}</h2>
-  <h3>
-    <span class="author">{{ data.post.author.displayName }}</span>
-  </h3>
+    <h3 class="date">{{ data.post.datePublished | date: 'EEEE, dd MMMM yyyy' }}</h3>
+    <h2>{{ data.post.title }}</h2>
+    <h4>
+      <span class="author">{{ data.post.author.displayName }}</span>
+    </h4>
   </header>
   <md ng-model="data.post.body"></md>
   <footer>
-    <h3>
-      <span class="date">{{ data.post.datePublished | date: 'dd MMMM yyyy' }}</span>
+    <h4>
+      <span class="time">{{ data.post.datePublished | date: 'shortTime' }}</span>
       <span class="categories">
         <span class="category" ng-repeat='category in data.post.Categories'>
           <a href="/blog/categories/?id={{ category.id }}" target="_self">{{ category.name }}</a>
         </span>
       </span>
-    </h3>
+    </h4>
   </footer>
 </article>
 </div>

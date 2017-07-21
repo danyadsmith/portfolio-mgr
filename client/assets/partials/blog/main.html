@@ -14,15 +14,16 @@
 <div class="post" ng-repeat='post in filtered = (data.posts | filter:{Categories: {name: filterOnName}})' ng-if="post.published">
 <article>
   <header>
+    <h3 class="date">{{ post.datePublished | date: 'EEEE, dd MMMM yyyy' }}</h3>
     <h2><a ng-href="/blog/posts/?id={{ post.id}}" target="_self">{{ post.title }}</a></h2>
-  <h3>
-    <span class="author">{{ post.author.displayName }}</span>
-  </h3>
+    <h4>
+      <span class="author">{{ post.author.displayName }}</span>
+    </h4>
   </header>
   <md ng-model="post.body"></md>
   <footer>
-    <h3>
-      <span class="date">{{ post.datePublished | date: 'dd MMMM yyyy' }}</span>
+    <h4>
+      <span class="time">{{ post.datePublished | date: 'shortTime' }}</span>
       <span class="categories">
         <span class="category" ng-repeat='category in post.Categories'>
           <a href="/blog/categories/?id={{ category.id }}" target="_self">{{ category.name }}</a>
@@ -31,7 +32,7 @@
       <span class="comment" ng-if="post.mediumUrl">
         <a href="{{ post.mediumUrl }}">Comment on Medium</a>
       </span>
-    </h3>
+    </h4>
   </footer>
 </article>
 </div>

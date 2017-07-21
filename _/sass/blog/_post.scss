@@ -1,3 +1,4 @@
+.post,
 .posts,
 .blog-posts,
 .blog-categories {
@@ -56,7 +57,7 @@
     display: none;
   }
 
-  h3 {
+  h4 {
     border-bottom: 1px solid $alto;
     border-top: 1px solid $alto;
     color: $dusty;
@@ -68,6 +69,13 @@
     span.date::before {
       // color: $accent;
       content: '\f133';
+      font-family: $icon-font;
+      margin-right: 5px;
+    }
+
+    span.time::before {
+      // color: $accent;
+      content: '\f017';
       font-family: $icon-font;
       margin-right: 5px;
     }
@@ -134,7 +142,11 @@
   }
 
   header {
-    h3 {
+    h3.date {
+      color: $silver;
+    }
+
+    h4 {
       border-top: 0;
       font-size: 14px;
     }
