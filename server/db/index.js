@@ -74,6 +74,13 @@ var Blog = db.define('Blog', {
   mediumUrl: Sequelize.STRING
 });
 
+var Message = db.define('Message', {
+  name: Sequelize.STRING,
+  email: Sequelize.STRING,
+  subject: Sequelize.STRING,
+  message: Sequelize.TEXT
+});
+
 var BlogCategory = db.define('BlogCategory', {
   BlogId: Sequelize.INTEGER,
   CategoryId: Sequelize.INTEGER
@@ -152,5 +159,6 @@ module.exports = {
   Portfolio: Portfolio,
   Blog: Blog,
   BlogCategory: BlogCategory,
+  Message: Message,
   Setting: Setting
 };
