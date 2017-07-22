@@ -9,6 +9,11 @@ var config = {
   jwt: {
     secret: process.env.JWT_SECRET || 'supersecret',
     expiry: 24 * 60 * 10
+  },
+  owner: {
+    name: process.env.USER_NAME,
+    email: process.env.USER_EMAIL,
+    password: process.env.USER_EMAIL_PWD
   }
 };
 

@@ -12,10 +12,7 @@ angular.module('contact.form', [])
     $scope.contact = angular.copy(defaultForm);
 
     $scope.sendMessage = function (form) {
-      Message.sendMessage(this.contact)
-      .then(function (data) {
-        console.log(data);
-      });
+      Message.sendMessage(this.contact);
       form.$setPristine();
       $scope.contact = angular.copy(defaultForm);
       form.$setUntouched();
