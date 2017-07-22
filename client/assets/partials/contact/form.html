@@ -1,13 +1,13 @@
-<form action="form_submit" method="get" accept-charset="utf-8">
+<form name="contactForm" ng-submit="sendMessage(contactForm)">
   <fieldset>
-    <label for="name-field">Name</label>
-    <input type="text" id="name-field" />
-    <label for="email-field">E-mail</label>
-    <input type="text" id="email-field" />
-    <label for="subject-field">Subject</label>
-    <input type="text" id="subject-field">
-    <label for="message-field">Message</label>
-    <textarea name="message-body" id="message-field" cols="30" rows="10"></textarea>
+    <label for="name">Name</label>
+    <input type="text" id="name" ng-model="contact.name" />
+    <label for="email">E-mail</label>
+    <input type="text" id="email" ng-model="contact.email" />
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" ng-model="contact.subject" >
+    <label for="message">Message</label>
+    <textarea name="message-body" id="message" cols="30" rows="10" ng-model="contact.message"></textarea>
     <button name="submit">Send a Message</button>
   </fieldset>
 </form>

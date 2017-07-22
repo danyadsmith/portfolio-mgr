@@ -4,6 +4,7 @@ angular.module('contact', [
   'global.footer',
   'contact.main',
   'contact.form',
+  'message.service',
   'profile.service',
   'ui.router'
 ])
