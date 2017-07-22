@@ -36,14 +36,13 @@ module.exports = {
     {UserId: 1, CategoryId: 9, name: 'BDD', expertise: 0}
   ],
   blogs: [
-    {title: 'From SQL to NoSQL: Getting Started with MongoDB', published: false, UserId: 1},
-    {title: 'Implementing CRUD Operations with Sequelize', published: false, UserId: 1},
-    {title: 'Grid-Based Web Design: A History', published: false, UserId: 1},
-    {title: 'Color Management Strategies in Sass', published: true, datePublished:'2017-05-21', UserId: 1},
+    {title: 'From SQL to NoSQL: Getting Started with MongoDB', published: true, UserId: 1},
+    {title: 'Implementing CRUD Operations with Sequelize', published: true, UserId: 1},
+    {title: 'Grid-Based Web Design: A History', published: true, UserId: 1},
+    {title: 'Color Management Strategies in Sass', published: false, datePublished:'2017-05-21', UserId: 1},
     {title: 'Managing Environment Variables in Node.js', published: true, datePublished:'2017-04-21', UserId: 1}
   ],
   blogCategories: [
-    { BlogId: 1, CategoryId: 4 },
     { BlogId: 2, CategoryId: 5 },
     { BlogId: 3, CategoryId: 6 },
     { BlogId: 5, CategoryId: 13 }
@@ -121,6 +120,9 @@ module.exports = {
     { image: 'photo02.png', url: 'http://localhost:3000/portfolios/2', UserId: 1 },
     { image: 'photo03.png', url: 'http://localhost:3000/portfolios/3', UserId: 1 },
     { image: 'photo04.png', url: 'http://localhost:3000/portfolios/4', UserId: 1 }
+  ],
+  messages: [
+    { name: 'John Doe', email: 'jdoe@mail.com', subject: 'Seeking Developer for XYZ Team', message: 'Noticed your profile on LinkedIn and checked out your portfolio. Looking to hire a developer for xyz team. It would be a contract to hire position. Would love to schedule a time to talk. Can you send me an e-mail to let me know if you are interested in communicating further about this position?'}
   ],
   users: [
     {
