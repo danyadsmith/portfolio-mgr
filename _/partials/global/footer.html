@@ -1,3 +1,36 @@
+<div>
+  <div>
+    <h3>About</h3>
+        <p><img class="gravatar" src="{{data.user.photoUrl}}" />{{ data.user.biography }}</p>
+  </div>
+  <footer>
+  <ul>
+    <li class="location"><span class="heading">{{data.user.location}}</span></li>
+    <li class="for-hire">
+      <span class="heading" ng-if="data.user.seekingNewOpportunities === false">Not Seeking Opportunities</span>
+      <span class="heading" ng-if="data.user.seekingNewOpportunities === true">Open to New Opportunities</span>
+    </li>
+    <li class="relocation unavailable">
+      <span class="heading" ng-if="data.user.willingToRelocate === false">Not Able to Relocate</span>
+      <span class="heading" ng-if="data.user.willingToRelocate === true">Willing to Relocate</span>
+    </li>
+    <li class="freelance" ng-if="data.user.acceptingFreelanceWork === true">
+      <span class="heading">Accepting Frelance Work</span>
+    </li>
+  </ul>
+  </footer>
+  <div>
+    <h3>Recent Projects</h3>
+    <div>
+    <div ng-repeat="portfolio in data.portfolios | limitTo: 2" class="project">
+    <a href="{{ portfolio.url }}" target="_self">
+    <img src="{{ portfolio.image }}" class="portfolio-image" alt="{{ portfolio.title }}" />
+    </a>
+    </div>
+    </div>
+  </div>
+</div>
+
 <ul class="social-icons">
   <li ng-controller="FooterController" ng-repeat='profile in data.profiles' ng-if="profile.visible = true">
     <a href="{{ profile.profileUrl }}"></a>
