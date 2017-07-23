@@ -1,4 +1,4 @@
-  Post Count: {{ data.count }}
+  <!-- Post Count: {{ data.count }} -->
   <ul ng-repeat="page in data.pages">
     <button ng-init="limit = data.limit" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">{{page + 1}}</button>
   </ul>
