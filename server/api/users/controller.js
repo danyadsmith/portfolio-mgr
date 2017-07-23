@@ -1,6 +1,7 @@
 const chalk = require('chalk');
 const config = require('../../config');
 const sequelize = require('../../db');
+const gravatar = require('gravatar');
 
 module.exports = {
   param: function (req, res, next) {
@@ -35,6 +36,8 @@ module.exports = {
   },
 
   post: function (req, res) {
+    var gravatarImg = gravatar.url(req.body.email, {s: 100});
+    req.body.photoUrl = 'https:' + gravatarImg;
     return sequelize.User.create(req.body)
       .then(function (user) {
         res.json(user);
