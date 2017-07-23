@@ -101,6 +101,7 @@ var User = db.define('User', {
   phone: Sequelize.STRING,
   email: Sequelize.STRING,
   photoUrl: Sequelize.STRING,
+  biography: Sequelize.STRING,
   desiredJobTitle: Sequelize.STRING,
   acceptingFreelanceWork: Sequelize.BOOLEAN,
   seekingNewOpportunities: Sequelize.BOOLEAN,

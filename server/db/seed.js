@@ -14,6 +14,7 @@ var SocialMediaAccount = db.SocialMediaAccount;
 var Portfolio = db.Portfolio;
 var Blog = db.Blog;
 var BlogCategory = db.BlogCategory;
+var Message = db.Message;
 var Setting = db.Setting;
 
 console.log(chalk.white.bold('Seeding the Database........'));
@@ -36,6 +37,7 @@ var seedData = function () {
   .then(() => Portfolio.sync({force: true}))
   .then(() => Blog.sync({force: true}))
   .then(() => BlogCategory.sync({force: true}))
+  .then(() => Message.sync({force: true}))
   .then(() => Setting.sync({force: true}))
   .then(() => console.log(chalk.magenta('Seeding Users')))
   .then(() => User.create({
@@ -45,10 +47,11 @@ var seedData = function () {
     displayName: 'Danya D. Smith',
     username: 'danyadsmith',
     email: 'danyadsmith@email.com',
-    photoUrl: 'http://portfolio.pspu.ru/uploads/avatars/noimage.png',
+    photoUrl: 'https://www.gravatar.com/avatar/ce455612d775f063b339c0c6549220a9?s=100',
     password: '$2a$10$17kLnuJc/J/KEvKCro6NVOPcOCld6/jD2zwX.SOwJZ4GNbzYnIOx6',
-    location: 'Metro Detroit',
+    location: 'Detroit Metro Area',
     desiredJobTitle: 'Full Stack Software Engineer',
+    biography: 'Danya D. Smith is a design-oriented software engineer working and living in metro Detroit.',
     seekingNewOpportunities: true,
     willingToRelocate: false,
     acceptingFreelanceWork: true,
@@ -211,7 +214,8 @@ var seedData = function () {
   .then(() => console.log(chalk.magenta('Seeding Portfolio')))
   .then(() => Portfolio.bulkCreate([
     { title: 'Singular Brand', image: 'http://via.placeholder.com/450X300', url: 'http://localhost:8080/blog/posts/?id=10', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10},
-    { title: 'Scope Hero', image: 'http://via.placeholder.com/450X300', url: 'http://localhost:8080/blog/posts/?id=9', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10}
+    { title: 'Scope Hero', image: 'http://via.placeholder.com/450X300', url: 'http://localhost:8080/blog/posts/?id=9', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10},
+    { title: 'Siren', image: 'http://via.placeholder.com/450X300', url: 'http://localhost:8080/blog/posts/?id=9', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10}
   ]))
   .then(() => console.log(chalk.magenta('Seeding Blog Posts')))
   .then(() => Blog.bulkCreate([
