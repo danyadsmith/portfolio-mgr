@@ -5,6 +5,7 @@ angular.module('contact', [
   'contact.main',
   'contact.form',
   'message.service',
+  'portfolio.service',
   'profile.service',
   'ui.router'
 ])
@@ -22,10 +23,6 @@ angular.module('contact', [
         'contactHeaderView': {
           controller: 'HomeController',
           templateUrl: '../../assets/partials/contact/header.html'
-        },
-        'contactFrontMatterView': {
-          controller: 'HomeController',
-          templateUrl: '../../assets/partials/contact/frontmatter.html'
         },
         'contactFormView': {
           controller: 'FormController',

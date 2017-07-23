@@ -5,6 +5,7 @@ angular.module('blog', [
   'blog.main',
   'blog.pagination',
   'blog.service',
+  'portfolio.service',
   'profile.service',
   'ui.router',
   'yaru22.md'

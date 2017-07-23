@@ -8,6 +8,7 @@ angular.module('resume', [
   'resume.main',
   'resume.sidebar',
   'resume.service',
+  'portfolio.service',
   'profile.service',
   'ui.router'
 ])

@@ -4,6 +4,7 @@ angular.module('blog-categories', [
   'global.footer',
   'blog-categories.main',
   'blog.service',
+  'portfolio.service',
   'profile.service',
   'ui.router',
   'yaru22.md'
