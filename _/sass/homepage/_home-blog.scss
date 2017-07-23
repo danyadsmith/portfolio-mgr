@@ -19,8 +19,8 @@
 
       + section {
         @include container;
-        @include prefix(2 of 24);
-        @include suffix(2 of 24);
+        @include prefix(4 of 24);
+        @include suffix(4 of 24);
         margin: 100px 0;
       }
     }

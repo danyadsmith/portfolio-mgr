@@ -2,8 +2,8 @@
   .about {
     article {
       @include container;
-      @include prefix(2 of 24);
-      @include suffix(2 of 24);
+      @include prefix(4 of 24);
+      @include suffix(4 of 24);
       margin: 100px 0;
     }
 
@@ -11,18 +11,11 @@
       background-image: none;
       height: auto;
       margin: 50px 0;
-      padding-bottom: 50px;
     }
 
     img {
       @include span(8 of 24);
       min-height: 400px;
-    }
-
-    header,
-    p {
-      @include span(14 of 24);
-      margin: 0 0 0 span(2 of 24);
     }
 
     p {

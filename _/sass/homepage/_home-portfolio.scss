@@ -19,15 +19,18 @@
     }
 
     .gallery {
+      @include container;
+      @include prefix(4 of 24);
+      @include suffix(4 of 24);
       display: -ms-flexbox;
       display: -webkit-box;
       display: flex;
-      -ms-flex-direction: column;
-      -webkit-flex-flow: row wrap;
-      flex-flow: row wrap;
-      -ms-flex-wrap: wrap;
       font-size: 0;
-      margin: 100px;
+      -ms-flex-direction: column;
+      -ms-flex-wrap: wrap;
+      flex-flow: row wrap;
+      margin: 100px 0;
+      -webkit-flex-flow: row wrap;
 
       a {
         -webkit-box-flex: auto;
@@ -41,92 +44,6 @@
           width: 100%;
         }
       }
-    }
-
-    footer {
-      align-items: center;
-      background-image: $concrete;
-      color: $accent;
-      display: flex;
-      flex-wrap: wrap;
-      height: 170px;
-      justify-content: space-around;
-
-      ul {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        height: 80%;
-        justify-content: space-around;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-      }
-
-      li {
-        color: $mineshaft;
-        font-size: 13px;
-        height: 40px;
-        text-transform: uppercase;
-        width: 250px;
-
-        span.number,
-        span.heading {
-          color: $accent;
-          display: block;
-          font-size: 30px;
-          font-weight: 100;
-          padding-bottom: 2px;
-        }
-
-        span.subheading {
-          display: block;
-        }
-      }
-
-      li::before {
-        color: $accent;
-        float: left;
-        font-family: $icon-font;
-        font-size: 3.2em;
-        margin: 10px 3px;
-        padding-right: 8px;
-        text-align: center;
-        width: 40px;
-      }
-    }
-
-    li.experience::before {
-      content: '\f133';
-    }
-
-    li.clients::before {
-      content: '\f0f7';
-    }
-
-    li.projects::before {
-      content: '\f121';
-    }
-
-    li.education::before {
-      content: '\f19d';
-    }
-
-    li.for-hire::before {
-      content: '\f0f7';
-    }
-
-    li.relocation::before {
-      content: '\f0d1';
-    }
-
-    li.freelance::before {
-      content: '\f0b1';
-    }
-
-    li.location::before {
-      content: '\f041';
     }
   }
 }

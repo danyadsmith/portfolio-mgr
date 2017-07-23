@@ -1,7 +1,157 @@
 footer.global {
   background-color: $charcoal;
+  color: $mercury;
   min-height: 399px;
   position: relative;
+
+  .gravatar {
+    border: 1px solid $gallery;
+    border-radius: 50px;
+    float: left;
+    margin: 0 10px 0 0;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+    padding: 30px 0;
+
+    div {
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0;
+
+      div {
+        flex-direction: row;
+      }
+
+      .project {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        img {
+          height: 140px;
+          object-fit: contain;
+          padding: 25px;
+          width: 175px;
+        }
+
+        img:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+
+    h3 {
+      color: $white;
+      font-weight: 500;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+
+    h3::after {
+      border-bottom: 1px solid $accent;
+      border-top: 1px solid $accent;
+      bottom: -2px;
+      content: '';
+      display: block;
+      height: 3px;
+      left: 0;
+      position: relative;
+      width: 1em;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 100;
+      line-height: 1.3em;
+    }
+
+    footer {
+      align-items: center;
+      color: $accent;
+      display: flex;
+      flex-wrap: wrap;
+      height: 170px;
+      justify-content: space-around;
+      padding: 40px 0 0 10px;
+
+      ul {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 80%;
+        justify-content: space-around;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+
+      li {
+        color: $alabaster;
+        font-size: 13px;
+        line-height: 1.8em;
+        text-transform: uppercase;
+        width: 300px;
+
+        span.number,
+        span.heading {
+          color: $alabaster;
+          display: block;
+          font-size: 14px;
+          font-weight: 100;
+          padding-bottom: 2px;
+        }
+      }
+
+      li::before {
+        color: $accent;
+        float: left;
+        font-family: $icon-font;
+        font-size: 1.6em;
+        padding-right: 8px;
+        text-align: center;
+        width: 40px;
+      }
+    }
+
+    li.experience::before {
+      content: '\f133';
+    }
+
+    li.clients::before {
+      content: '\f0f7';
+    }
+
+    li.projects::before {
+      content: '\f121';
+    }
+
+    li.education::before {
+      content: '\f19d';
+    }
+
+    li.for-hire::before {
+      content: '\f0f7';
+    }
+
+    li.relocation::before {
+      content: '\f0d1';
+    }
+
+    li.freelance::before {
+      content: '\f0b1';
+    }
+
+    li.location::before {
+      content: '\f041';
+    }
+  }
 
   ul.social-icons {
     background-color: $black;
