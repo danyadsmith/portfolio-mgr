@@ -72,12 +72,16 @@ module.exports = {
         [ 'datePublished', 'DESC']
       ]
     })
-    .then(function (blogs) {
-      blogs.limit = Number(limit);
-      blogs.offset = Number(offset);
-      blogs.pages = Math.ceil(blogs.count / blogs.limit);
-      res.json(blogs);
-    });
+      .then(function (blogs) {
+        blogs.limit = Number(limit);
+        blogs.offset = Number(offset);
+        blogs.pageCount = (blogs.limit > blogs.count) ? 1 : blogs.count / blogs.limit;
+        blogs.page = blogs.offset / blogs.limit + 1;
+        blogs.pages = Array.apply(null, {length: blogs.pageCount})
+          .map(Number.call, Number)
+          .map(function (page) { return page + 1; });
+        res.json(blogs);
+      });
   }
 
 };
