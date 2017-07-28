@@ -3,7 +3,6 @@
 angular.module('blog', [
   'global.footer',
   'blog.main',
-  'blog.pagination',
   'blog.service',
   'portfolio.service',
   'profile.service',
