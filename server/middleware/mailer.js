@@ -19,12 +19,16 @@ var sendMail = function (req, res) {
     from: from,
     to: to,
     cc: from,
+    replyTo: from,
     subject: '[SingularBrand.io Contact Form] ' + subject,
     text: name + '(' + from + ') just submitted the following message:\n\n' + message
   };
   smtpTransport.sendMail(mailOptions, function (error, res) {
     if (error) {
       console.log(error);
+    }
+    if (config.log.debug) {
+      console.log(res);
     }
   });
 };
