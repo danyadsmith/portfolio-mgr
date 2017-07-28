@@ -7,7 +7,7 @@ module.exports = {
 
 
   one: function (req, res) {
-    return sequelize.Blog.findAll({
+    return sequelize.Blog.findAndCountAll({
       include: [
         {
           model: sequelize.User,
@@ -28,6 +28,10 @@ module.exports = {
     })
       .then(function (blogs) {
         //console.log(req.user.id);
+        var length = (blogs.count > 3) ? Math.ceil(blogs.count / 3) : 1;
+        blogs.pages = Array.apply(null, {length: length })
+          .map(Number.call, Number)
+          .map(function (page) { return page + 1; });
         res.json(blogs);
       });
   },
