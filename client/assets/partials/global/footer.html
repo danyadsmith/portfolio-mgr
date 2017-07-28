@@ -3,7 +3,7 @@
     <h3>About</h3>
         <p><img class="gravatar" src="{{data.user.photoUrl}}" />{{ data.user.biography }}</p>
   </div>
-  <footer>
+  <footer class="work-status">
   <ul>
     <li class="location"><span class="heading">{{data.user.location}}</span></li>
     <li class="for-hire">
@@ -19,7 +19,7 @@
     </li>
   </ul>
   </footer>
-  <div>
+  <div class="recent-projects">
     <h3>Recent Projects</h3>
     <div>
     <div ng-repeat="portfolio in data.portfolios | limitTo: 2" class="project">

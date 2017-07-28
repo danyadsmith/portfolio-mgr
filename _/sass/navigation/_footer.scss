@@ -1,14 +1,14 @@
 footer.global {
   background-color: $charcoal;
-  color: $mercury;
+  color: $dove;
   min-height: 399px;
   position: relative;
 
   .gravatar {
-    border: 1px solid $gallery;
+    border: 1px solid $dove;
     border-radius: 50px;
     float: left;
-    margin: 0 20px 20px 0;
+    margin: 0 20px 0 0;
   }
 
   div {
@@ -35,7 +35,7 @@ footer.global {
         img {
           height: 140px;
           object-fit: contain;
-          padding: 25px;
+          padding: 10px 25px;
           width: 175px;
         }
 
@@ -67,12 +67,11 @@ footer.global {
     p {
       font-size: 20px;
       font-weight: 100;
-      line-height: 1.3em;
+      line-height: 1.1em;
     }
 
     footer {
       align-items: center;
-      color: $accent;
       display: flex;
       flex-wrap: wrap;
       height: 170px;
@@ -93,7 +92,6 @@ footer.global {
       }
 
       li {
-        color: $alabaster;
         font-size: 13px;
         line-height: 1.8em;
         text-transform: uppercase;
@@ -101,7 +99,6 @@ footer.global {
 
         span.number,
         span.heading {
-          color: $alabaster;
           display: block;
           font-size: 14px;
           font-weight: 100;
@@ -110,7 +107,7 @@ footer.global {
       }
 
       li::before {
-        color: $accent;
+        color: $dusty;
         float: left;
         font-family: $icon-font;
         font-size: 1.6em;
@@ -264,5 +261,24 @@ footer.global {
     [href*='youtube']::before {
       content: '\f167';
     }
+  }
+}
+
+@media (max-width: 1300px) {
+  footer .recent-projects {
+    display: none !important;
+  }
+
+}
+
+@media (max-width: 800px) {
+  footer .work-status {
+    display: none !important;
+  }
+}
+
+@media (max-width: 500px) {
+  footer.global div p {
+    font-size: 18px;
   }
 }
