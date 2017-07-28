@@ -26,10 +26,10 @@ angular.module('blog.service', [])
       });
     };
 
-    var getBlogPosts = function (limit=3, offset=0) {
+    var getBlogPosts = function () {
       return $http({
         method: 'GET',
-        url: '/api/blogs/posts?limit=' + limit + '&offset=' + offset
+        url: '/api/blogs/posts'
       }).then(function (response) {
         data = response.data;
         //console.log(JSON.stringify(data));
@@ -59,11 +59,24 @@ angular.module('blog.service', [])
       });
     };
 
-    var getLatestBlogPosts = function (limit) {
+    var getLatestBlogPosts = function (limit, offset) {
       limit = limit || 3;
+      offset = offset || 0;
+      let limitString;
+
+      switch (limit) {
+      case '*':
+      case 0:
+        limitString = '';
+        break;
+      default:
+        limitString = limit + '/' + offset;
+        break;
+      }
+
       return $http({
         method: 'GET',
-        url: '/api/blogs/posts/' + limit + '/0'
+        url: '/api/blogs/posts/' + limitString
       }).then(function (response) {
         data = response.data;
         //console.log(JSON.stringify(data));
