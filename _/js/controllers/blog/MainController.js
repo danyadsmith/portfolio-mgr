@@ -8,6 +8,7 @@ angular.module('blog.main', [])
     $rootScope.filterOnName = '';
     $rootScope.currentPage = 1;
     $rootScope.pageSize = 3;
+    $rootScope.currentCategory = '';
 
     Blog.getBlogPosts().then(function (posts) {
       postCount = posts.count;
@@ -45,7 +46,17 @@ angular.module('blog.main', [])
       return $filter('filter')($rootScope.data.posts, $rootScope.filterOnName);
     };
 
-    $scope.pageChangeHandler = function (num) {
-      console.log('Blog page changed to ' + num);
+    $scope.pageChangeHandler = function (switchToPage) {
+      var currentPage = $rootScope.data.page;
+      var pageDiff = (switchToPage > currentPage) ? switchToPage - currentPage : currentPage - switchToPage;
+      var newOffset =  $rootScope.data.offset + ($rootScope.data.limit * pageDiff);
+      console.log('Current page: ', currentPage);
+      console.log('Current offset: ', $rootScope.data.offset);
+      console.log('Blog page changed to ' + switchToPage);
+      console.log('New offset:', newOffset);
+      $rootScope.data.offset = newOffset;
+      $rootScope.data.page = switchToPage;
+      $location.url($location.path());
+      return $filter('limitTo')($rootScope.data.posts, $rootScope.data.limit, newOffset);
     };
   }]);

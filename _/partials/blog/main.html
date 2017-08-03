@@ -11,7 +11,8 @@
     </span>
   </h3>
 </header>
-<div class="post" ng-repeat='post in filtered = (data.posts | filter:{Categories: {name: filterOnName}}) | limitTo : 3' ng-if="post.published">
+<!-- <div ng-if="filterOnName.length > 0"> -->
+<div class="post" ng-repeat='post in filtered = (data.posts | filter:{Categories: {name: filterOnName}}) | limitTo : 3 : data.offset' ng-if="post.published">
 <article>
   <header>
     <h3 class="date">{{ post.datePublished | date: 'EEEE, dd MMMM yyyy' }}</h3>
@@ -36,3 +37,4 @@
   </footer>
 </article>
 </div>
+<!--</div> -->

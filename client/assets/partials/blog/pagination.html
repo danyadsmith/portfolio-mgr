@@ -1,4 +1,4 @@
   <p>Posts {{ data.offset + 1 }} - {{ data.limit * data.page }} of {{ data.count }}</p>
   <ul>
-    <li ng-repeat="page in data.pages"><button ng-class="{'selected': page === 1}">{{ page }}</button></li>
+    <li ng-repeat="page in data.pages"><button ng-click="pageChangeHandler(page)" ng-class="{'selected': page === 1}">{{ page }}</button></li>
   </ul>
