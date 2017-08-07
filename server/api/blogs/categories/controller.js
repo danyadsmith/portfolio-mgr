@@ -7,6 +7,7 @@ module.exports = {
 
 
   one: function (req, res) {
+
     return sequelize.Blog.findAndCountAll({
       include: [
         {
@@ -19,9 +20,9 @@ module.exports = {
           where: { id: { $any: [ Number(req.params.id) ] } }
         }
       ],
-      attributes: {
-        exclude: ['UserId']
-      },
+      // attributes: {
+      //   exclude: ['UserId']
+      // },
       order: [
         [ 'datePublished', 'DESC']
       ]
@@ -30,6 +31,42 @@ module.exports = {
         //console.log(req.user.id);
         var length = (blogs.count > 3) ? Math.ceil(blogs.count / 3) : 1;
         blogs.pages = Array.apply(null, {length: length })
+          .map(Number.call, Number)
+          .map(function (page) { return page + 1; });
+        res.json(blogs);
+      });
+  },
+
+  limit: function (req, res) {
+    let limit = req.params.limit || 3;
+    let offset = req.params.offset || 0;
+
+    return sequelize.Blog.findAndCountAll({
+      where: { published: true },
+      limit: limit,
+      offset: offset,
+      distinct: true,
+      include: [
+        {
+          model: sequelize.User,
+          attributes: ['firstName', 'middleName', 'lastName', 'displayName'],
+          as: 'author'
+        },
+        {
+          model: sequelize.Category,
+          where: { id: { $any: [ Number(req.params.id) ] } }
+        }
+      ],
+      order: [
+        [ 'datePublished', 'DESC']
+      ]
+    })
+      .then(function (blogs) {
+        blogs.limit = Number(limit);
+        blogs.offset = Number(offset);
+        blogs.pageCount = (blogs.limit > blogs.count) ? 1 : blogs.count / blogs.limit;
+        blogs.page = blogs.offset / blogs.limit + 1;
+        blogs.pages = Array.apply(null, {length: blogs.pageCount})
           .map(Number.call, Number)
           .map(function (page) { return page + 1; });
         res.json(blogs);

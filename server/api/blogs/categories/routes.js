@@ -8,4 +8,7 @@ router.route('/')
 router.route('/:id')
   .get(controller.one);
 
+router.route('/:id/:limit/:offset')
+  .get(controller.limit);
+
 module.exports = router;
