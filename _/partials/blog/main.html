@@ -1,18 +1,18 @@
 <header>
-  <h3 ng-if="filterOnName">
-    Category: <strong>{{ filterOnName }}</strong>
+  <h3 ng-if="currentCategory">
+    Category: <strong>{{ currentCategory }}</strong>
     <span class="post-count">
-      <ng-pluralize count="filtered.length"
+      <ng-pluralize count="data.count"
         when="{
           '0': '0 posts',
           '1': '1 post',
-          'other': '{{ filtered.length }} posts'}">
+          'other': '{{ data.count }} posts'}">
       </ng-pluralize>
     </span>
   </h3>
 </header>
 <!-- <div ng-if="filterOnName.length > 0"> -->
-<div class="post" ng-repeat='post in filtered = (data.posts | filter:{Categories: {name: filterOnName}}) | limitTo : 3 : data.offset' ng-if="post.published">
+<div class="post" ng-repeat='post in data.posts'>
 <article>
   <header>
     <h3 class="date">{{ post.datePublished | date: 'EEEE, dd MMMM yyyy' }}</h3>
@@ -27,7 +27,7 @@
       <span class="time">{{ post.datePublished | date: 'shortTime' }}</span>
       <span class="categories">
         <span class="category" ng-repeat='category in post.Categories'>
-          <a href="/blog/categories/?id={{ category.id }}" target="_self">{{ category.name }}</a>
+          <a href="/blog?category={{ category.id }}&limit=3&offset=0" target="_self">{{ category.name }}</a>
         </span>
       </span>
       <span class="comment" ng-if="post.mediumUrl">
