@@ -15,10 +15,16 @@ angular.module('blog.service', [])
       });
     };
 
-    var getBlogPostsByCategory = function (id) {
+    var getBlogPostsByCategory = function (id, limit, offset) {
+      var apiRoute = '';
+      if (limit && offset) {
+        apiRoute = id + '/' + limit + '/' + offset;
+      } else {
+        apiRoute = id;
+      }
       return $http({
         method: 'GET',
-        url: '/api/blogs/categories/' + id
+        url: '/api/blogs/categories/' + apiRoute
       }).then(function (response) {
         data = response.data;
         //console.log(JSON.stringify(data));

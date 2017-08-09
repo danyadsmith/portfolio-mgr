@@ -20,5 +20,5 @@
 
 <div class="categories-list" ng-if="data.categories">
 <article ng-repeat="category in data.categories">
-  <h3><a ng-href="/blog/categories/?id={{ category.id}}" target="_self">{{ category.name }}</a></h3>
+  <h3><a ng-href="/blog?category={{ category.id }}&limit=3&offset=0" target="_self">{{ category.name }}</a></h3>
 </article>
