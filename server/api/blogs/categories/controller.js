@@ -9,6 +9,7 @@ module.exports = {
   one: function (req, res) {
 
     return sequelize.Blog.findAndCountAll({
+      where: { published: true },
       include: [
         {
           model: sequelize.User,
@@ -43,9 +44,9 @@ module.exports = {
 
     return sequelize.Blog.findAndCountAll({
       where: { published: true },
+      subQuery: false,
       limit: limit,
       offset: offset,
-      distinct: true,
       include: [
         {
           model: sequelize.User,
@@ -54,7 +55,7 @@ module.exports = {
         },
         {
           model: sequelize.Category,
-          where: { id: { $any: [ Number(req.params.id) ] } }
+          where: { id: { $any: [ Number(req.params.id) ] } },
         }
       ],
       order: [
@@ -64,7 +65,7 @@ module.exports = {
       .then(function (blogs) {
         blogs.limit = Number(limit);
         blogs.offset = Number(offset);
-        blogs.pageCount = (blogs.limit > blogs.count) ? 1 : blogs.count / blogs.limit;
+        blogs.pageCount = (blogs.limit > blogs.count) ? 1 : Math.ceil(blogs.count / blogs.limit);
         blogs.page = blogs.offset / blogs.limit + 1;
         blogs.pages = Array.apply(null, {length: blogs.pageCount})
           .map(Number.call, Number)

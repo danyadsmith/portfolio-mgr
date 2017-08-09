@@ -69,7 +69,7 @@ var seedData = function () {
     {name: 'Project Management'}, // 7
     {name: 'Business Software'}, // 8
     {name: 'Other'}, // 9
-    {name: 'Project'}, // 10
+    {name: 'Projects'}, // 10
     {name: 'Process'}, // 11
     {name: 'Code'}, // 12
     {name: 'Libraries'}, // 13
