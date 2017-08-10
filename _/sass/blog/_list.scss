@@ -1,5 +1,16 @@
 .blog-posts,
 .blog-categories {
+  @include container;
+
+  section.page {
+    section.main {
+      @include span(24 of 24);
+    }
+  }
+}
+
+.blog-posts,
+.blog-categories {
   table {
     border-collapse: collapse;
     width: 100%;

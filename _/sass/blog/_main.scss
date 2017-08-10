@@ -1,22 +1,9 @@
 .blog {
   @include container;
 
-  section.page {
-    margin: 100px 125px;
-
-    section.main {
-      @include span(16 of 24 first);
-      @include suffix(2 of 24);
-    }
-
-    section.sidebar {
-      @include span(6 of 24 last);
-    }
-  }
-
   header {
-    [ng-if="filterOnName"] {
-      color: $silver;
+    [ng-if="currentCategory"] {
+      color: $charcoal;
 
       &::after {
         border-bottom: 1px solid $accent;
@@ -31,14 +18,14 @@
       }
 
       strong {
-        color: $charcoal;
+        color: $accent;
       }
     }
 
   }
 
   .post-count {
-    background-color: $accent;
+    background-color: $charcoal;
     border: 0;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 0 $gallery;
@@ -56,8 +43,6 @@
   @include container;
 
   section.page {
-    margin: 20px 125px 100px;
-
     section.main {
       @include span(16 of 24 first);
       @include suffix(8 of 24 last);
@@ -89,5 +74,97 @@
   }
 }
 
+@media (min-width: 300px) {
+  .blog,
+  .blog-posts,
+  .blog-categories {
+    section.page {
+      margin: 25px;
+    }
+
+    section.main article,
+    [ui-view="blogPaginationView"] {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    section.sidebar {
+      display: none;
+    }
+  }
+}
 
 
+@media (min-width: 800px) {
+  .blog,
+  .blog-posts,
+  .blog-categories {
+    section.page {
+      margin: 25px;
+
+      section.main {
+        @include span(24 of 24);
+      }
+    }
+
+    section.main article,
+    [ui-view="blogPaginationView"] {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .blog,
+  .blog-posts,
+  .blog-categories {
+
+    section.page {
+      margin: 100px 125px;
+
+      section.main {
+        @include span(16 of 24 first);
+        @include suffix(2 of 24);
+      }
+
+      section.sidebar {
+        @include span(6 of 24 last);
+        display: block;
+      }
+    }
+
+    section.main article,
+    [ui-view="blogPaginationView"] {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .blog,
+  .blog-posts,
+  .blog-categories {
+
+    section.page {
+      margin: 100px 300px;
+
+      section.main {
+        @include span(16 of 24 first);
+        @include suffix(2 of 24);
+      }
+
+      section.sidebar {
+        @include span(6 of 24 last);
+        display: block;
+      }
+    }
+
+    section.main article,
+    [ui-view="blogPaginationView"] {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}

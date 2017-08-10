@@ -40,16 +40,29 @@ angular.module('blog.main', [])
           postCount = posts.count;
           console.log(postCount);
         }).then(function (postCount) {
-          Blog.getLatestBlogPosts(postCount).then(function (posts) {
-            $rootScope.data.posts = posts.rows;
-            $rootScope.data.count = posts.count;
-            $rootScope.data.limit = posts.limit;
-            $rootScope.data.offset = posts.offset;
-            $rootScope.data.pageCount = posts.pageCount;
-            $rootScope.data.pages = posts.pages;
-            $rootScope.data.page = posts.page;
-            //console.log(posts);
-          });
+          if($rootScope.limit > 0) {
+            Blog.getLatestBlogPosts($rootScope.limit, $rootScope.offset).then(function (posts) {
+              $rootScope.data.posts = posts.rows;
+              $rootScope.data.count = posts.count;
+              $rootScope.data.limit = posts.limit;
+              $rootScope.data.offset = posts.offset;
+              $rootScope.data.pageCount = posts.pageCount;
+              $rootScope.data.pages = posts.pages;
+              $rootScope.data.page = posts.page;
+              //console.log(posts);
+            });
+          } else {
+            Blog.getLatestBlogPosts(postCount).then(function (posts) {
+              $rootScope.data.posts = posts.rows;
+              $rootScope.data.count = posts.count;
+              $rootScope.data.limit = posts.limit;
+              $rootScope.data.offset = posts.offset;
+              $rootScope.data.pageCount = posts.pageCount;
+              $rootScope.data.pages = posts.pages;
+              $rootScope.data.page = posts.page;
+              //console.log(posts);
+            });
+          }
         });
       }
     });
@@ -63,7 +76,13 @@ angular.module('blog.main', [])
       var offset = (switchToPage === 1) ? 0 : (switchToPage * $rootScope.data.limit) - $rootScope.data.limit;
       console.log('Changing to Page:', switchToPage);
       console.log('Changing Page via Offset:', offset);
-      var categoryUrl = 'http://' + $window.location.host + '/blog/?category=' + $rootScope.category + '&limit=3&offset=' + offset;
-      $window.location.href = categoryUrl;
+      if ($rootScope.currentCategory !== null) {
+        var categoryUrl = 'http://' + $window.location.host + '/blog/?category=' + $rootScope.category + '&limit=3&offset=' + offset;
+        $window.location.href = categoryUrl;
+      } else {
+        $rootScope.limit = $rootScope.pageSize;
+        var pageUrl = 'http://' + $window.location.host + '/blog/?' + 'limit=' + $rootScope.limit + '&offset=' + offset;
+        $window.location.href = pageUrl;
+      }
     };
   }]);
