@@ -15,7 +15,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   </head>
   <body class="resume">
-  <nav>
+  <nav class="main">
+    <input type="checkbox" id="toggle-nav" name="toggle-nav">
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/blog/">Blog</a></li>
@@ -23,6 +24,7 @@
       <li><a href="/resume/" class="selected">Résumé</a></li>
       <li><a href="/contact/">Contact</a></li>
     </ul>
+    <label for="toggle-nav" id="toggle-nav"></label>
   </nav>
   <div ng-app="resume">
   <section class="header" ui-view="resumeHeaderView">
