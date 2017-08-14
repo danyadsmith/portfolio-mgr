@@ -4,7 +4,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   height: auto;
-  margin: 100px auto;
+  margin: 50px auto;
   width: 80%;
 
   .portfolio-card {
@@ -14,7 +14,7 @@
     margin: 10px;
     // min-width: 300px; - 3 columns @ 1400x900
     padding: 10px;
-    width: 45%; // 2 columns @ 1440x900
+    width: 100%; // 2 columns @ 1440x900
 
     h2 {
       font-family: $alt-heading-font;
@@ -60,3 +60,26 @@
   }
 }
 
+@media (min-width: 890px) {
+  .gallery {
+    .portfolio-card {
+      width: 44%;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .gallery {
+    .portfolio-card {
+      width: 30%;
+    }
+  }
+}
+
+@media (min-width: 2800px) {
+  .gallery {
+    .portfolio-card {
+      width: 23%;
+    }
+  }
+}
