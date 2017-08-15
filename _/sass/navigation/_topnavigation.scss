@@ -2,6 +2,14 @@
 // https://codepen.io/torbencolding/pen/OPwwOg
 
 nav.main {
+  height: 70px;
+
+  img {
+    float: left;
+    height: 50px;
+    padding: 10px 100px 0;
+    width: 50px;
+  }
 
   ul {
     background: transparent;
@@ -9,11 +17,11 @@ nav.main {
     flex-wrap: wrap;
     justify-content: flex-end;
     list-style: none;
-    margin: 0 50px 0 0;
+    margin: 0;
   }
 
   li {
-    line-height: 43px;
+    line-height: 70px;
     position: relative;
     text-align: center;
     width: 125px;
@@ -51,10 +59,10 @@ nav.main {
     color: $charcoal;
     display: none;
     font-size: 1.6rem;
-    height: 36px;
-    line-height: 36px;
+    height: 30px;
+    line-height: 60px;
     text-align: center;
-    width: 36px;
+    width: 30px;
   }
 
   [type='checkbox'],
@@ -86,9 +94,13 @@ nav.main {
   }
 }
 
-@media only screen and (max-width: 760px){
+@media only screen and (max-width: 930px){
   nav.main {
     position: relative;
+
+    img {
+      padding: 10px 30px 0;
+    }
 
     ul {
       background: $charcoal;
@@ -102,6 +114,7 @@ nav.main {
 
     li {
       flex: none;
+      line-height: 56px;
       padding: 0;
       width: 100%;
     }
