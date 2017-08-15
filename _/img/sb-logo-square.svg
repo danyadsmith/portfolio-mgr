@@ -8,19 +8,21 @@
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group">
-            <g id="Rectangle">
-                <use fill="#0CCBD2" fill-rule="evenodd" xlink:href="#path-1"></use>
-                <rect stroke="#0CCBD2" stroke-width="1" x="5.5" y="5.5" width="75" height="75"></rect>
+            <g id="Group-2">
+                <g id="Rectangle">
+                    <use fill="#0CCBD2" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#0CCBD2" stroke-width="1" x="5.5" y="5.5" width="75" height="75"></rect>
+                </g>
+                <rect id="Rectangle" stroke="#D1D1D1" x="0.5" y="0.5" width="85" height="85"></rect>
+                <text id="Singular" font-family="ThirstyScript-Bold, Thirsty Script" font-size="18" font-weight="bold" fill="#515151">
+                    <tspan x="8" y="43">Sin</tspan>
+                    <tspan x="35.738" y="43">g</tspan>
+                    <tspan x="45.8" y="43">ular</tspan>
+                </text>
+                <text id="BRAND" font-family="Poppins-Bold, Poppins" font-size="18" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="12" y="59">BRAND</tspan>
+                </text>
             </g>
-            <rect id="Rectangle" stroke="#000000" x="0.5" y="0.5" width="85" height="85"></rect>
-            <text id="Singular" font-family="ThirstyScript-Bold, Thirsty Script" font-size="18" font-weight="bold" fill="#373737">
-                <tspan x="8" y="43">Sin</tspan>
-                <tspan x="35.738" y="43">g</tspan>
-                <tspan x="45.8" y="43">ular</tspan>
-            </text>
-            <text id="BRAND" font-family="Poppins-Bold, Poppins" font-size="18" font-weight="bold" fill="#FFFFFF">
-                <tspan x="12" y="59">BRAND</tspan>
-            </text>
         </g>
     </g>
 </svg>
