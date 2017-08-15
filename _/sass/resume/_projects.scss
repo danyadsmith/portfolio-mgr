@@ -3,9 +3,10 @@ article.project {
 
   h4 {
     color: $silver;
+    font-family: 'Pathway Gothic One';
     font-size: 24px;
     font-weight: 100;
-    margin: 15px 0 0;
+    margin: 15px 0 5px;
 
     &:first-child {
       margin-top: 0;
@@ -13,7 +14,7 @@ article.project {
 
     .role {
       color: $mineshaft;
-      font-size: 15px;
+      font-size: 20px;
       font-weight: normal;
     }
   }

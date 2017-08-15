@@ -1,4 +1,13 @@
-  <section>
+  <section class="skills">
+  <h3>Skills</h3>
+  <h4><span class="experienced">Experienced</span> | <span class="exposed">Learning</span></h4>
+  <article class="skill" ng-controller="SidebarController" ng-repeat="(key, value) in data.skills | groupBy: 'category.name'">
+    <h4>{{ key }}</h4>
+    <p><span ng-repeat="skill in value" ng-class="{ experienced: skill.expertise, exposed: !skill.expertise }">{{ skill.name }}</span></p>
+  </article>
+  </section>
+
+  <section class="education">
   <h3>Education</h3>
   <article class="credential" ng-controller="SidebarController" ng-repeat='credential in data.credentials' ng-if='credential.visible == true'>
     <h4>
@@ -11,16 +20,7 @@
   </article>
   </section>
 
-  <section>
-  <h3>Skills</h3>
-  <h4>Experienced | <span class="exposed">Some Exposure</span></h4>
-  <article class="skill" ng-controller="SidebarController" ng-repeat="(key, value) in data.skills | groupBy: 'category.name'">
-    <h4>{{ key }}</h4>
-    <p><span ng-repeat="skill in value" ng-class="{ experienced: skill.expertise, exposed: !skill.expertise }">{{ skill.name }}</span></p>
-  </article>
-  </section>
-
-  <section>
+  <section class="service">
   <h3>Community Service</h3>
   <article class="community-service" ng-controller="SidebarController" ng-repeat="service in data.communityService">
     <h4>{{ service.organization }}</h4>

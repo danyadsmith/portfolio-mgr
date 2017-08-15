@@ -1,6 +1,23 @@
-  <section>
-  <h3>Work Experience</h3>
+  <section class="skills">
+  <h3>Skills</h3>
+  <!-- <h4>Strong</h4> -->
+  <article class="skill" ng-controller="SidebarController">
+    <p>
+      <span ng-repeat="skill in data.skills" ng-if="skill.expertise">{{ skill.name }}</span>
+    </p>
+  </article>
+  <!--
+  <h4>Experienced</h4>
+  <article class="skill" ng-controller="SidebarController">
+    <p>
+      <span ng-repeat="skill in data.skills" ng-if="!skill.expertise">{{ skill.name }}</span>
+    </p>
+  </article>
+  -->
+  </section>
 
+  <section class="experience">
+  <h3>Work Experience</h3>
   <article class="project" ng-controller="MainController" ng-repeat='project in data.projects' ng-if='project.type.name == "Work"'>
     <h4>{{ project.title }} <span class="role">/ {{ project.role }}</span></h4>
     <ul>
@@ -9,7 +26,7 @@
   </article>
   </section>
 
-  <section>
+  <section class="projects">
   <h3>Open Source Projects</h3>
 
   <article class="project" ng-controller="MainController" ng-repeat='project in data.projects' ng-if='project.type.name == "Open Source"'>
@@ -20,12 +37,12 @@
   </article>
   </section>
 
-  <section>
+  <section class="work-history">
   <h3>Work History</h3>
 
   <p class="work-history" ng-controller="MainController" ng-repeat='job in data.workHistory'>
     <span class="company">{{ job.employer }}</span>
     {{ job.jobTitle }}
-    ({{ job.startDate | date: 'MMMM yyyy' }} - {{ (job.endDate | date: 'MMMM yyyy') || 'Present' }})
+    <span class="date-range">({{ job.startDate | date: 'MMMM yyyy' }} - {{ (job.endDate | date: 'MMMM yyyy') || 'Present' }})</span>
   </p>
   </section>

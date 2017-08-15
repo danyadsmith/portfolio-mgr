@@ -33,12 +33,11 @@ h2 {
 h2::after {
   border-bottom: 1px solid $accent;
   border-top: 1px solid $accent;
-  bottom: -20px;
   content: '';
   display: block;
   height: 5px;
-  left: -36px;
-  position: relative;
+  margin-top: 20px;
+  position: static;
   width: 70px;
 }
 
@@ -69,11 +68,27 @@ code,
 pre,
 samp {
   font-family: 'PT Mono';
-  font-size: .85em;
+  font-size: .75em;
 }
 
 pre {
   background-color: $mineshaft;
   color: $gallery;
+  overflow: auto;
   padding: 10px;
+}
+
+@media (min-width: 761px) {
+  h2::after {
+    border-bottom: 1px solid $accent;
+    border-top: 1px solid $accent;
+    bottom: -20px;
+    content: '';
+    display: block;
+    height: 5px;
+    left: -36px;
+    margin-top: 0;
+    position: relative;
+    width: 70px;
+  }
 }

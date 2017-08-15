@@ -13,29 +13,85 @@
     article {
       @include span(24 of 24);
 
+      &.main {
+        section.resume,
+        aside.sidebar {
+          color: $tundora;
+
+          h3 {
+            color: $black;
+            font-size: 18px;
+            text-transform: uppercase;
+          }
+        }
+      }
     }
   }
 
-  article.main {
-    @include container;
-    padding: 50px 150px;
+  @media (min-width: 300px) {
+    article {
+      &.main {
+        @include container;
+        padding: 20px;
 
-    section.resume {
-      @include span(18 of 24 first);
+        section.resume {
+          @include span(24 of 24);
+        }
+
+        aside.sidebar {
+          @include span(24 of 24);
+        }
+
+        section.resume,
+        aside.sidebar {
+          h3 {
+            font-size: 18px;
+          }
+        }
+      }
     }
+  }
 
+  @media (max-width: 959px) {
     aside.sidebar {
-      @include span(6 of 24 last);
+      section.skills {
+        display: none;
+      }
     }
+  }
 
-    section.resume,
-    aside.sidebar {
-      color: $tundora;
+  @media (min-width: 960px) {
+    article {
+      &.main {
+        @include container;
+        padding: 50px 100px;
 
-      h3 {
-        color: $black;
-        font-size: 18px;
-        text-transform: uppercase;
+        section.resume {
+          @include span(18 of 24 first);
+
+          section.skills {
+            display: none;
+          }
+        }
+
+        aside.sidebar {
+          @include span(6 of 24 last);
+        }
+
+        section.resume,
+        aside.sidebar {
+          h3 {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1400px) {
+    article {
+      &.main {
+        padding: 50px 150px;
       }
     }
   }

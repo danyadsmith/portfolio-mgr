@@ -1,6 +1,6 @@
 .work-history {
   font-family: $alt-sans-font;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.75em;
   margin: 0;
 
@@ -10,6 +10,31 @@
     font-size: 20px;
     font-weight: 100;
     padding-right: 5px;
+  }
+
+  .date-range {
+    color: $silver;
+    font-size: .9em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 760px) {
+  .work-history {
+    margin: 10px 0;
+
+    .company,
+    .date-range {
+      display: block;
+    }
+
+    .date-range {
+      font-size: 10px;
+      position: relative;
+      top: -5px;
+    }
   }
 }
 
