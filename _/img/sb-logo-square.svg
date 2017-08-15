@@ -3,17 +3,22 @@
     <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
     <title>Group</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
+    <defs>
+        <rect id="path-1" x="5" y="5" width="76" height="76"></rect>
+    </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group">
-            <rect id="Rectangle" stroke="#0CCBD2" x="5.5" y="5.5" width="75" height="75"></rect>
+            <g id="Rectangle">
+                <use fill="#0CCBD2" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#0CCBD2" stroke-width="1" x="5.5" y="5.5" width="75" height="75"></rect>
+            </g>
             <rect id="Rectangle" stroke="#000000" x="0.5" y="0.5" width="85" height="85"></rect>
             <text id="Singular" font-family="ThirstyScript-Bold, Thirsty Script" font-size="18" font-weight="bold" fill="#373737">
                 <tspan x="8" y="43">Sin</tspan>
                 <tspan x="35.738" y="43">g</tspan>
                 <tspan x="45.8" y="43">ular</tspan>
             </text>
-            <text id="BRAND" font-family="Poppins-Bold, Poppins" font-size="18" font-weight="bold" fill="#0CCBD2">
+            <text id="BRAND" font-family="Poppins-Bold, Poppins" font-size="18" font-weight="bold" fill="#FFFFFF">
                 <tspan x="12" y="59">BRAND</tspan>
             </text>
         </g>
