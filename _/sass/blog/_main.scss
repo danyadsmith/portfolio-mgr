@@ -52,7 +52,8 @@
 
 .breadcrumbs {
   font-size: .9em;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
 
   a::before,
   span::before {
@@ -74,6 +75,14 @@
   }
 }
 
+@media (max-height: 414px) {
+  header {
+    [ng-if="currentCategory"] {
+      margin-top: 80px;
+    }
+  }
+}
+
 @media (min-width: 300px) {
   .blog,
   .blog-posts,
@@ -89,8 +98,23 @@
     }
 
     section.sidebar {
-      display: none;
+      @include span(24 of 24);
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .post h2 {
+    font-size: 50px !important;
+  }
+
+  .blog .page header [ng-if='currentCategory'] {
+    font-size: 14px !important;
+  }
+
+  .post p {
+    font-size: 16px;
+    line-height:18px;
   }
 }
 
