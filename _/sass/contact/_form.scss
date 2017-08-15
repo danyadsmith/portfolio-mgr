@@ -1,8 +1,19 @@
 [ui-view='contactFormView'] {
   @include container;
-  padding: 50px 20%;
+  padding: 50px 5%;
+
+  button {
+    margin: 0 auto;
+  }
 }
 
 fieldset {
   @include container;
+}
+
+@media (min-width:800px) {
+  [ui-view='contactFormView'] {
+    @include container;
+    padding: 50px 20%;
+  }
 }
