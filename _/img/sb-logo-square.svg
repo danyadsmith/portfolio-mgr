@@ -3,21 +3,18 @@
     <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
     <title>Group</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <rect id="path-1" x="6" y="6" width="74" height="74"></rect>
-    </defs>
+    <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group">
-            <g id="Rectangle">
-                <use fill="#FAF9F9" fill-rule="evenodd" xlink:href="#path-1"></use>
-                <rect stroke="#0CCBD2" stroke-width="1" x="6.5" y="6.5" width="73" height="73"></rect>
-            </g>
+            <rect id="Rectangle" stroke="#0CCBD2" x="5.5" y="5.5" width="75" height="75"></rect>
             <rect id="Rectangle" stroke="#000000" x="0.5" y="0.5" width="85" height="85"></rect>
-            <text id="SINGULAR" font-family="Poppins-Bold, Poppins" font-size="12" font-weight="bold" fill="#000000">
-                <tspan x="12" y="40">SINGULAR</tspan>
+            <text id="Singular" font-family="ThirstyScript-Bold, Thirsty Script" font-size="18" font-weight="bold" fill="#373737">
+                <tspan x="8" y="43">Sin</tspan>
+                <tspan x="35.738" y="43">g</tspan>
+                <tspan x="45.8" y="43">ular</tspan>
             </text>
             <text id="BRAND" font-family="Poppins-Bold, Poppins" font-size="18" font-weight="bold" fill="#0CCBD2">
-                <tspan x="11" y="55">BRAND</tspan>
+                <tspan x="12" y="59">BRAND</tspan>
             </text>
         </g>
     </g>
