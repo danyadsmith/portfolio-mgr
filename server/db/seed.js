@@ -46,7 +46,7 @@ var seedData = function () {
     lastName: 'Smith',
     displayName: 'Danya D. Smith',
     username: 'danyadsmith',
-    email: 'danyadsmith@email.com',
+    email: 'your.singular.brand@gmail.com',
     photoUrl: 'https://www.gravatar.com/avatar/ce455612d775f063b339c0c6549220a9?s=100',
     password: '$2a$10$17kLnuJc/J/KEvKCro6NVOPcOCld6/jD2zwX.SOwJZ4GNbzYnIOx6',
     location: 'Detroit Metro Area',
@@ -147,7 +147,7 @@ var seedData = function () {
   ]))
   .then(() => console.log(chalk.magenta('Seeding Credentials')))
   .then(() => Credential.bulkCreate([
-    {organization: 'Oakland University', school: 'School of Business Administration',credential: 'Bachelor of Arts', major: 'Management Information Systems', minor: 'Applied Technology in Business', dateCompleted: '2003-04-26', UserId: 1, visible: true},
+    {organization: 'Oakland University', school: 'School of Business Administration',credential: 'Bachelor of Science', major: 'Management Information Systems', minor: 'Applied Technology in Business', dateCompleted: '2003-04-26', UserId: 1, visible: true},
     {organization: 'Hack Reactor', school: 'Remote', credential: 'Advanced Software Engineering Immersive Program', dateCompleted: '2017-05-06', UserId: 1, visible: true},
     {organization: 'Bloc', school: 'Remote', credential: 'Full Stack Developer Track', dateCompleted: '2017-07-06', UserId: 1, visible: false}
   ]))
@@ -213,9 +213,9 @@ var seedData = function () {
   ]))
   .then(() => console.log(chalk.magenta('Seeding Portfolio')))
   .then(() => Portfolio.bulkCreate([
-    { title: 'Singular Brand', image: 'http://via.placeholder.com/450X300', url: 'http://localhost:8080/blog/posts/?id=10', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10},
-    { title: 'Scope Hero', image: 'http://via.placeholder.com/450X300', url: 'http://localhost:8080/blog/posts/?id=9', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10},
-    { title: 'Siren', image: 'http://via.placeholder.com/450X300', url: 'http://localhost:8080/blog/posts/?id=9', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10}
+    { title: 'Singular Brand', image: 'http://via.placeholder.com/450X300', url: '/blog/posts/?id=10', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10},
+    { title: 'Scope Hero', image: 'http://via.placeholder.com/450X300', url: '/blog/posts/?id=9', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10},
+    { title: 'Siren', image: 'http://via.placeholder.com/450X300', url: '/blog/posts/?id=9', abstract: 'A brief paragraph that describes the project. The project description should be less than (enter length) words. It should be short but inviting, providing the reader with a hook that provides some incentive to read further. The paragraph text should be enhanced or supported by the portfolio image. This should be a sample of your best work. For inspiration on how to craft an effective portfolio, check out these resources.', UserId: 1, CategoryId: 10}
   ]))
   .then(() => console.log(chalk.magenta('Seeding Blog Posts')))
   .then(() => Blog.bulkCreate([
