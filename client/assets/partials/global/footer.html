@@ -22,9 +22,9 @@
   <div class="recent-projects">
     <h3>Recent Projects</h3>
     <div>
-    <div ng-repeat="portfolio in data.portfolios | limitTo: 2" class="project">
+    <div ng-repeat="portfolio in data.portfolios | limitTo: 2" class="project" ng-if="portfolio.image">
     <a href="{{ portfolio.url }}" target="_self">
-    <img src="{{ portfolio.image }}" class="portfolio-image" alt="{{ portfolio.title }}" />
+    <img ng-src="{{ portfolio.image }}" class="portfolio-image" alt="{{ portfolio.title }}" />
     </a>
     </div>
     </div>
